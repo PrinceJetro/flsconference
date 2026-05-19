@@ -130,24 +130,47 @@
 </head>
 <body class="bg-surface text-on-surface font-body-md selection:bg-prestige-gold/30 selection:text-heritage-maroon">
 <!-- TopAppBar -->
-<header class="bg-surface/95 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm elevation-1 h-20">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-full">
-<div class="flex items-center gap-2">
-<span class="text-body-lg font-headline-lg font-bold text-heritage-maroon tracking-tight">UNILAG Life Sciences</span>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="home_unilag_life_sciences_conference.html">Home</a>
-<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="about_one_health_conference.html">About</a>
-<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="speakers_one_health_conference.html">Speakers</a>
-<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="program_one_health_conference.html">Program</a>
-<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
-<a class="text-heritage-maroon border-b-2 border-prestige-gold font-bold pb-1 text-label-lg font-label-lg" href="contact_one_health_conference.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="hidden lg:block text-on-surface-variant font-medium hover:text-heritage-maroon transition-all text-label-lg font-label-lg px-4 py-2">Login</button>
-<button class="bg-prestige-gold text-heritage-maroon font-bold px-6 py-2.5 rounded hover:bg-prestige-gold/90 transition-all scale-95 active:scale-90 text-label-lg font-label-lg shadow-sm border-t border-white/20">Register Now</button>
-</div>
-</div>
+<header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm elevation-1 docked full-width top-0 sticky z-50">
+  <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-20">
+    <div class="text-body-lg font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight">
+      UNILAG Life Sciences
+    </div>
+    <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="home_unilag_life_sciences_conference.html">Home</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="about_one_health_conference.html">About</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="program_one_health_conference.html">Program</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="venue_travel_one_health_conference.html">Venue</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="contact_one_health_conference.html">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+      <button class="hidden lg:block text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg">Login</button>
+      <a class="bg-heritage-maroon text-on-primary px-6 py-2.5 rounded-full font-bold hover:bg-primary scale-95 active:scale-90 transition-all shadow-md text-label-lg" href="registration_one_health_conference.html">Register Now</a>
+      
+      <!-- Mobile Hamburger Button -->
+      <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none flex items-center" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Drawer -->
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-md transition-all duration-300" id="mobile-menu">
+    <nav class="flex flex-col px-margin-mobile py-4 space-y-4">
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="home_unilag_life_sciences_conference.html">Home</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="about_one_health_conference.html">About</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="program_one_health_conference.html">Program</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="venue_travel_one_health_conference.html">Venue</a>
+      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg font-label-lg" href="contact_one_health_conference.html">Contact</a>
+      <div class="flex flex-col gap-3 pt-4 border-t border-clinical-gray/20">
+        <button class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg py-2 text-left pl-0">Login</button>
+        <a class="bg-heritage-maroon text-on-primary px-6 py-2.5 rounded-full font-bold hover:bg-primary transition-all shadow-md text-label-lg text-center" href="registration_one_health_conference.html">Register Now</a>
+      </div>
+    </nav>
+  </div>
 </header>
 <main class="bio-texture min-h-screen">
 <!-- Hero Section -->
@@ -302,53 +325,79 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-heritage-maroon text-on-primary full-width bottom-0 border-t border-prestige-gold/20">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-max-width mx-auto">
-<div class="flex flex-col gap-4">
-<span class="text-headline-md font-headline-md text-prestige-gold">UNILAG Life Sciences</span>
-<p class="text-body-md text-on-primary/70 leading-relaxed">Pioneering "One Health" solutions through interdisciplinary scientific excellence and institutional prestige.</p>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-headline-sm font-headline-md text-white">Quick Links</h4>
-<nav class="flex flex-col gap-2">
-<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="home_unilag_life_sciences_conference.html">Home</a>
-<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="program_one_health_conference.html">Schedule</a>
-<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="speakers_one_health_conference.html">Speakers</a>
-<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="abstract_submission_one_health_conference.html">Abstracts</a>
-</nav>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-headline-sm font-headline-md text-white">Support</h4>
-<nav class="flex flex-col gap-2">
-<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="#">Privacy Policy</a>
-<a class="text-prestige-gold font-bold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="contact_one_health_conference.html">Contact</a>
-<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="#">Registration Help</a>
-<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 duration-200 text-label-sm font-label-sm" href="#">Sponsorship</a>
-</nav>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-headline-sm font-headline-md text-white">Contact Info</h4>
-<div class="flex flex-col gap-2 text-label-sm text-on-primary/70">
-<p class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px]" data-icon="mail">mail</span>
-                        info@unilaglifesciences.com
-                    </p>
-<p class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px]" data-icon="call">call</span>
-                        +234 800 UNILAG
-                    </p>
-<p class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
-                        University of Lagos, Akoka
-                    </p>
-</div>
-</div>
-</div>
-<div class="px-margin-desktop py-6 border-t border-white/10 max-w-max-width mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-label-sm font-label-sm text-on-primary/50">© 2024 University of Lagos Faculty of Life Sciences. All Rights Reserved. One Health Conference.</p>
-<div class="flex gap-4">
-<span class="text-[10px] uppercase tracking-tighter text-prestige-gold/40">Knowledge - Excellence - Service</span>
-</div>
-</div>
+<footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 full-width bottom-0 mt-auto">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-max-width mx-auto">
+    <div class="space-y-4">
+      <div class="text-headline-md font-headline-md text-prestige-gold">UNILAG One Health</div>
+      <p class="text-label-sm opacity-80 leading-relaxed">
+        Faculty of Life Sciences<br/>
+        University of Lagos, Nigeria.<br/>
+        Advancing Science, Impacting Life.
+      </p>
+    </div>
+    <div class="space-y-4">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold">Navigation</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="home_unilag_life_sciences_conference.html">Home</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="about_one_health_conference.html">About</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="speakers_one_health_conference.html">Speakers</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="program_one_health_conference.html">Program</a>
+      </nav>
+    </div>
+    <div class="space-y-4">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold">Resources</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="abstract_submission_one_health_conference.html">Abstracts</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="registration_one_health_conference.html">Register</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="venue_travel_one_health_conference.html">Venue & Accommodation</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="contact_one_health_conference.html">Contact</a>
+      </nav>
+    </div>
+    <div class="space-y-4">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold">Connect</h4>
+      <div class="flex gap-4">
+        <a class="w-10 h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+          <span class="material-symbols-outlined text-body-md">share</span>
+        </a>
+        <a class="w-10 h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+          <span class="material-symbols-outlined text-body-md">mail</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-prestige-gold/10 py-6 px-margin-desktop text-center text-label-sm opacity-60">
+    © 2026 University of Lagos Faculty of Life Sciences. All Rights Reserved. One Health Conference.
+  </div>
 </footer>
+<!-- Navigation Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Active link highlighting
+    var currentPath = window.location.pathname.split('/').pop();
+    // Default to home page if path is empty or matches directory
+    if (!currentPath || currentPath === '' || currentPath === 'index.html') {
+      currentPath = 'home_unilag_life_sciences_conference.html';
+    }
+    
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href === currentPath) {
+        link.classList.add('text-heritage-maroon', 'dark:text-prestige-gold', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.remove('text-on-surface-variant', 'dark:text-surface-variant', 'font-medium');
+      } else {
+        link.classList.remove('text-heritage-maroon', 'dark:text-prestige-gold', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.add('text-on-surface-variant', 'dark:text-surface-variant', 'font-medium');
+      }
+    });
+  });
+</script>
 </body></html>
