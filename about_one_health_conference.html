@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | UNILAG Life Sciences One Health Conference</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .bio-digital-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #E9ECEF 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .microscopic-mask {
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #800000 0%, #570000 100%);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#86a5f5",
+                    "science-blue": "#1E428C",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary-fixed": "#dae2ff",
+                    "on-surface": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "secondary-fixed": "#ffe16d",
+                    "secondary": "#705d00",
+                    "tertiary-container": "#103882",
+                    "primary-container": "#800000",
+                    "inverse-surface": "#2e3132",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#ff8371",
+                    "clinical-gray": "#E9ECEF",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-container": "#fcd400",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "prestige-gold": "#FFD700",
+                    "outline-variant": "#e2bfb9",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "surface-container": "#edeeef",
+                    "surface-tint": "#b22b1d",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb4a8",
+                    "tertiary-fixed-dim": "#b1c5ff",
+                    "tertiary": "#00235e",
+                    "surface-variant": "#e1e3e4",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#570000",
+                    "on-secondary-container": "#6e5c00",
+                    "on-tertiary-fixed-variant": "#1f438d",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary-fixed": "#001847",
+                    "secondary-fixed-dim": "#e9c400",
+                    "on-primary-fixed-variant": "#8f0f07",
+                    "on-secondary": "#ffffff",
+                    "outline": "#8e706c",
+                    "on-surface-variant": "#5a413d",
+                    "on-primary-fixed": "#410000",
+                    "on-background": "#191c1d",
+                    "heritage-maroon": "#800000",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "primary-fixed": "#ffdad4",
+                    "on-secondary-fixed": "#221b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "max-width": "1280px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "label-lg": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-pattern">
+<!-- TopAppBar -->
+<header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm elevation-1 docked full-width top-0 sticky z-50 h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-full">
+<div class="text-body-lg font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight">
+                UNILAG Life Sciences
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors" href="home_unilag_life_sciences_conference.html">Home</a>
+<a class="text-heritage-maroon dark:text-prestige-gold border-b-2 border-prestige-gold font-bold pb-1" href="about_one_health_conference.html">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors" href="speakers_one_health_conference.html">Speakers</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors" href="program_one_health_conference.html">Program</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors" href="abstract_submission_one_health_conference.html">Submit</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors" href="registration_one_health_conference.html">Register</a>
+</nav>
+<div class="flex gap-4">
+<button class="hidden lg:block px-6 py-2 border border-heritage-maroon text-heritage-maroon font-label-lg hover:bg-heritage-maroon hover:text-white transition-all scale-95 active:scale-90">Login</button>
+<button class="bg-prestige-gold text-heritage-maroon px-6 py-2 font-label-lg font-bold shadow-sm hover:translate-y-[-2px] transition-all scale-95 active:scale-90">Register Now</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative hero-gradient py-24 overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+<span class="material-symbols-outlined text-[400px]" style="font-variation-settings: 'FILL' 1;">Dna</span>
+</div>
+<div class="max-w-max-width mx-auto px-margin-desktop relative z-10">
+<span class="text-prestige-gold font-label-lg tracking-widest uppercase mb-4 block">1st Annual Conference</span>
+<h1 class="font-display-lg text-display-lg text-white mb-6">About the Conference</h1>
+<p class="text-on-primary/80 font-body-lg max-w-2xl leading-relaxed">
+                    Uniting diverse scientific disciplines to address the complex interconnectedness of human, animal, and environmental health at the University of Lagos.
+                </p>
+</div>
+</section>
+<!-- History Section -->
+<section class="py-24 max-w-max-width mx-auto px-margin-desktop grid md:grid-cols-2 gap-20 items-center">
+<div class="relative group">
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-prestige-gold/30 z-0"></div>
+<img alt="UNILAG Campus" class="relative z-10 w-full h-[500px] object-cover shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]" data-alt="A wide-angle professional photograph of the University of Lagos iconic architecture, capturing the majestic academic buildings under a clear blue sky. The lighting is bright and crisp, highlighting the institutional prestige and history of the Faculty of Life Sciences. The composition uses leading lines to draw focus to the academic excellence embodied in the campus setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgHUafdNLb54xiIAYZaZS7IwmtKJm8TqFr0O5zEWELnxgkmdCOkXkgvsYLym6wJSLZVq-MoGQ2w4g0SbjtLiA0NNqow3_MOoyJRcVMbWlyy4G4ZY0KHyBHrhzATQwEBuP15rYLdQPgJLFPs8ZZqeqS0WEDbfaeEPIZrbUeNCzMpBXMekjqAhzmS1pjM6cMyU6g6pS7zJzhStiXIr8RGc8siGmwDEjLW2FHhyBfv-nqUd1dfoujhW1KzIHK0OvXp5XVuWnKzdEZcvw"/>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-heritage-maroon mb-8">Legacy of Excellence</h2>
+<div class="space-y-6 text-on-surface-variant font-body-md leading-relaxed">
+<p>Established with a vision to pioneer biological research in West Africa, the Faculty of Life Sciences at the University of Lagos has been at the forefront of scientific discovery for decades. Our commitment to academic rigor and societal impact has produced generations of leaders in genetics, microbiology, and environmental biology.</p>
+<p>As we navigate the 21st century, the Faculty has evolved into a powerhouse of innovation. From tackling infectious diseases to developing sustainable biotechnologies, our research centers are hubs of multi-disciplinary collaboration that bridge the gap between theory and application.</p>
+</div>
+<div class="mt-10 grid grid-cols-2 gap-8 border-t border-clinical-gray pt-10">
+<div>
+<div class="text-headline-md font-headline-md text-science-blue">60+ Years</div>
+<div class="text-label-sm text-on-surface-variant uppercase tracking-wider">Academic Heritage</div>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-science-blue">4,500+</div>
+<div class="text-label-sm text-on-surface-variant uppercase tracking-wider">Alumni Worldwide</div>
+</div>
+</div>
+</div>
+</section>
+<!-- One Health Deep Dive -->
+<section class="bg-clinical-gray/30 py-24">
+<div class="max-w-max-width mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-heritage-maroon mb-4">The "One Health" Vision</h2>
+<p class="text-on-surface-variant font-body-lg max-w-3xl mx-auto">An integrated approach that recognizes the health of people is closely connected to the health of animals and our shared environment.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Human Health -->
+<div class="bg-white p-10 border border-clinical-gray hover:shadow-lg transition-all duration-300 relative group overflow-hidden">
+<div class="absolute bottom-0 right-0 opacity-5 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined text-8xl">person</span>
+</div>
+<div class="w-12 h-12 bg-heritage-maroon flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h3 class="font-headline-md text-science-blue mb-4">Human Well-being</h3>
+<p class="text-on-surface-variant font-body-md leading-relaxed">Focusing on zoonotic disease prevention, antimicrobial resistance, and the social determinants of health in modern urban settings.</p>
+</div>
+<!-- Animal Health -->
+<div class="bg-white p-10 border border-clinical-gray hover:shadow-lg transition-all duration-300 relative group overflow-hidden">
+<div class="absolute bottom-0 right-0 opacity-5 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined text-8xl">pets</span>
+</div>
+<div class="w-12 h-12 bg-science-blue flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined">pets</span>
+</div>
+<h3 class="font-headline-md text-science-blue mb-4">Animal Stewardship</h3>
+<p class="text-on-surface-variant font-body-md leading-relaxed">Examining veterinary advancements and the preservation of biodiversity as critical barriers against global pandemics.</p>
+</div>
+<!-- Environment -->
+<div class="bg-white p-10 border border-clinical-gray hover:shadow-lg transition-all duration-300 relative group overflow-hidden">
+<div class="absolute bottom-0 right-0 opacity-5 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined text-8xl">eco</span>
+</div>
+<div class="w-12 h-12 bg-prestige-gold flex items-center justify-center text-heritage-maroon mb-6">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<h3 class="font-headline-md text-science-blue mb-4">Ecological Integrity</h3>
+<p class="text-on-surface-variant font-body-md leading-relaxed">Understanding climate change, pollution, and ecosystem services as foundational pillars for a healthy global future.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Organizing Committee -->
+<section class="py-24 max-w-max-width mx-auto px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-heritage-maroon text-center mb-16">Organizing Committee</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Member 1 -->
+<div class="group">
+<div class="mb-4 overflow-hidden border border-clinical-gray relative aspect-[4/5]">
+<img alt="Prof. Funke Lawal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional studio portrait of a distinguished female academic in her 50s, wearing business attire. The lighting is soft and flattering with a clean, neutral gray background. Her expression is confident and welcoming, embodying leadership and academic authority. The image has a high-end corporate aesthetic suitable for a faculty dean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU3O7kkvcEFcOmax5-Dax5JkypaBjvukni9UfYU2E500hwpKaCbsm069q39z_E2XO9aVVM1x0NMY4cVLSRAU179_Bxgps_5qhgL9DoS4ialnA_J6Yp3NRxPnFGl566cOOK-fNGUCENPDMviVFURNmauu0chwdu-QG3HPBbwIx-3xNGiNzvNuVzgq_6LyzHlnSHWy9g7zjyjSX9nX6Lhvt8zNHk3b1-tlckySPmPNnselAHlzGyTo-4lSkIVjjQ-iWknVb94l2U7cg"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-prestige-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-science-blue mb-1">Prof. Funke Lawal</h4>
+<p class="text-label-sm text-heritage-maroon uppercase font-bold tracking-tighter">Conference Chairperson</p>
+</div>
+<!-- Member 2 -->
+<div class="group">
+<div class="mb-4 overflow-hidden border border-clinical-gray relative aspect-[4/5]">
+<img alt="Dr. Emeka Okafor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional headshot of a male scientist in his 40s with a modern, approachable look. He is wearing a sharp navy blue blazer over a light shirt. The setting is a bright, modern interior with subtle bokeh of a scientific facility in the background. The lighting is professional and high-key, suggesting innovation and forward-thinking expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQVOVD6kW72hBE2O4o89t9XB_qjgfUvcfi52S3ysIetFH2kGYw6K-31sK4jN5uAN-kykKb_BJMEE6tbOk0Bz_LTaMZDOVB-bEcbdY5VHz1jeIQchpO1H_ThCAzORit_cPtaOcRUlwTLUeiusknFOJVnrTeBhnkRDNFUFKLdB6L1NKyqlFZrB2w50Nj455fJH2Z6jJB0mdFMs72SH-SehVqghV_JsuO-I4jqZMxXKVAIXon-yzrWxE3c7dM3QFGJYBd57A-TDYQ2gQ"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-prestige-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-science-blue mb-1">Dr. Emeka Okafor</h4>
+<p class="text-label-sm text-heritage-maroon uppercase font-bold tracking-tighter">Technical Lead</p>
+</div>
+<!-- Member 3 -->
+<div class="group">
+<div class="mb-4 overflow-hidden border border-clinical-gray relative aspect-[4/5]">
+<img alt="Prof. Sarah Adeboye" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sophisticated portrait of a female professional in a sleek executive suit. She is captured in a high-light environment with a bright, minimalist aesthetic. Her posture is poised and professional, reflecting her role in organizational excellence. The image uses a shallow depth of field to focus on her sharp features and professional attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdClNcIwNMzSGhginonHic7Eh9C9fwsjhfv_u8P1TISWJvsyDFi6fqN98dxqQmkgzGaObgOXYy5twIBHM2FhD30znXFUIwrLqsJkrt1WFGugamWZ3BhZfGZw4mfp0D5huO5uRIwHExvAaud2J3l85PToj4Avh-nrw4JrUwOybOHtqeOyBnIM-z3-GSXzEJYOKmlrCNahaFmKoO2_cuCPMh6eBHfD4Yk_elHBQRQ8XSxzAFy6p81ZNzbvdt7G01RmngYyU0VfmpDsw"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-prestige-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-science-blue mb-1">Prof. Sarah Adeboye</h4>
+<p class="text-label-sm text-heritage-maroon uppercase font-bold tracking-tighter">Strategic Partnerships</p>
+</div>
+<!-- Member 4 -->
+<div class="group">
+<div class="mb-4 overflow-hidden border border-clinical-gray relative aspect-[4/5]">
+<img alt="Dr. Ibrahim Musa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-quality professional portrait of a male academic with a scholarly appearance. He is wearing spectacles and a tailored jacket. The background is a blurred academic library, giving a sense of depth and intellectual environment. The lighting is warm and authoritative, capturing the essence of a seasoned professor and administrator." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqVrGNUBF_LK0eghbGqZj16mXbr_MO_VYKXGnz5Qtw2D7Kp8KgeY6R7AAj8vTPS_v3YyCyYLV2Ne1GeEeEobvps6I9wYUAkkTs6tErHkHq3K1vnWnuZxS_MKa9Knr35fyYwTdH0297zZtXy40W9OoRzF0xvKPkQAwYAzpVc2FoC92dpVhtnGm57FTd3awFWpxFmCe38AnXeZDOj-8eg_M_r-YkZn_YiPxElKugnCpgE-Mezpl2g49bK_mKvMF1HLvbA_BwzillebU"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-prestige-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-science-blue mb-1">Dr. Ibrahim Musa</h4>
+<p class="text-label-sm text-heritage-maroon uppercase font-bold tracking-tighter">Logistics Director</p>
+</div>
+</div>
+</section>
+<!-- Partners & Sponsors -->
+<section class="py-24 bg-white border-t border-clinical-gray">
+<div class="max-w-max-width mx-auto px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-heritage-maroon mb-12 flex items-center gap-4">
+                    Collaborating Partners
+                    <span class="flex-grow h-px bg-clinical-gray"></span>
+</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter items-center opacity-60 grayscale hover:grayscale-0 transition-all">
+<div class="p-6 border border-clinical-gray/50 flex justify-center hover:shadow-md transition-shadow">
+<img alt="WHO Partner" data-alt="A minimalist vector logo for a global health organization, rendered in a clean flat style. The logo uses blue and green tones to represent health and vitality. It is presented on a clean white background with ample negative space, reflecting a modern corporate identity focused on scientific innovation and global welfare." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoj9D4lCZhHCRyifZkBQ2ptyKQlu28cCUWH1931ymzO2Y-ZEAjM6ci2AgTIis5tkCS9r8ObmW_RWTM0lf6JIl5G8lYQMt8UxC9lp8xtqToq1XqptDg2Wu20UpfRv_dXBdVvf-m7QLCwA9YmNu7iPR2DY8FRMfct8uAKehmDNzmPd3h5ta_nwYEZu1Bvj7yaKKRUycOgIG_4KvKlh8HNOn-cS_j00gzbjz-fdIxQ5acDDwkuIApCPMaywpUHIhRV7JsW9-p1ykm0As"/>
+</div>
+<div class="p-6 border border-clinical-gray/50 flex justify-center hover:shadow-md transition-shadow">
+<img alt="Science Foundation" data-alt="A contemporary logo for a science-based foundation, featuring geometric abstractions of a microscope and a leaf. The design is minimal and professional, using a deep maroon and gold color scheme. It is set against a pristine white background, conveying trust, academic rigor, and professional collaboration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCmpJxmscVixkKIKaXojZ5nIPdoBs-aY0b1mF8Jd-_5umkncBe_g2v5XdU5AYBNYj9fOYJESPmJFXqJbuLZqZdaLy_e2B_bWLIWxhQCNbQDQc6BxgwSDdr8t0FstE9Gowo_47UAVpSLBHDdFO02J2flZCcobuBJAxlGtB93DWKc779moLmaMhSMr_84lwhOK5XlrN_whhPN4lA8R4l4LgDvEJ2dmypFBMRvK-lEP3Um9-iD_JYTABoVHfCy3LJaXUqguQX7SMKfak"/>
+</div>
+<div class="p-6 border border-clinical-gray/50 flex justify-center hover:shadow-md transition-shadow">
+<img alt="EPA Partner" data-alt="A professional institutional logo representing an environmental protection agency. The design incorporates circular motifs and organic shapes in shades of deep green and gold. The overall aesthetic is clean, modern, and authoritative, suitable for a high-level academic and governmental partnership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7thq-zUuHfwL8qEVf9K-bV7WQCUsqicpyvz1mvnH4pV710_HgWtZOpd6-R3G1yLLQtAXTGLXuHfNznpfo32sGAovS1kOW7ziPMCBU0yXaATHTZDCtArkIhya2-_8U5HW-8voPK8zlL3_NNvtXaoLkREcG4HAJEWWDAv7onv57L8rTUkE-jH2QvZ08t6EmTgGFo_gkpsyZqqAflNirIn4jjsq4wo6eK3b8E8zaMnDtCviv660te8_ibME5KeMNcDw4RdfNQf2UtcE"/>
+</div>
+<div class="p-6 border border-clinical-gray/50 flex justify-center hover:shadow-md transition-shadow">
+<img alt="Biotech Partner" data-alt="An elegant corporate logo for a biotechnology company, featuring a stylized DNA double helix in a minimalist geometric pattern. The colors are sleek navy and gold. The design is sophisticated and high-tech, appearing professional on a high-diffusion soft white background in a light-mode layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3sw4qwlRtlNkI-XhBbdponArhJ436X5bq1GiJ8dtcw0Vt-1ZK-2jarwSk5Iu43AxhSPVhmj058BR3YbFoEOnHSIBck2YSfVArMsKYorxTAEfpig2wmQzslJo5WdFFd5apDd_LK6EneRL_toDxh_VO2MtbbdEMskt6Szp42kZIQxJGRek9EDGStkajb1o0BvpK7e0eoa500GOBaGOk755Ow2OvxhyoPnQRKeaENfL8QWL2iSJc_ObnWuYMldwbZaaJKw5UMWWvxmk"/>
+</div>
+<div class="p-6 border border-clinical-gray/50 flex justify-center hover:shadow-md transition-shadow">
+<img alt="Vet Council" data-alt="A clean, typographic logo for a veterinary medicine council. The branding is professional and clear, utilizing a bold serif font with a simple medical cross icon integrated into the letterform. The palette consists of heritage maroon and clinical gray, signifying stability and academic heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA755_5nN-KRYFcxzLzJ_J1bfb6fV0tqArb1DQQC-ef9I6mq0l0rIkiX-3ePtkbTudGderi5kuVI8AZgL8g3DybFHHleGUtNTR_y8qcKKj_nufHBrZ87jlTVC5i96SmN8mowGDXlm7ytw4XWRcpq1INqUVg_bMkX4h_L1LFaF7Aen1MrPE-W29D437tIxsvVAteQjro5OxQleTCqVt_CLTGkkkpzu1DG6PIn1qjRn1V_LouPORp9Mi1MALlLS-2h5XMU_5WFKEjoA4"/>
+</div>
+<div class="p-6 border border-clinical-gray/50 flex justify-center hover:shadow-md transition-shadow">
+<img alt="Research Institute" data-alt="A modern research institute logo, featuring abstract connectivity dots and lines symbolizing multi-disciplinary cooperation. The style is futuristic and clinical, with a light gray and blue color palette. The logo is centered in a white box with a subtle shadow, representing innovation in the life sciences field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg1L2AqhmbUCDY-l77FlhnQWU4wfpAFjoqygHqjrejYQja2SIyNx-7KduXJicg0o-KO4appvKNSrmiVYA1JOnOSpzFgFN4PY7jQ3eIlj1p95LfLowK58uqhaZ16m-OgCxSqP-SmMLUUs-j-WawBKEVQaKS7Qca38Qn0C_oqLJ62CpsG3K-tCwqPpGgI933Y2bilXXpqxa4KrhosgQSkq99IbsoRaLN4nkhsDKcAprIlOGfa_ZW6lTsrSlbsQDeEWgWK90K8VkAP0Y"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 full-width bottom-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-max-width mx-auto">
+<div class="space-y-4">
+<div class="text-headline-md font-headline-md text-prestige-gold">One Health 2024</div>
+<p class="text-label-sm opacity-80 leading-relaxed">Pioneering the future of integrated health sciences at the University of Lagos.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline-md text-headline-sm text-prestige-gold">Navigation</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer" href="home_unilag_life_sciences_conference.html">Home</a>
+<a class="text-prestige-gold font-bold transition-transform hover:translate-x-1 cursor-pointer" href="about_one_health_conference.html">About</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer" href="program_one_health_conference.html">Schedule</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer" href="speakers_one_health_conference.html">Speakers</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline-md text-headline-sm text-prestige-gold">Resources</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer" href="abstract_submission_one_health_conference.html">Abstracts</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer" href="contact_one_health_conference.html">Contact</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline-md text-headline-sm text-prestige-gold">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+<span class="material-symbols-outlined text-body-md">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+<span class="material-symbols-outlined text-body-md">mail</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-prestige-gold/10 py-6 px-margin-desktop text-center text-label-sm opacity-60">
+            © 2024 University of Lagos Faculty of Life Sciences. All Rights Reserved. One Health Conference.
+        </div>
+</footer>
+</body></html>

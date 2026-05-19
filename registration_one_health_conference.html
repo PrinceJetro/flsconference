@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | UNILAG Life Sciences One Health Conference</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#86a5f5",
+                        "science-blue": "#1E428C",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed": "#dae2ff",
+                        "on-surface": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "secondary-fixed": "#ffe16d",
+                        "secondary": "#705d00",
+                        "tertiary-container": "#103882",
+                        "primary-container": "#800000",
+                        "inverse-surface": "#2e3132",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#ff8371",
+                        "clinical-gray": "#E9ECEF",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-container": "#fcd400",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "prestige-gold": "#FFD700",
+                        "outline-variant": "#e2bfb9",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "surface-container": "#edeeef",
+                        "surface-tint": "#b22b1d",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb4a8",
+                        "tertiary-fixed-dim": "#b1c5ff",
+                        "tertiary": "#00235e",
+                        "surface-variant": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#570000",
+                        "on-secondary-container": "#6e5c00",
+                        "on-tertiary-fixed-variant": "#1f438d",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#001847",
+                        "secondary-fixed-dim": "#e9c400",
+                        "on-primary-fixed-variant": "#8f0f07",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8e706c",
+                        "on-surface-variant": "#5a413d",
+                        "on-primary-fixed": "#410000",
+                        "on-background": "#191c1d",
+                        "heritage-maroon": "#800000",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#544600",
+                        "primary-fixed": "#ffdad4",
+                        "on-secondary-fixed": "#221b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "max-width": "1280px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bio-texture {
+            background-image: radial-gradient(circle at 2px 2px, rgba(128, 0, 0, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/95 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-20">
+<div class="text-body-lg font-headline-lg font-bold text-heritage-maroon tracking-tight">
+                UNILAG Life Sciences
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="home_unilag_life_sciences_conference.html">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="about_one_health_conference.html">About</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="speakers_one_health_conference.html">Speakers</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="program_one_health_conference.html">Program</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
+<a class="text-heritage-maroon border-b-2 border-prestige-gold font-bold pb-1 text-label-lg font-label-lg" href="registration_one_health_conference.html">Register</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg">Login</button>
+<button class="bg-heritage-maroon text-on-primary px-6 py-2.5 rounded-lg font-bold text-label-lg font-label-lg hover:bg-primary transition-all active:scale-95">Register Now</button>
+</div>
+</div>
+</header>
+<main class="bio-texture min-h-screen">
+<!-- Hero & Deadline -->
+<section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto text-center border-b border-clinical-gray">
+<div class="inline-flex items-center gap-2 bg-error-container text-on-error-container px-4 py-2 rounded-full mb-8 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">event_upcoming</span>
+<span class="text-label-lg font-label-lg">DEADLINE: SEPTEMBER 15, 2024</span>
+</div>
+<h1 class="text-display-lg-mobile md:text-display-lg font-headline-lg text-heritage-maroon mb-6 leading-tight">
+                Secure Your Participation in <br class="hidden md:block"/> <span class="text-science-blue">One Health 2024</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Join global experts, researchers, and policymakers at the 1st Annual Conference of the Faculty of Life Sciences, University of Lagos.
+            </p>
+</section>
+<!-- Pricing Tiers -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Students -->
+<div class="bg-surface-container-lowest border border-clinical-gray p-8 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-lg transition-all duration-300 group">
+<span class="material-symbols-outlined text-science-blue text-4xl mb-4 group-hover:scale-110 transition-transform">school</span>
+<h3 class="text-headline-md font-headline-md text-heritage-maroon mb-2">Students</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-headline-md font-headline-md text-on-surface">₦5,000</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/ Early Bird</span>
+</div>
+<ul class="text-left w-full space-y-4 mb-8">
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Undergraduate &amp; Masters
+                        </li>
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Access to all workshops
+                        </li>
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Student ID Required
+                        </li>
+</ul>
+<button class="mt-auto w-full py-3 border-2 border-heritage-maroon text-heritage-maroon font-bold rounded-lg hover:bg-heritage-maroon hover:text-white transition-colors">Select Tier</button>
+</div>
+<!-- Academic Staff -->
+<div class="bg-surface-container-lowest border-2 border-prestige-gold p-8 rounded-xl flex flex-col items-center text-center shadow-md relative scale-105 z-10">
+<div class="absolute -top-4 bg-prestige-gold text-heritage-maroon text-label-sm font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+<span class="material-symbols-outlined text-science-blue text-4xl mb-4">account_balance</span>
+<h3 class="text-headline-md font-headline-md text-heritage-maroon mb-2">UNILAG Staff</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-headline-md font-headline-md text-on-surface">₦15,000</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/ Full Pass</span>
+</div>
+<ul class="text-left w-full space-y-4 mb-8">
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Full Scientific Sessions
+                        </li>
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Paper Presentation Entry
+                        </li>
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Gala Dinner Ticket
+                        </li>
+</ul>
+<button class="mt-auto w-full py-3 bg-prestige-gold text-heritage-maroon font-bold rounded-lg shadow-sm hover:brightness-105 transition-all active:scale-95">Register as Staff</button>
+</div>
+<!-- External/Guests -->
+<div class="bg-surface-container-lowest border border-clinical-gray p-8 rounded-xl flex flex-col items-center text-center shadow-sm hover:shadow-lg transition-all duration-300 group">
+<span class="material-symbols-outlined text-science-blue text-4xl mb-4 group-hover:scale-110 transition-transform">public</span>
+<h3 class="text-headline-md font-headline-md text-heritage-maroon mb-2">Guests</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-headline-md font-headline-md text-on-surface">₦25,000</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/ General</span>
+</div>
+<ul class="text-left w-full space-y-4 mb-8">
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            All Networking Events
+                        </li>
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Conference Material Kit
+                        </li>
+<li class="flex items-center gap-3 text-body-md font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                            Lunch &amp; Refreshments
+                        </li>
+</ul>
+<button class="mt-auto w-full py-3 border-2 border-heritage-maroon text-heritage-maroon font-bold rounded-lg hover:bg-heritage-maroon hover:text-white transition-colors">Select Tier</button>
+</div>
+</div>
+</section>
+<!-- Benefits & Form Layout -->
+<section class="pb-24 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- What's Included (Left Side) -->
+<div class="lg:col-span-5 space-y-12">
+<div>
+<h2 class="text-headline-md font-headline-md text-heritage-maroon mb-8">What's Included</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-science-blue/10 p-3 rounded-lg text-science-blue">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Scientific Abstracts</h4>
+<p class="text-on-surface-variant text-body-md">Hard-bound and digital copy of the 2024 Conference Proceedings.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-science-blue/10 p-3 rounded-lg text-science-blue">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Premium Catering</h4>
+<p class="text-on-surface-variant text-body-md">Complimentary lunch, tea breaks, and high-tea for all days.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-science-blue/10 p-3 rounded-lg text-science-blue">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Smart Accreditation</h4>
+<p class="text-on-surface-variant text-body-md">RFID-enabled delegate badge for seamless session entry.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-heritage-maroon p-8 rounded-xl text-on-primary">
+<p class="font-headline-md text-headline-sm mb-4">Group Discounts</p>
+<p class="opacity-80 mb-6">Registering more than 5 members from the same laboratory or institution? Contact us for special rates.</p>
+<a class="inline-flex items-center gap-2 text-prestige-gold font-bold hover:underline" href="mailto:conference@lifesciences.unilag.edu">
+                            Contact Secretariat <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Registration Form (Right Side) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-2xl shadow-sm border border-clinical-gray">
+<h2 class="text-headline-md font-headline-md text-heritage-maroon mb-8">Registration Details</h2>
+<form action="#" class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-lg font-label-lg text-on-surface-variant">Full Name</label>
+<input class="w-full border-clinical-gray focus:border-heritage-maroon focus:ring-2 focus:ring-prestige-gold/20 rounded-lg p-3 outline-none transition-all" placeholder="Dr. Jane Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-lg font-label-lg text-on-surface-variant">Email Address</label>
+<input class="w-full border-clinical-gray focus:border-heritage-maroon focus:ring-2 focus:ring-prestige-gold/20 rounded-lg p-3 outline-none transition-all" placeholder="jane.doe@unilag.edu.ng" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-lg font-label-lg text-on-surface-variant">Primary Institution</label>
+<input class="w-full border-clinical-gray focus:border-heritage-maroon focus:ring-2 focus:ring-prestige-gold/20 rounded-lg p-3 outline-none transition-all" placeholder="Department of Cell Biology, University of Lagos" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-lg font-label-lg text-on-surface-variant">Academic Role</label>
+<select class="w-full border-clinical-gray focus:border-heritage-maroon focus:ring-2 focus:ring-prestige-gold/20 rounded-lg p-3 outline-none transition-all">
+<option>Professor</option>
+<option>Senior Lecturer</option>
+<option>Postdoctoral Fellow</option>
+<option>Graduate Student</option>
+<option>Undergraduate</option>
+<option>Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-lg font-label-lg text-on-surface-variant">Track Preference</label>
+<select class="w-full border-clinical-gray focus:border-heritage-maroon focus:ring-2 focus:ring-prestige-gold/20 rounded-lg p-3 outline-none transition-all">
+<option>Molecular Biology &amp; Genomics</option>
+<option>Environmental Health</option>
+<option>Zoonotic Diseases</option>
+<option>Biotechnology Innovations</option>
+</select>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-label-lg font-label-lg text-on-surface-variant">Session Preferences (Select all that apply)</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-3 border border-clinical-gray rounded-lg hover:border-prestige-gold cursor-pointer transition-colors">
+<input class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+<span class="text-body-md">Morning Plenary</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-clinical-gray rounded-lg hover:border-prestige-gold cursor-pointer transition-colors">
+<input class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+<span class="text-body-md">Workshop: CRISPR-Cas9</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-clinical-gray rounded-lg hover:border-prestige-gold cursor-pointer transition-colors">
+<input class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+<span class="text-body-md">Poster Session</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-clinical-gray rounded-lg hover:border-prestige-gold cursor-pointer transition-colors">
+<input class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+<span class="text-body-md">Closing Gala</span>
+</label>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full py-4 bg-heritage-maroon text-on-primary font-bold text-lg rounded-xl shadow-lg hover:bg-primary transition-all active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">payments</span>
+                                Proceed to Payment Securely
+                            </button>
+<p class="text-center text-label-sm text-on-surface-variant mt-4">
+                                By clicking, you agree to our Conference Terms and Conditions.
+                            </p>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-heritage-maroon full-width bottom-0 border-t border-prestige-gold/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-max-width mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="text-headline-md font-headline-md text-prestige-gold mb-4">UNILAG One Health</div>
+<p class="text-on-primary/80 text-body-md max-w-sm mb-6">Advancing interdisciplinary collaboration across life sciences to solve the world's most pressing health challenges.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-prestige-gold cursor-pointer opacity-90 hover:opacity-100 transition-transform hover:translate-y-[-2px]">public</span>
+<span class="material-symbols-outlined text-prestige-gold cursor-pointer opacity-90 hover:opacity-100 transition-transform hover:translate-y-[-2px]">mail</span>
+<span class="material-symbols-outlined text-prestige-gold cursor-pointer opacity-90 hover:opacity-100 transition-transform hover:translate-y-[-2px]">call</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="text-headline-sm font-headline-md text-on-primary mb-2">Quick Links</div>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-colors hover:translate-x-1 duration-200 text-body-md" href="home_unilag_life_sciences_conference.html">Home</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-colors hover:translate-x-1 duration-200 text-body-md" href="program_one_health_conference.html">Schedule</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-colors hover:translate-x-1 duration-200 text-body-md" href="speakers_one_health_conference.html">Speakers</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-colors hover:translate-x-1 duration-200 text-body-md" href="abstract_submission_one_health_conference.html">Abstracts</a>
+</div>
+<div class="flex flex-col gap-3">
+<div class="text-headline-sm font-headline-md text-on-primary mb-2">Support</div>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-colors hover:translate-x-1 duration-200 text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-colors hover:translate-x-1 duration-200 text-body-md" href="contact_one_health_conference.html">Contact</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-colors hover:translate-x-1 duration-200 text-body-md" href="#">FAQ</a>
+</div>
+</div>
+<div class="border-t border-prestige-gold/10 py-6 text-center text-label-sm font-label-sm text-on-primary/60">
+            © 2024 University of Lagos Faculty of Life Sciences. All Rights Reserved. One Health Conference.
+        </div>
+</footer>
+</body></html>

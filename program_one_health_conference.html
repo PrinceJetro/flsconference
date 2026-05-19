@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Program Schedule - UNILAG Faculty of Life Sciences</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#86a5f5",
+                        "science-blue": "#1E428C",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed": "#dae2ff",
+                        "on-surface": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "secondary-fixed": "#ffe16d",
+                        "secondary": "#705d00",
+                        "tertiary-container": "#103882",
+                        "primary-container": "#800000",
+                        "inverse-surface": "#2e3132",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#ff8371",
+                        "clinical-gray": "#E9ECEF",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-container": "#fcd400",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "prestige-gold": "#FFD700",
+                        "outline-variant": "#e2bfb9",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "surface-container": "#edeeef",
+                        "surface-tint": "#b22b1d",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb4a8",
+                        "tertiary-fixed-dim": "#b1c5ff",
+                        "tertiary": "#00235e",
+                        "surface-variant": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#570000",
+                        "on-secondary-container": "#6e5c00",
+                        "on-tertiary-fixed-variant": "#1f438d",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#001847",
+                        "secondary-fixed-dim": "#e9c400",
+                        "on-primary-fixed-variant": "#8f0f07",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8e706c",
+                        "on-surface-variant": "#5a413d",
+                        "on-primary-fixed": "#410000",
+                        "on-background": "#191c1d",
+                        "heritage-maroon": "#800000",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#544600",
+                        "primary-fixed": "#ffdad4",
+                        "on-secondary-fixed": "#221b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "max-width": "1280px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .microscopic-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(128, 0, 0, 0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .active-tab-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #FFD700;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-prestige-gold selection:text-heritage-maroon">
+<!-- TopAppBar Component -->
+<header class="bg-surface/95 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-20">
+<div class="flex items-center gap-4">
+<img alt="Logo" class="w-10 h-10" data-alt="A stylized geometric logo for the University of Lagos Faculty of Life Sciences. The emblem features a modern interpretation of a DNA helix and a microscopic cell structure, rendered in deep heritage maroon and bright prestige gold. The aesthetic is clean, academic, and future-ready, suggesting scientific excellence and prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSwOYb5NJnPDUIN8fyzJhSNENzzWBMf6bTG0sIFRYajpAZ_eDKHeTqap4tolBOjq5_HQtKDh7VUsRvnFXhcH_cmPZBpcULWmotaCIfeLs0DbWLbq-Qv-yBFRtwhpi5VJ4wjl-Te8GbluDCjvEl6I3t5HQq5Y7chBKNX44JhaYfLL28ADx_ChuU7s-XRnw9sE8r1Acp_SvgoHYXuEYmA1D4vvboyPfX2KkNSnf86zfblUE19jXVOOfsVX5REZ84nsHgJaQgGAvAU0o"/>
+<span class="text-body-lg font-headline-lg font-bold text-heritage-maroon tracking-tight">UNILAG Life Sciences</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="home_unilag_life_sciences_conference.html">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="about_one_health_conference.html">About</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="speakers_one_health_conference.html">Speakers</a>
+<a class="text-heritage-maroon border-b-2 border-prestige-gold font-bold pb-1 text-label-lg font-label-lg" href="program_one_health_conference.html">Program</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
+<a class="text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="registration_one_health_conference.html">Register</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block px-4 py-2 text-label-lg font-label-lg text-heritage-maroon font-bold hover:bg-surface-container-high transition-all active:scale-95">Login</button>
+<button class="bg-prestige-gold text-heritage-maroon px-6 py-2 text-label-lg font-label-lg font-bold shadow-sm hover:translate-y-[-1px] active:scale-95 transition-all border-inset border-[1px] border-white/20">Register Now</button>
+</div>
+</div>
+</header>
+<main class="microscopic-pattern min-h-screen pb-24">
+<!-- Hero Section for Schedule -->
+<section class="relative pt-20 pb-12 overflow-hidden">
+<div class="max-w-max-width mx-auto px-margin-desktop relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end gap-gutter">
+<div class="max-w-2xl">
+<span class="text-label-lg font-label-lg text-science-blue uppercase tracking-widest mb-4 block">Conference Agenda</span>
+<h1 class="text-display-lg font-display-lg text-heritage-maroon mb-6">Scientific Program &amp; Schedule</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                            A comprehensive three-day exploration of the "One Health" paradigm, bridging the gap between human health, veterinary medicine, and environmental science.
+                        </p>
+</div>
+<div class="pb-2">
+<button class="flex items-center gap-2 bg-heritage-maroon text-white px-8 py-4 text-label-lg font-label-lg font-bold hover:shadow-lg transition-all group active:scale-95">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                            DOWNLOAD PDF SCHEDULE
+                        </button>
+</div>
+</div>
+</div>
+<!-- Decorative DNA motif background -->
+<div class="absolute right-0 top-0 opacity-5 pointer-events-none -mr-20">
+<svg height="600" viewbox="0 0 100 200" width="400">
+<path d="M30 0 Q 70 50 30 100 T 30 200" fill="none" stroke="#800000" stroke-width="0.5"></path>
+<path d="M70 0 Q 30 50 70 100 T 70 200" fill="none" stroke="#800000" stroke-width="0.5"></path>
+</svg>
+</div>
+</section>
+<!-- Date Navigation Tabs -->
+<section class="sticky top-20 bg-surface/80 backdrop-blur-md z-40 border-b border-clinical-gray">
+<div class="max-w-max-width mx-auto px-margin-desktop">
+<div class="flex gap-12 overflow-x-auto no-scrollbar">
+<button class="relative py-6 text-heritage-maroon font-bold flex flex-col items-center min-w-max group">
+<span class="text-label-sm font-label-sm text-on-surface-variant group-hover:text-heritage-maroon">DAY 01</span>
+<span class="text-headline-md font-headline-md">July 15</span>
+<div class="active-tab-indicator"></div>
+</button>
+<button class="relative py-6 text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors flex flex-col items-center min-w-max group">
+<span class="text-label-sm font-label-sm group-hover:text-heritage-maroon">DAY 02</span>
+<span class="text-headline-md font-headline-md">July 16</span>
+</button>
+<button class="relative py-6 text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors flex flex-col items-center min-w-max group">
+<span class="text-label-sm font-label-sm group-hover:text-heritage-maroon">DAY 03</span>
+<span class="text-headline-md font-headline-md">July 17</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Schedule Grid Content -->
+<section class="max-w-max-width mx-auto px-margin-desktop mt-12">
+<div class="grid grid-cols-1 gap-base">
+<!-- Time Slot 1 -->
+<div class="group grid grid-cols-12 items-center bg-white p-6 border border-clinical-gray hover:border-prestige-gold transition-all shadow-[0px_4px_20px_rgba(128,0,0,0.02)]">
+<div class="col-span-12 md:col-span-2">
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-heritage-maroon">08:30</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">AM</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 mt-4 md:mt-0">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-clinical-gray text-on-surface-variant text-label-sm font-label-sm rounded-full">General Session</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2 group-hover:text-heritage-maroon transition-colors">Registration and Morning Coffee</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Conference Grand Foyer
+                        </p>
+</div>
+<div class="col-span-12 md:col-span-3 mt-4 md:mt-0 flex justify-end">
+<!-- Action placeholder or empty for general events -->
+</div>
+</div>
+<!-- Time Slot 2: Featured Keynote -->
+<div class="group grid grid-cols-12 items-center bg-surface-container-low p-6 border-l-4 border-l-prestige-gold border border-clinical-gray shadow-[0px_4px_20px_rgba(128,0,0,0.05)]">
+<div class="col-span-12 md:col-span-2">
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-heritage-maroon">10:00</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">AM</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 mt-4 md:mt-0">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-heritage-maroon text-white text-label-sm font-label-sm rounded-full">Keynote Address</span>
+<span class="px-3 py-1 border border-science-blue text-science-blue text-label-sm font-label-sm rounded-full">Public Health</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">One Health: The Interplay of Ecosystems and Human Prosperity</h3>
+<div class="flex items-center gap-4 mb-3">
+<img alt="Speaker" class="w-8 h-8 rounded-full border border-prestige-gold" data-alt="Professional headshot of a distinguished female academic scientist with a focused expression. She is wearing professional attire and glasses, set against a blurred background of a modern scientific laboratory with high-key clinical lighting. The image conveys intellectual authority and scientific rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0qOKEGTdC0SbE2D6bGtPKm5-KIae6VbGaRXrhH7jaCkgVscezLaSw8jjPlOf4SGxjlK_jbWsuobnYbA2pZAS0BZWg2m4vTIuVIdlAGy37U834NUNWwm9ZzmkoTpvXbYNwLwwYIkRXHThk9hiorBgpmRfVyLaIwbgcKpzV632Ln_dsnnBiIv5EwJ98WzAgIFAIkNzqEl2m6mBzk5g_DmQtMQRAZhpH_nQjnE4JXZhxs4NaQ_c8pZ6G71-uxgnkOXqjTeaQz6WRPOU"/>
+<span class="text-body-md font-body-md font-bold text-on-surface">Prof. Abayomi Omogbehin</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Main Auditorium (Hall A)
+                        </p>
+</div>
+<div class="col-span-12 md:col-span-3 mt-4 md:mt-0 flex flex-col gap-2 justify-center items-end">
+<button class="w-full md:w-auto px-6 py-2 border border-heritage-maroon text-heritage-maroon text-label-lg font-label-lg font-bold hover:bg-heritage-maroon hover:text-white transition-all">View Abstract</button>
+</div>
+</div>
+<!-- Time Slot 3: Parallel Track -->
+<div class="group grid grid-cols-12 items-center bg-white p-6 border border-clinical-gray hover:shadow-md transition-all">
+<div class="col-span-12 md:col-span-2">
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-heritage-maroon">11:30</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">AM</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 mt-4 md:mt-0">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-science-blue text-white text-label-sm font-label-sm rounded-full">Technical Session</span>
+<span class="px-3 py-1 border border-on-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded-full">Genomics</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Genomic Surveillance of Emerging Zoonotic Pathogens</h3>
+<div class="flex items-center gap-4 mb-3">
+<span class="text-body-md font-body-md font-bold text-on-surface">Dr. Chidi Nwosu</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Seminar Room B-12
+                        </p>
+</div>
+<div class="col-span-12 md:col-span-3 mt-4 md:mt-0 flex justify-end">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:text-heritage-maroon hover:bg-surface-container transition-all" data-icon="calendar_add_on">calendar_add_on</button>
+</div>
+</div>
+<!-- Time Slot 4: Parallel Track -->
+<div class="group grid grid-cols-12 items-center bg-white p-6 border border-clinical-gray hover:shadow-md transition-all">
+<div class="col-span-12 md:col-span-2">
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-heritage-maroon">11:30</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">AM</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 mt-4 md:mt-0">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-science-blue text-white text-label-sm font-label-sm rounded-full">Technical Session</span>
+<span class="px-3 py-1 border border-secondary text-secondary text-label-sm font-label-sm rounded-full">Food Security</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Climate-Resilient Agriculture and Nutritional Sovereignty</h3>
+<div class="flex items-center gap-4 mb-3">
+<span class="text-body-md font-body-md font-bold text-on-surface">Prof. Adeola Williams</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Conference Room 4 (Level 2)
+                        </p>
+</div>
+<div class="col-span-12 md:col-span-3 mt-4 md:mt-0 flex justify-end">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:text-heritage-maroon hover:bg-surface-container transition-all" data-icon="calendar_add_on">calendar_add_on</button>
+</div>
+</div>
+<!-- Time Slot 5: Break -->
+<div class="grid grid-cols-12 items-center bg-clinical-gray/30 p-4 border-y border-clinical-gray opacity-80">
+<div class="col-span-12 md:col-span-2">
+<span class="text-label-lg font-label-lg font-bold text-on-surface-variant">01:00 PM</span>
+</div>
+<div class="col-span-12 md:col-span-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="restaurant">restaurant</span>
+<span class="text-body-md font-body-md italic text-on-surface-variant">Networking Lunch and Poster Viewing Session — Exhibition Gallery</span>
+</div>
+</div>
+</div>
+<!-- Time Slot 6: Panel -->
+<div class="group grid grid-cols-12 items-center bg-white p-6 border border-clinical-gray hover:shadow-md transition-all">
+<div class="col-span-12 md:col-span-2">
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-heritage-maroon">02:30</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">PM</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 mt-4 md:mt-0">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-on-tertiary-container text-tertiary text-label-sm font-label-sm rounded-full">Panel Discussion</span>
+<span class="px-3 py-1 border border-primary text-primary text-label-sm font-label-sm rounded-full">Infectious Diseases</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-2">Pandemic Preparedness: Lessons from the West African Frontier</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+                            Moderated by Dr. S. Balogun with 4 invited panelists.
+                        </p>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            Main Auditorium (Hall A)
+                        </p>
+</div>
+<div class="col-span-12 md:col-span-3 mt-4 md:mt-0 flex justify-end">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:text-heritage-maroon hover:bg-surface-container transition-all" data-icon="calendar_add_on">calendar_add_on</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Track Legend -->
+<section class="max-w-max-width mx-auto px-margin-desktop mt-20">
+<div class="bg-surface-container p-base rounded-xl">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-gutter p-gutter">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-heritage-maroon"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">General Sessions</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-science-blue"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Technical Tracks</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full border border-primary"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Infectious Diseases</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full border border-on-secondary-container"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Genomics</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full border border-secondary"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Food Security</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-heritage-maroon text-on-primary full-width bottom-0 border-t border-prestige-gold/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-max-width mx-auto">
+<div class="col-span-1 md:col-span-2">
+<h2 class="text-headline-md font-headline-md text-prestige-gold mb-6">UNILAG Life Sciences</h2>
+<p class="text-body-md font-body-md text-on-primary/80 max-w-md mb-8">
+                    Advancing scientific knowledge through the One Health lens. Join us at the Faculty of Life Sciences, University of Lagos for the 1st Annual Conference.
+                </p>
+<div class="flex gap-4">
+<a class="material-symbols-outlined text-prestige-gold hover:opacity-100 opacity-90 transition-opacity" data-icon="language" href="#">language</a>
+<a class="material-symbols-outlined text-prestige-gold hover:opacity-100 opacity-90 transition-opacity" data-icon="alternate_email" href="#">alternate_email</a>
+<a class="material-symbols-outlined text-prestige-gold hover:opacity-100 opacity-90 transition-opacity" data-icon="share" href="#">share</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-lg font-label-lg text-prestige-gold uppercase tracking-wider mb-2">Conference</h4>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-all hover:translate-x-1" href="home_unilag_life_sciences_conference.html">Home</a>
+<a class="text-prestige-gold font-bold" href="program_one_health_conference.html">Schedule</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-all hover:translate-x-1" href="speakers_one_health_conference.html">Speakers</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-all hover:translate-x-1" href="abstract_submission_one_health_conference.html">Abstracts</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-lg font-label-lg text-prestige-gold uppercase tracking-wider mb-2">Legal &amp; Contact</h4>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-all hover:translate-x-1" href="#">Privacy Policy</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-all hover:translate-x-1" href="contact_one_health_conference.html">Contact</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-all hover:translate-x-1" href="#">Venue Map</a>
+<a class="text-on-primary/80 hover:text-prestige-gold transition-all hover:translate-x-1" href="#">FAQs</a>
+</div>
+</div>
+<div class="max-w-max-width mx-auto px-margin-desktop border-t border-prestige-gold/10 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-sm font-label-sm text-on-primary/60">© 2024 University of Lagos Faculty of Life Sciences. All Rights Reserved. One Health Conference.</p>
+<div class="flex items-center gap-2">
+<img alt="Seal" class="w-8 h-8 opacity-50" data-alt="The official institutional seal of the University of Lagos, featuring traditional academic symbols and heritage maroon colors. The design is subtly transparent, functioning as a watermark for the footer section." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABmACIuipQ1xhNg-gRQvOfCPoGmxp8V__5DQdRY02Lkbjhc9HZLzA6rR3ZQLP5JS9z5wOeWdqDQoZkLjX6Nzz2RPZTpsYzw4P4E_5AYdvr0uyeQiFKV6NqFYSq5OVIXB8O1I5vfv38mdIrv6To7lPVFLRHbWU5dlePFV1hTK4lKujkU0EHlBXXCjjCt3aFa8e0rGrDC27aOzRWre0u6fWk6KlMa4u177zcwhAhfiigaNt1BZuATAesQreyQ-Rqeg3K1FNGTZ2fZzE"/>
+<span class="text-label-sm font-label-sm text-prestige-gold">Akoka, Yaba, Lagos</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
