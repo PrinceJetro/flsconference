@@ -1,72 +1,57 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Speakers - UNILAG Life Sciences One Health Conference</title>
-<!-- Tailwind CSS -->
+<title>Speakers | Faculty of Life Sciences One Health Conference</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
+<!-- Google Fonts preconnect for better performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<style>
+        .bio-digital-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(30, 66, 140, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1E428C 0%, #00235e 100%);
+        }
+        @media (max-width: 768px) {
+            .nav-link, button, .footer-link {
+                touch-action: manipulation;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            line-height: 1;
+        }
+        img {
+            background-color: #f3f4f5;
+        }
+    </style>
+<script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             "colors": {
-                    "on-tertiary-container": "#86a5f5",
                     "science-blue": "#1E428C",
-                    "surface-container-highest": "#e1e3e4",
+                    "turquoise-accent": "#00A896",
+                    "navy-dark": "#028090",
                     "surface-bright": "#f8f9fa",
-                    "tertiary-fixed": "#dae2ff",
                     "on-surface": "#191c1d",
-                    "surface-dim": "#d9dadb",
-                    "secondary-fixed": "#ffe16d",
-                    "secondary": "#705d00",
-                    "tertiary-container": "#103882",
-                    "primary-container": "#800000",
-                    "inverse-surface": "#2e3132",
                     "background": "#f8f9fa",
-                    "on-primary-container": "#ff8371",
                     "clinical-gray": "#E9ECEF",
-                    "inverse-on-surface": "#f0f1f2",
                     "surface": "#f8f9fa",
-                    "on-tertiary": "#ffffff",
-                    "surface-container-high": "#e7e8e9",
-                    "secondary-container": "#fcd400",
-                    "on-error-container": "#93000a",
-                    "on-error": "#ffffff",
                     "prestige-gold": "#FFD700",
-                    "outline-variant": "#e2bfb9",
-                    "primary-fixed-dim": "#ffb4a8",
-                    "surface-container": "#edeeef",
-                    "surface-tint": "#b22b1d",
-                    "error-container": "#ffdad6",
-                    "inverse-primary": "#ffb4a8",
-                    "tertiary-fixed-dim": "#b1c5ff",
-                    "tertiary": "#00235e",
-                    "surface-variant": "#e1e3e4",
-                    "error": "#ba1a1a",
-                    "surface-container-lowest": "#ffffff",
-                    "primary": "#570000",
-                    "on-secondary-container": "#6e5c00",
-                    "on-tertiary-fixed-variant": "#1f438d",
-                    "surface-container-low": "#f3f4f5",
-                    "on-tertiary-fixed": "#001847",
-                    "secondary-fixed-dim": "#e9c400",
-                    "on-primary-fixed-variant": "#8f0f07",
-                    "on-secondary": "#ffffff",
-                    "outline": "#8e706c",
-                    "on-surface-variant": "#5a413d",
-                    "on-primary-fixed": "#410000",
-                    "on-background": "#191c1d",
                     "heritage-maroon": "#800000",
-                    "on-primary": "#ffffff",
-                    "on-secondary-fixed-variant": "#544600",
-                    "primary-fixed": "#ffdad4",
-                    "on-secondary-fixed": "#221b00"
+                    "primary": "#570000",
+                    "on-primary": "#ffffff"
             },
             "borderRadius": {
                     "DEFAULT": "0.125rem",
@@ -77,7 +62,6 @@
             "spacing": {
                     "margin-desktop": "80px",
                     "gutter": "24px",
-                    "base": "8px",
                     "max-width": "1280px",
                     "margin-mobile": "16px"
             },
@@ -87,70 +71,37 @@
                     "headline-md": ["Playfair Display", "serif"],
                     "label-lg": ["Inter", "sans-serif"],
                     "display-lg": ["Playfair Display", "serif"],
-                    "display-lg-mobile": ["Playfair Display", "serif"],
                     "label-sm": ["Inter", "sans-serif"],
                     "body-lg": ["Inter", "sans-serif"]
-            },
-            "fontSize": {
-                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
-            },
-            screens: {
-              'xs': '375px',
-              'sm': '640px',
-              'md': '768px',
-              'lg': '1024px',
-              'xl': '1280px',
             }
           },
         },
       }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .bio-digital-bg {
-            background-image: radial-gradient(circle at 2px 2px, rgba(128, 0, 0, 0.03) 1px, transparent 0);
-            background-size: 32px 32px;
-        }
-        @media (max-width: 768px) {
-            .speaker-card .session-badge {
-                flex-wrap: wrap;
-            }
-        }
-    </style>
 </head>
-<body class="bg-surface text-on-surface font-body-md selection:bg-prestige-gold selection:text-heritage-maroon bio-digital-bg">
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-bg flex flex-col min-h-screen">
 
-<!-- TopAppBar - Mobile Enhanced -->
+<!-- Header -->
 <header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
   <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-16 md:h-20">
-    <a href="index.html" class="text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight truncate max-w-[180px] sm:max-w-none hover:opacity-90">
-      UNILAG Life Sciences
+    <a href="index.html" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight hover:opacity-90">
+      <img src="unilag logo.png" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
+      <div class="flex flex-col">
+        <span class="leading-none text-base md:text-lg font-bold">Faculty of Life Sciences</span>
+        <span class="text-[9px] font-medium tracking-wide text-on-surface-variant leading-normal">University of Lagos</span>
+      </div>
     </a>
     <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="index.html">Home</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="about_one_health_conference.html">About</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="speakers_one_health_conference.html">Speakers</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="program_one_health_conference.html">Program</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="contact_one_health_conference.html">Contact</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="about_one_health_conference.html">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="program_one_health_conference.html">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="partners_sponsors.html">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="contact_one_health_conference.html">Contact</a>
     </nav>
     <div class="flex items-center space-x-3 sm:space-x-4">
-      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-6 md:py-2.5 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md text-label-sm md:text-label-lg whitespace-nowrap" href="registration_one_health_conference.html">Register Now</a>
-      
-      <!-- Mobile Hamburger Button -->
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-6 md:py-2.5 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md text-label-sm md:text-label-lg whitespace-nowrap animate-bounce" href="registration_one_health_conference.html">Register Now</a>
       <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none p-2 -mr-2" id="mobile-menu-btn" aria-label="Toggle Menu">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
@@ -158,14 +109,15 @@
   </div>
   
   <!-- Mobile Menu Drawer -->
-  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300 ease-in-out" id="mobile-menu">
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300" id="mobile-menu">
     <nav class="flex flex-col px-margin-mobile py-4 space-y-3 max-h-[80vh] overflow-y-auto">
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="index.html">Home</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="about_one_health_conference.html">About</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="speakers_one_health_conference.html">Speakers</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="program_one_health_conference.html">Program</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="abstract_submission_one_health_conference.html">Submit</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="contact_one_health_conference.html">Contact</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="about_one_health_conference.html">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="program_one_health_conference.html">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="abstract_submission_one_health_conference.html">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="partners_sponsors.html">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="contact_one_health_conference.html">Contact</a>
       <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
         <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md" href="registration_one_health_conference.html">Register Now</a>
       </div>
@@ -173,190 +125,207 @@
   </div>
 </header>
 
-<main class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-16">
-  <!-- Page Title Section -->
-  <section class="mb-12 md:mb-20">
-    <div class="inline-flex items-center space-x-2 text-science-blue mb-3 md:mb-4">
-      <span class="h-px w-8 md:w-12 bg-science-blue"></span>
-      <span class="text-label-sm md:text-label-lg font-label-lg tracking-widest uppercase">Expert Voices</span>
+<main class="flex-grow">
+  <!-- Hero Section -->
+  <section class="relative hero-gradient py-12 md:py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+      <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white">groups</span>
     </div>
-    <h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-heritage-maroon leading-tight mb-4 md:mb-6">
-      Leading the Dialogue in <br/> <span class="text-science-blue italic">One Health</span> Innovation
-    </h1>
-    <p class="text-body-md md:text-body-lg font-body-md text-on-surface-variant max-w-2xl">
-      Join our distinguished faculty of global researchers, clinicians, and environmental scientists as they explore the intersection of human, animal, and environmental health.
-    </p>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-on-primary">
+      <span class="inline-block bg-turquoise-accent text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">Expert Keynotes &amp; Plenaries</span>
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
+        Conference Speakers
+      </h1>
+      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Meet our distinguished keynote speaker, chairman, and plenaries leading critical conversations at our first annual conference, holding August 4–6, 2026.
+      </p>
+    </div>
   </section>
 
-  <!-- Keynote Speakers Section (Featured) -->
-  <section class="mb-16 md:mb-24">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4">
-      <h2 class="text-headline-md md:text-headline-lg font-headline-lg text-heritage-maroon">Keynote Presenters</h2>
-      <!-- Simple navigation dots for mobile (decorative) -->
-      <div class="flex space-x-2">
-        <button class="p-1.5 md:p-2 rounded-full border border-clinical-gray hover:bg-surface-container transition-colors">
-          <span class="material-symbols-outlined text-base md:text-xl">chevron_left</span>
-        </button>
-        <button class="p-1.5 md:p-2 rounded-full border border-clinical-gray hover:bg-surface-container transition-colors">
-          <span class="material-symbols-outlined text-base md:text-xl">chevron_right</span>
-        </button>
-      </div>
+  <!-- Keynote and Chairman Section -->
+  <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-12">
+      <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-2">Distinguished guests</span>
+      <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Conference Leadership</h2>
+      <div class="w-12 h-1 bg-turquoise-accent mx-auto mt-3"></div>
     </div>
-    
-    <!-- Asymmetric Keynote Layout - Responsive -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-      <!-- Large Featured Keynote -->
-      <div class="md:col-span-7 bg-surface-container-lowest border border-clinical-gray rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(128,0,0,0.05)] group">
-        <div class="grid grid-cols-1 lg:grid-cols-2 h-full">
-          <div class="relative overflow-hidden aspect-square lg:aspect-auto bg-surface-container">
-            <img alt="Featured Keynote Speaker Prof. Sarah Adenuga" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqf81xsxokFCOZKTDY9g1AV5pFaKT1iLgeOA14eTHTQ2Y4jCtValD7iEJvhA1LQR0MESVoMv7jfGTQYhuJzPl7F5wPc_GXbQ4SiR6Q7dkZKCb7HoHI2edQGmRadESvCVvRLwKQKVm9EIVYDn-iVgrH-gxlHW4cNiqQWTcz2n7qHJC8w-TldpYE0WyvBXxxZicqOh0GtR6aEFHMqkeWcudZv71f-PF297yE3iMfJ6LY7iL36XqeUYgWcqUnCMFdqi-DmuW6fsfSb3k" onerror="this.src='https://placehold.co/800x600/800000/white?text=Prof.+Sarah+Adenuga'"/>
-            <div class="absolute top-3 left-3 md:top-4 md:left-4 bg-prestige-gold text-heritage-maroon px-2 py-0.5 md:px-3 md:py-1 text-label-xs md:text-label-sm rounded shadow-sm uppercase tracking-wider text-[10px] md:text-xs font-bold">Opening Keynote</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+      <!-- Keynote Card -->
+      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+        <div class="absolute -top-3 right-6 bg-heritage-maroon text-prestige-gold text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Keynote Speaker</div>
+        <div class="pt-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-20 h-20 rounded-full bg-heritage-maroon/10 border-2 border-heritage-maroon flex items-center justify-center text-heritage-maroon flex-shrink-0">
+              <span class="material-symbols-outlined text-4xl">stethoscope</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Prof. Emmanuel Akinola Abayomi</h3>
+              <p class="text-on-surface-variant text-xs font-semibold mt-1">The Honourable Commissioner for Health</p>
+            </div>
           </div>
-          <div class="p-6 md:p-10 flex flex-col justify-center">
-            <span class="text-science-blue font-bold text-label-sm md:text-label-lg mb-1 md:mb-2">Molecular Epidemiology</span>
-            <h3 class="text-headline-sm md:text-headline-md font-headline-md mb-2 md:mb-4 text-heritage-maroon">Prof. Sarah Adenuga</h3>
-            <div class="h-0.5 w-8 md:w-12 bg-prestige-gold mb-4 md:mb-6"></div>
-            <p class="text-on-surface-variant text-sm md:text-base mb-6 md:mb-8 line-clamp-4">
-              Director of the Institute for Global Health at Cambridge University, Prof. Adenuga has pioneered research in zoonotic disease transmission pathways. Her work has redefined how we monitor pandemic threats in urban ecosystems.
-            </p>
-            <button class="flex items-center space-x-2 text-heritage-maroon font-bold hover:translate-x-2 transition-transform text-sm md:text-base group/btn">
-              <span class="text-label-sm md:text-label-lg">Full Profile</span>
-              <span class="material-symbols-outlined text-base md:text-xl">arrow_forward</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Secondary Keynote -->
-      <div class="md:col-span-5 bg-heritage-maroon text-on-primary rounded-xl overflow-hidden shadow-xl group flex flex-col">
-        <div class="relative h-52 md:h-64 overflow-hidden">
-          <img alt="Keynote Speaker Dr. Marcus Ibrahim" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaSZy8VqTNOv6AbFm1Cn4oaVYy5dp3-e2Yqnu1tOIAv0LYjEuOCryFhsYStO4xliV6VRE2Jb1xXEm5ZlpX7XsWPitryhyFesgRHNkN1qvMwbYZLLQoN6rc1i0Y9UT-dTsTSxGHTdmH_CPB9pNqkv3CmtA8oOugyc8ZcX1LPPOwQ2IiA4bmKhXpu7vabR_M_TAm0hiFBfKqv2AriMAAetDoWvrCRzxqSwcsZdkxU-SVIzBcRKVRLbere16JQPAUujdT27T3nbSDMKo" onerror="this.src='https://placehold.co/800x600/570000/white?text=Dr.+Marcus+Ibrahim'"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-heritage-maroon via-transparent to-transparent"></div>
-        </div>
-        <div class="p-6 md:p-8 flex-1 flex flex-col">
-          <span class="text-prestige-gold font-bold text-label-sm md:text-label-lg mb-1 md:mb-2">Policy &amp; Public Health</span>
-          <h3 class="text-headline-sm md:text-headline-md font-headline-md mb-1 md:mb-2">Dr. Marcus Ibrahim</h3>
-          <p class="text-on-primary/80 text-sm md:text-base mb-4 md:mb-6">
-            World Health Organization (WHO) Regional Advisor for Africa, focusing on integrated health systems and planetary wellness policies.
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
+          <p class="text-on-surface-variant text-sm font-bold mb-4">The Lagos State Ministry of Health, Nigeria</p>
+          
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About the Keynote</span>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-6">
+            Prof. Akinola Abayomi is a physician-scientist who has stood at the helm of public health emergency responses, infrastructural strategy, and clinical integration across Lagos State. Under his guidance, the state launched comprehensive pandemic action protocols incorporating One Health concepts to bridge veterinary, clinical, and environmental wellness.
           </p>
-          <button class="bg-prestige-gold text-heritage-maroon px-5 py-2 md:px-6 md:py-2.5 rounded-full font-bold hover:shadow-md transition-all active:scale-95 text-label-xs md:text-label-sm self-start border border-white/10">
-            VIEW SESSION
-          </button>
+        </div>
+      </div>
+
+      <!-- Chairman Card -->
+      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group">
+        <div class="absolute -top-3 right-6 bg-science-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Chairman of the Day</div>
+        <div class="pt-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-20 h-20 rounded-full bg-science-blue/10 border-2 border-science-blue flex items-center justify-center text-science-blue flex-shrink-0">
+              <span class="material-symbols-outlined text-4xl">corporate_fare</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Mr. Babatunde Folawiyo</h3>
+              <p class="text-on-surface-variant text-xs font-semibold mt-1">Managing Director</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
+          <p class="text-on-surface-variant text-sm font-bold mb-4">Yinka Folawiyo Group, Nigeria</p>
+
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About the Chairman</span>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-6">
+            Mr. Babatunde Folawiyo is an industrialist, entrepreneur, and philanthropist. His leadership and support of biological research platforms and environmental advocacy groups have facilitated significant cross-sector partnerships between industry, academia, and local administrative bodies.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Speakers Grid Section - Full list without filters -->
-  <section class="mb-16 md:mb-24">
-    <div class="flex items-center justify-between mb-8 md:mb-12">
-      <h2 class="text-headline-md md:text-headline-lg font-headline-lg text-heritage-maroon">Distinguished Speakers</h2>
-      <span class="text-label-sm md:text-label-lg text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full">8 Experts</span>
-    </div>
-    
-    <!-- Responsive Speaker Grid (4 columns on desktop, 2 on tablet, 1 on mobile) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-      
-      <!-- Speaker Card 1 -->
-      <div class="bg-surface-container-lowest border border-clinical-gray rounded-xl p-4 md:p-5 group hover:shadow-[0px_8px_30px_rgba(128,0,0,0.1)] transition-all flex flex-col relative speaker-card">
-        <div class="aspect-[3/4] overflow-hidden mb-4 md:mb-6 rounded-lg bg-surface-container">
-          <img alt="Dr. Chima Obi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ8fGukPm5XbZS1ionHQJRt51BHDyDkOuTQYvd7KEM1VYkXqWj191rvKPqD4gLnn0zOrW77esxkba9cGMlinw6N_bmWqVnCqMPfmNqTduGguk-1-s45zLwoV-0s3HwzfMjXV59HiWslXTnjM-EbECRFVfUfoGKoTTjNaGgPs6GfQ-nTLtjgLAPogn40WBoaT_jrroanNRVNRIgC1ThUWRJ1zJdu6UCmKNwbFqWxJrW4AyzMaS1lhTrtW0lK-h1W8tgNZgFhBl3I6E" onerror="this.src='https://placehold.co/400x500/1E428C/white?text=Dr.+Chima+Obi'"/>
-        </div>
-        <div class="h-0.5 w-8 bg-prestige-gold mb-3"></div>
-        <h4 class="text-body-lg md:text-headline-sm font-headline-md mb-1 text-heritage-maroon font-bold">Dr. Chima Obi</h4>
-        <p class="text-label-xs md:text-label-sm font-label-sm text-science-blue uppercase tracking-tighter mb-3 md:mb-4">University of Lagos</p>
-        <p class="text-body-sm md:text-body-md text-on-surface-variant mb-4 md:mb-6 flex-grow">Antimicrobial Resistance in Tropical Urban Waterways.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Session A2</span>
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Genomics</span>
-        </div>
-      </div>
-      
-      <!-- Speaker Card 2 -->
-      <div class="bg-surface-container-lowest border border-clinical-gray rounded-xl p-4 md:p-5 group hover:shadow-[0px_8px_30px_rgba(128,0,0,0.1)] transition-all flex flex-col relative speaker-card">
-        <div class="aspect-[3/4] overflow-hidden mb-4 md:mb-6 rounded-lg bg-surface-container">
-          <img alt="Prof. David Smith" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0SKotFtBkC0Jen9A3zQZ4kmG16YKQ5NMgowjmiYV9m7uwSkHVjR_9bB_1yptT_td0HxaM6ZayUvelwFEdj8AYajv_ynyZ2wwYro-Ftf1vzHoq-fRDsP4-2ywNBzuDR467xv7i0WzaSe8l_QfJFt-KAF1Kc0bFHMzkInhg96vcFT0rgGwiR0EvvvFFzBgQVd8YS8RevJa7fvgolFWWMhjpDVncAmV1S1GOCrvYGdzZRy8n-E9AWWi4b8_s05GQNkaD44zAwJYGwLU" onerror="this.src='https://placehold.co/400x500/800000/white?text=Prof.+David+Smith'"/>
-        </div>
-        <div class="h-0.5 w-8 bg-prestige-gold mb-3"></div>
-        <h4 class="text-body-lg md:text-headline-sm font-headline-md mb-1 text-heritage-maroon font-bold">Prof. David Smith</h4>
-        <p class="text-label-xs md:text-label-sm font-label-sm text-science-blue uppercase tracking-tighter mb-3 md:mb-4">Oxford University</p>
-        <p class="text-body-sm md:text-body-md text-on-surface-variant mb-4 md:mb-6 flex-grow">Global Health Surveillance: A One Health Approach.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Keynote</span>
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Surveillance</span>
-        </div>
-      </div>
-      
-      <!-- Speaker Card 3 -->
-      <div class="bg-surface-container-lowest border border-clinical-gray rounded-xl p-4 md:p-5 group hover:shadow-[0px_8px_30px_rgba(128,0,0,0.1)] transition-all flex flex-col relative speaker-card">
-        <div class="aspect-[3/4] overflow-hidden mb-4 md:mb-6 rounded-lg bg-surface-container">
-          <img alt="Dr. Ananya Rao" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_p--eaL_l16RIHLETT89CuEbKzyH_R5OfX9NoWbUkmmG1TJ_gAGHYSg3eAcwU601z9VUVzrqpaWRK6KYsu1nreZvgG4VfTeJ99L0cp89Ti9jcFQhQ6cnN-W_rfGPdtcw5ICeC5560BF_7iBX30T1APK4peG_y1eC8AUHiVcF_2gjFI5IEfWOzyjZk6lcEaSw_40RH0j80y8CLfHRajErB7UkrM6d6ARZIpbCKETAsuLJSwznNWa5tHz2aaWTf2mpIkZfYa1ssojQ" onerror="this.src='https://placehold.co/400x500/1E428C/white?text=Dr.+Ananya+Rao'"/>
-        </div>
-        <div class="h-0.5 w-8 bg-prestige-gold mb-3"></div>
-        <h4 class="text-body-lg md:text-headline-sm font-headline-md mb-1 text-heritage-maroon font-bold">Dr. Ananya Rao</h4>
-        <p class="text-label-xs md:text-label-sm font-label-sm text-science-blue uppercase tracking-tighter mb-3 md:mb-4">NCDC Nigeria</p>
-        <p class="text-body-sm md:text-body-md text-on-surface-variant mb-4 md:mb-6 flex-grow">Integrative Wildlife Pathogen Screening in West Africa.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Session B1</span>
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Ecology</span>
-        </div>
-      </div>
-      
-      <!-- Speaker Card 4 -->
-      <div class="bg-surface-container-lowest border border-clinical-gray rounded-xl p-4 md:p-5 group hover:shadow-[0px_8px_30px_rgba(128,0,0,0.1)] transition-all flex flex-col relative speaker-card">
-        <div class="aspect-[3/4] overflow-hidden mb-4 md:mb-6 rounded-lg bg-surface-container">
-          <img alt="Prof. Kolawole O." class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIaqjnBGcqhfucqXQ3enNsv0N3Vy8-_De2yPbWmILICh0LL-lWFhC-zl5e_ke3D5XEItlODT0WZNcLgSokQLcQEzrQuRFr1fREg5DEdLlNqL9x74OdnM7XydbXqllzqBE1YsGGmkDTgEShfhDhjjGYafMU4LK0WFqy--ndsjtlhvbaC_OAaNo7sLZRatqV8WSJ4TxD-G59_c8uCY3ORyY4S-U9H_s6xDnbBfC1q78LPNn9VO2UQ14q9JnEoz84-YbprRndzzYxkDA" onerror="this.src='https://placehold.co/400x500/800000/white?text=Prof.+Kolawole'"/>
-        </div>
-        <div class="h-0.5 w-8 bg-prestige-gold mb-3"></div>
-        <h4 class="text-body-lg md:text-headline-sm font-headline-md mb-1 text-heritage-maroon font-bold">Prof. Kolawole O.</h4>
-        <p class="text-label-xs md:text-label-sm font-label-sm text-science-blue uppercase tracking-tighter mb-3 md:mb-4">Ibadan University</p>
-        <p class="text-body-sm md:text-body-md text-on-surface-variant mb-4 md:mb-6 flex-grow">Biosecurity and One Health: A Local Perspective.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Session C3</span>
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Biosecurity</span>
-        </div>
+  <!-- Plenary & Invited Speakers Section -->
+  <section class="py-12 md:py-16 bg-clinical-gray/20 border-y border-clinical-gray">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-12">
+        <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-2">Plenary Sessions</span>
+        <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Invited &amp; Plenary Presenters</h2>
+        <div class="w-12 h-1 bg-turquoise-accent mx-auto mt-3"></div>
       </div>
 
-      <!-- Additional Speaker Card 5 (New to showcase variety) -->
-      <div class="bg-surface-container-lowest border border-clinical-gray rounded-xl p-4 md:p-5 group hover:shadow-[0px_8px_30px_rgba(128,0,0,0.1)] transition-all flex flex-col relative speaker-card">
-        <div class="aspect-[3/4] overflow-hidden mb-4 md:mb-6 rounded-lg bg-surface-container">
-          <img alt="Prof. Fatima Bello" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdClNcIwNMzSGhginonHic7Eh9C9fwsjhfv_u8P1TISWJvsyDFi6fqN98dxqQmkgzGaObgOXYy5twIBHM2FhD30znXFUIwrLqsJkrt1WFGugamWZ3BhZfGZw4mfp0D5huO5uRIwHExvAaud2J3l85PToj4Avh-nrw4JrUwOybOHtqeOyBnIM-z3-GSXzEJYOKmlrCNahaFmKoO2_cuCPMh6eBHfD4Yk_elHBQRQ8XSxzAFy6p81ZNzbvdt7G01RmngYyU0VfmpDsw" onerror="this.src='https://placehold.co/400x500/1E428C/white?text=Prof.+Fatima+Bello'"/>
+      <!-- Speakers Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Speaker 1 -->
+        <div class="bg-white border border-clinical-gray rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-clinical-gray mb-4 relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqf81xsxokFCOZKTDY9g1AV5pFaKT1iLgeOA14eTHTQ2Y4jCtValD7iEJvhA1LQR0MESVoMv7jfGTQYhuJzPl7F5wPc_GXbQ4SiR6Q7dkZKCb7HoHI2edQGmRadESvCVvRLwKQKVm9EIVYDn-iVgrH-gxlHW4cNiqQWTcz2n7qHJC8w-TldpYE0WyvBXxxZicqOh0GtR6aEFHMqkeWcudZv71f-PF297yE3iMfJ6LY7iL36XqeUYgWcqUnCMFdqi-DmuW6fsfSb3k" alt="Prof. Sarah Adenuga" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/800000/white?text=Prof.+Sarah+Adenuga'"/>
+            </div>
+            <h4 class="font-bold text-base text-heritage-maroon">Prof. Sarah Adenuga</h4>
+            <p class="text-[10px] text-science-blue font-bold uppercase tracking-wider mb-2">Cambridge University, UK</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Pioneering researcher in zoonotic epidemiology pathways and micro-transmission tracks in urban centers.
+            </p>
+          </div>
+          <span class="text-[10px] bg-clinical-gray px-2 py-1 rounded w-fit text-on-surface-variant">Molecular Epidemiology</span>
         </div>
-        <div class="h-0.5 w-8 bg-prestige-gold mb-3"></div>
-        <h4 class="text-body-lg md:text-headline-sm font-headline-md mb-1 text-heritage-maroon font-bold">Prof. Fatima Bello</h4>
-        <p class="text-label-xs md:text-label-sm font-label-sm text-science-blue uppercase tracking-tighter mb-3 md:mb-4">Ahmadu Bello University</p>
-        <p class="text-body-sm md:text-body-md text-on-surface-variant mb-4 md:mb-6 flex-grow">Climate Change and Vector-Borne Disease Dynamics in the Sahel.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Session D1</span>
-          <span class="px-2 py-1 bg-clinical-gray text-label-xs md:text-label-sm rounded">Climate &amp; Health</span>
+
+        <!-- Speaker 2 -->
+        <div class="bg-white border border-clinical-gray rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-clinical-gray mb-4 relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaSZy8VqTNOv6AbFm1Cn4oaVYy5dp3-e2Yqnu1tOIAv0LYjEuOCryFhsYStO4xliV6VRE2Jb1xXEm5ZlpX7XsWPitryhyFesgRHNkN1qvMwbYZLLQoN6rc1i0Y9UT-dTsTSxGHTdmH_CPB9pNqkv3CmtA8oOugyc8ZcX1LPPOwQ2IiA4bmKhXpu7vabR_M_TAm0hiFBfKqv2AriMAAetDoWvrCRzxqSwcsZdkxU-SVIzBcRKVRLbere16JQPAUujdT27T3nbSDMKo" alt="Dr. Marcus Ibrahim" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/1E428C/white?text=Dr.+Marcus+Ibrahim'"/>
+            </div>
+            <h4 class="font-bold text-base text-heritage-maroon">Dr. Marcus Ibrahim</h4>
+            <p class="text-[10px] text-science-blue font-bold uppercase tracking-wider mb-2">World Health Organization</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Regional Advisor for Public Health Systems and policy deployment across rural and sub-Saharan Africa.
+            </p>
+          </div>
+          <span class="text-[10px] bg-clinical-gray px-2 py-1 rounded w-fit text-on-surface-variant">Policy &amp; Health Systems</span>
+        </div>
+
+        <!-- Speaker 3 -->
+        <div class="bg-white border border-clinical-gray rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-clinical-gray mb-4 relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ8fGukPm5XbZS1ionHQJRt51BHDyDkOuTQYvd7KEM1VYkXqWj191rvKPqD4gLnn0zOrW77esxkba9cGMlinw6N_bmWqVnCqMPfmNqTduGguk-1-s45zLwoV-0s3HwzfMjXV59HiWslXTnjM-EbECRFVfUfoGKoTTjNaGgPs6GfQ-nTLtjgLAPogn40WBoaT_jrroanNRVNRIgC1ThUWRJ1zJdu6UCmKNwbFqWxJrW4AyzMaS1lhTrtW0lK-h1W8tgNZgFhBl3I6E" alt="Dr. Chima Obi" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/800000/white?text=Dr.+Chima+Obi'"/>
+            </div>
+            <h4 class="font-bold text-base text-heritage-maroon">Dr. Chima Obi</h4>
+            <p class="text-[10px] text-science-blue font-bold uppercase tracking-wider mb-2">University of Lagos, Nigeria</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Senior Lecturer tracking antimicrobial resistance mutations within urban waterways and lagoon environments.
+            </p>
+          </div>
+          <span class="text-[10px] bg-clinical-gray px-2 py-1 rounded w-fit text-on-surface-variant">Antimicrobial Resistance</span>
+        </div>
+
+        <!-- Speaker 4 -->
+        <div class="bg-white border border-clinical-gray rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-clinical-gray mb-4 relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0SKotFtBkC0Jen9A3zQZ4kmG16YKQ5NMgowjmiYV9m7uwSkHVjR_9bB_1yptT_td0HxaM6ZayUvelwFEdj8AYajv_ynyZ2wwYro-Ftf1vzHoq-fRDsP4-2ywNBzuDR467xv7i0WzaSe8l_QfJFt-KAF1Kc0bFHMzkInhg96vcFT0rgGwiR0EvvvFFzBgQVd8YS8RevJa7fvgolFWWMhjpDVncAmV1S1GOCrvYGdzZRy8n-E9AWWi4b8_s05GQNkaD44zAwJYGwLU" alt="Prof. David Smith" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/1E428C/white?text=Prof.+David+Smith'"/>
+            </div>
+            <h4 class="font-bold text-base text-heritage-maroon">Prof. David Smith</h4>
+            <p class="text-[10px] text-science-blue font-bold uppercase tracking-wider mb-2">Oxford University, UK</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Lead epidemiologist developing mathematical risk models for international veterinary and viral vector containment.
+            </p>
+          </div>
+          <span class="text-[10px] bg-clinical-gray px-2 py-1 rounded w-fit text-on-surface-variant">Global Health Surveillance</span>
+        </div>
+
+        <!-- Speaker 5 -->
+        <div class="bg-white border border-clinical-gray rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-clinical-gray mb-4 relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_p--eaL_l16RIHLETT89CuEbKzyH_R5OfX9NoWbUkmmG1TJ_gAGHYSg3eAcwU601z9VUVzrqpaWRK6KYsu1nreZvgG4VfTeJ99L0cp89Ti9jcFQhQ6cnN-W_rfGPdtcw5ICeC5560BF_7iBX30T1APK4peG_y1eC8AUHiVcF_2gjFI5IEfWOzyjZk6lcEaSw_40RH0j80y8CLfHRajErB7UkrM6d6ARZIpbCKETAsuLJSwznNWa5tHz2aaWTf2mpIkZfYa1ssojQ" alt="Dr. Ananya Rao" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/800000/white?text=Dr.+Ananya+Rao'"/>
+            </div>
+            <h4 class="font-bold text-base text-heritage-maroon">Dr. Ananya Rao</h4>
+            <p class="text-[10px] text-science-blue font-bold uppercase tracking-wider mb-2">NCDC, Nigeria</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Wildlife health advisor designing regional cross-species screening kits for forest zones.
+            </p>
+          </div>
+          <span class="text-[10px] bg-clinical-gray px-2 py-1 rounded w-fit text-on-surface-variant">Wildlife Pathobiology</span>
+        </div>
+
+        <!-- Speaker 6 -->
+        <div class="bg-white border border-clinical-gray rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-clinical-gray mb-4 relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIaqjnBGcqhfucqXQ3enNsv0N3Vy8-_De2yPbWmILICh0LL-lWFhC-zl5e_ke3D5XEItlODT0WZNcLgSokQLcQEzrQuRFr1fREg5DEdLlNqL9x74OdnM7XydbXqllzqBE1YsGGmkDTgEShfhDhjjGYafMU4LK0WFqy--ndsjtlhvbaC_OAaNo7sLZRatqV8WSJ4TxD-G59_c8uCY3ORyY4S-U9H_s6xDnbBfC1q78LPNn9VO2UQ14q9JnEoz84-YbprRndzzYxkDA" alt="Prof. Kolawole O." class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/1E428C/white?text=Prof.+Kolawole'"/>
+            </div>
+            <h4 class="font-bold text-base text-heritage-maroon">Prof. Kolawole O.</h4>
+            <p class="text-[10px] text-science-blue font-bold uppercase tracking-wider mb-2">University of Ibadan, Nigeria</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Microbiologist leading containment strategies and laboratory security frameworks in West Africa.
+            </p>
+          </div>
+          <span class="text-[10px] bg-clinical-gray px-2 py-1 rounded w-fit text-on-surface-variant">Biosecurity &amp; Containment</span>
+        </div>
+
+        <!-- Speaker 7 -->
+        <div class="bg-white border border-clinical-gray rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-clinical-gray mb-4 relative">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdClNcIwNMzSGhginonHic7Eh9C9fwsjhfv_u8P1TISWJvsyDFi6fqN98dxqQmkgzGaObgOXYy5twIBHM2FhD30znXFUIwrLqsJkrt1WFGugamWZ3BhZfGZw4mfp0D5huO5uRIwHExvAaud2J3l85PToj4Avh-nrw4JrUwOybOHtqeOyBnIM-z3-GSXzEJYOKmlrCNahaFmKoO2_cuCPMh6eBHfD4Yk_elHBQRQ8XSxzAFy6p81ZNzbvdt7G01RmngYyU0VfmpDsw" alt="Prof. Fatima Bello" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/800000/white?text=Prof.+Fatima+Bello'"/>
+            </div>
+            <h4 class="font-bold text-base text-heritage-maroon">Prof. Fatima Bello</h4>
+            <p class="text-[10px] text-science-blue font-bold uppercase tracking-wider mb-2">Ahmadu Bello University, Nigeria</p>
+            <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+              Climatologist studying Sahel wind patterns, sand expansion, and vector migration tracks.
+            </p>
+          </div>
+          <span class="text-[10px] bg-clinical-gray px-2 py-1 rounded w-fit text-on-surface-variant">Climate Dynamics</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="bg-surface-bright border border-clinical-gray p-8 md:p-12 rounded-2xl flex flex-col items-center text-center relative overflow-hidden">
-    <!-- Decorative watermark -->
-    <div class="absolute bottom-[-30px] right-[-30px] md:bottom-[-50px] md:right-[-50px] opacity-[0.05] pointer-events-none">
-      <span class="material-symbols-outlined text-[120px] md:text-[200px] text-heritage-maroon">science</span>
-    </div>
-    <h2 class="text-headline-md md:text-headline-lg font-headline-lg text-heritage-maroon mb-4 md:mb-6">Interested in Presenting?</h2>
-    <p class="text-body-md md:text-body-lg text-on-surface-variant max-w-xl mb-6 md:mb-10 px-2">
-      The call for posters and lightning talks is still open for selected tracks. Share your research with a global audience of specialists.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 w-full justify-center">
-      <button class="bg-heritage-maroon text-on-primary px-6 md:px-10 py-3 md:py-4 rounded-lg font-bold hover:shadow-xl transition-all active:scale-95 text-label-sm md:text-label-lg">Submit Abstract</button>
-      <button class="border-2 border-heritage-maroon text-heritage-maroon px-6 md:px-10 py-3 md:py-4 rounded-lg font-bold hover:bg-heritage-maroon/5 transition-all text-label-sm md:text-label-lg">View Submission Guidelines</button>
     </div>
   </section>
 </main>
 
-<!-- Footer - Responsive -->
+<!-- Footer -->
 <footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 w-full mt-auto">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-margin-mobile md:px-margin-desktop py-8 md:py-12 max-w-max-width mx-auto">
-    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
-      <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl">UNILAG One Health</div>
-      <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm">
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left flex flex-col items-center sm:items-start">
+      <img src="unilag logo.png" alt="UNILAG Logo" class="h-12 w-auto object-contain mb-2" onerror="this.style.display='none'"/>
+      <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl leading-tight">Faculty of Life Sciences</div>
+      <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm text-center sm:text-left">
         Faculty of Life Sciences<br/>
         University of Lagos, Nigeria.<br/>
         Advancing Science, Impacting Life.
@@ -365,18 +334,19 @@
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Navigation</h4>
       <nav class="flex flex-col gap-2">
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="index.html">Home</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="about_one_health_conference.html">About</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="speakers_one_health_conference.html">Speakers</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="program_one_health_conference.html">Program</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="index.html">Home</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="about_one_health_conference.html">About</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="speakers_one_health_conference.html">Speakers</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="program_one_health_conference.html">Program</a>
       </nav>
     </div>
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Resources</h4>
       <nav class="flex flex-col gap-2">
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="abstract_submission_one_health_conference.html">Abstracts</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="registration_one_health_conference.html">Register</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="contact_one_health_conference.html">Contact</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="abstract_submission_one_health_conference.html">Abstracts</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="registration_one_health_conference.html">Register</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="partners_sponsors.html">Sponsors</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="contact_one_health_conference.html">Contact</a>
       </nav>
     </div>
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
@@ -392,11 +362,10 @@
     </div>
   </div>
   <div class="border-t border-prestige-gold/10 py-4 md:py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">
-    © 2026 University of Lagos Faculty of Life Sciences. All Rights Reserved. One Health Conference.
+    © 2026 Faculty of Life Science · University of Lagos. All Rights Reserved. One Health Conference.
   </div>
 </footer>
 
-<!-- Navigation & Interactive Script -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
@@ -426,19 +395,19 @@
     document.querySelectorAll('.nav-link').forEach(function(link) {
       var href = link.getAttribute('href');
       if (href === currentPath) {
-        link.classList.add('text-heritage-maroon', 'dark:text-prestige-gold', 'border-b-2', 'border-prestige-gold', 'font-bold');
-        link.classList.remove('text-on-surface-variant', 'dark:text-surface-variant', 'font-medium');
+        link.classList.add('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.remove('text-on-surface-variant', 'font-medium');
       } else {
-        link.classList.remove('text-heritage-maroon', 'dark:text-prestige-gold', 'border-b-2', 'border-prestige-gold', 'font-bold');
-        link.classList.add('text-on-surface-variant', 'dark:text-surface-variant', 'font-medium');
+        link.classList.remove('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.add('text-on-surface-variant', 'font-medium');
       }
     });
-    
-    // Image fallback for any broken images
+
+    // Image fallback handling
     document.querySelectorAll('img').forEach(img => {
       img.addEventListener('error', function() {
-        if (!this.hasAttribute('data-fallback')) {
-          this.setAttribute('data-fallback', 'true');
+        if (!this.hasAttribute('data-fallback-shown')) {
+          this.setAttribute('data-fallback-shown', 'true');
           this.style.backgroundColor = '#f3f4f5';
         }
       });

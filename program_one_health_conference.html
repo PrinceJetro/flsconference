@@ -1,169 +1,107 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Program Schedule - UNILAG Faculty of Life Sciences</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Program Schedule | Faculty of Life Sciences One Health Conference</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-tertiary-container": "#86a5f5",
-                        "science-blue": "#1E428C",
-                        "surface-container-highest": "#e1e3e4",
-                        "surface-bright": "#f8f9fa",
-                        "tertiary-fixed": "#dae2ff",
-                        "on-surface": "#191c1d",
-                        "surface-dim": "#d9dadb",
-                        "secondary-fixed": "#ffe16d",
-                        "secondary": "#705d00",
-                        "tertiary-container": "#103882",
-                        "primary-container": "#800000",
-                        "inverse-surface": "#2e3132",
-                        "background": "#f8f9fa",
-                        "on-primary-container": "#ff8371",
-                        "clinical-gray": "#E9ECEF",
-                        "inverse-on-surface": "#f0f1f2",
-                        "surface": "#f8f9fa",
-                        "on-tertiary": "#ffffff",
-                        "surface-container-high": "#e7e8e9",
-                        "secondary-container": "#fcd400",
-                        "on-error-container": "#93000a",
-                        "on-error": "#ffffff",
-                        "prestige-gold": "#FFD700",
-                        "outline-variant": "#e2bfb9",
-                        "primary-fixed-dim": "#ffb4a8",
-                        "surface-container": "#edeeef",
-                        "surface-tint": "#b22b1d",
-                        "error-container": "#ffdad6",
-                        "inverse-primary": "#ffb4a8",
-                        "tertiary-fixed-dim": "#b1c5ff",
-                        "tertiary": "#00235e",
-                        "surface-variant": "#e1e3e4",
-                        "error": "#ba1a1a",
-                        "surface-container-lowest": "#ffffff",
-                        "primary": "#570000",
-                        "on-secondary-container": "#6e5c00",
-                        "on-tertiary-fixed-variant": "#1f438d",
-                        "surface-container-low": "#f3f4f5",
-                        "on-tertiary-fixed": "#001847",
-                        "secondary-fixed-dim": "#e9c400",
-                        "on-primary-fixed-variant": "#8f0f07",
-                        "on-secondary": "#ffffff",
-                        "outline": "#8e706c",
-                        "on-surface-variant": "#5a413d",
-                        "on-primary-fixed": "#410000",
-                        "on-background": "#191c1d",
-                        "heritage-maroon": "#800000",
-                        "on-primary": "#ffffff",
-                        "on-secondary-fixed-variant": "#544600",
-                        "primary-fixed": "#ffdad4",
-                        "on-secondary-fixed": "#221b00"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "margin-desktop": "80px",
-                        "gutter": "24px",
-                        "base": "8px",
-                        "max-width": "1280px",
-                        "margin-mobile": "16px"
-                    },
-                    "fontFamily": {
-                        "headline-lg": ["Playfair Display", "serif"],
-                        "body-md": ["Inter", "sans-serif"],
-                        "headline-md": ["Playfair Display", "serif"],
-                        "label-lg": ["Inter", "sans-serif"],
-                        "display-lg": ["Playfair Display", "serif"],
-                        "display-lg-mobile": ["Playfair Display", "serif"],
-                        "label-sm": ["Inter", "sans-serif"],
-                        "body-lg": ["Inter", "sans-serif"]
-                    },
-                    "fontSize": {
-                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
-                    },
-                    screens: {
-                        'xs': '375px',
-                        'sm': '640px',
-                        'md': '768px',
-                        'lg': '1024px',
-                        'xl': '1280px',
-                    }
-                }
-            }
-        }
-    </script>
+<!-- Google Fonts preconnect for better performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        .microscopic-pattern {
-            background-image: radial-gradient(circle at 2px 2px, rgba(128, 0, 0, 0.03) 1px, transparent 0);
-            background-size: 24px 24px;
+        .bio-digital-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(30, 66, 140, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
         }
-        .active-tab-indicator {
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #FFD700;
-        }
-        /* Hide scrollbar for cleaner look on mobile */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Smooth transitions */
-        .schedule-day {
-            transition: opacity 0.25s ease-in-out;
+        .hero-gradient {
+            background: linear-gradient(135deg, #1E428C 0%, #00235e 100%);
         }
         @media (max-width: 768px) {
-            .session-card {
-                padding: 1rem;
-            }
-            .time-col {
-                margin-bottom: 0.5rem;
+            .nav-link, button, .footer-link {
+                touch-action: manipulation;
             }
         }
+        html {
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            line-height: 1;
+        }
+        img {
+            background-color: #f3f4f5;
+        }
     </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "science-blue": "#1E428C",
+                    "turquoise-accent": "#00A896",
+                    "navy-dark": "#028090",
+                    "surface-bright": "#f8f9fa",
+                    "on-surface": "#191c1d",
+                    "background": "#f8f9fa",
+                    "clinical-gray": "#E9ECEF",
+                    "surface": "#f8f9fa",
+                    "prestige-gold": "#FFD700",
+                    "heritage-maroon": "#800000",
+                    "primary": "#570000",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "max-width": "1280px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display", "serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "headline-md": ["Playfair Display", "serif"],
+                    "label-lg": ["Inter", "sans-serif"],
+                    "display-lg": ["Playfair Display", "serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
 </head>
-<body class="bg-background text-on-surface font-body-md selection:bg-prestige-gold selection:text-heritage-maroon">
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-bg flex flex-col min-h-screen">
 
-<!-- TopAppBar Component - Enhanced Mobile -->
+<!-- Header -->
 <header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
   <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-16 md:h-20">
-    <a href="index.html" class="text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight truncate max-w-[180px] sm:max-w-none hover:opacity-90">
-      UNILAG Life Sciences
+    <a href="index.html" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight hover:opacity-90">
+      <img src="unilag logo.png" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
+      <div class="flex flex-col">
+        <span class="leading-none text-base md:text-lg font-bold">Faculty of Life Sciences</span>
+        <span class="text-[9px] font-medium tracking-wide text-on-surface-variant leading-normal">University of Lagos</span>
+      </div>
     </a>
     <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="index.html">Home</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="about_one_health_conference.html">About</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="speakers_one_health_conference.html">Speakers</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="program_one_health_conference.html">Program</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-label-lg" href="contact_one_health_conference.html">Contact</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="about_one_health_conference.html">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="program_one_health_conference.html">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="partners_sponsors.html">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="contact_one_health_conference.html">Contact</a>
     </nav>
     <div class="flex items-center space-x-3 sm:space-x-4">
-      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-6 md:py-2.5 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md text-label-sm md:text-label-lg whitespace-nowrap" href="registration_one_health_conference.html">Register Now</a>
-      
-      <!-- Mobile Hamburger Button -->
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-6 md:py-2.5 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md text-label-sm md:text-label-lg whitespace-nowrap animate-bounce" href="registration_one_health_conference.html">Register Now</a>
       <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none p-2 -mr-2" id="mobile-menu-btn" aria-label="Toggle Menu">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
@@ -171,14 +109,15 @@
   </div>
   
   <!-- Mobile Menu Drawer -->
-  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300 ease-in-out" id="mobile-menu">
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300" id="mobile-menu">
     <nav class="flex flex-col px-margin-mobile py-4 space-y-3 max-h-[80vh] overflow-y-auto">
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="index.html">Home</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="about_one_health_conference.html">About</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="speakers_one_health_conference.html">Speakers</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="program_one_health_conference.html">Program</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="abstract_submission_one_health_conference.html">Submit</a>
-      <a class="nav-link text-on-surface-variant dark:text-surface-variant font-medium hover:text-heritage-maroon dark:hover:text-prestige-gold transition-colors text-body-md py-2" href="contact_one_health_conference.html">Contact</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="about_one_health_conference.html">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="program_one_health_conference.html">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="abstract_submission_one_health_conference.html">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="partners_sponsors.html">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="contact_one_health_conference.html">Contact</a>
       <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
         <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md" href="registration_one_health_conference.html">Register Now</a>
       </div>
@@ -186,306 +125,392 @@
   </div>
 </header>
 
-<main class="microscopic-pattern min-h-screen pb-16 md:pb-24">
-  <!-- Hero Section for Schedule - Responsive -->
-  <section class="relative pt-12 md:pt-20 pb-8 md:pb-12 overflow-hidden">
-    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8">
-        <div class="max-w-2xl">
-          <span class="text-label-sm md:text-label-lg font-label-lg text-science-blue uppercase tracking-widest mb-2 md:mb-4 block">Conference Agenda</span>
-          <h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-heritage-maroon mb-4 md:mb-6">Scientific Program &amp; Schedule</h1>
-          <p class="text-body-md md:text-body-lg font-body-md text-on-surface-variant leading-relaxed">
-            A comprehensive three-day exploration of the "One Health" paradigm, bridging the gap between human health, veterinary medicine, and environmental science.
-          </p>
-        </div>
-        <div class="pb-0 md:pb-2 w-full md:w-auto">
-          <button id="downloadPdfBtn" class="flex items-center justify-center gap-2 bg-heritage-maroon text-white px-5 py-3 md:px-8 md:py-4 text-label-sm md:text-label-lg font-label-lg font-bold hover:shadow-lg transition-all group active:scale-95 rounded-full w-full md:w-auto">
-            <span class="material-symbols-outlined text-lg md:text-2xl">download</span>
-            DOWNLOAD PDF SCHEDULE
-          </button>
-        </div>
-      </div>
+<main class="flex-grow">
+  <!-- Hero Section -->
+  <section class="relative hero-gradient py-12 md:py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+      <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white">event_note</span>
     </div>
-    <!-- Decorative DNA motif background - hidden on mobile for performance -->
-    <div class="hidden md:block absolute right-0 top-0 opacity-5 pointer-events-none -mr-20">
-      <svg height="600" viewbox="0 0 100 200" width="400">
-        <path d="M30 0 Q 70 50 30 100 T 30 200" fill="none" stroke="#800000" stroke-width="0.5"></path>
-        <path d="M70 0 Q 30 50 70 100 T 70 200" fill="none" stroke="#800000" stroke-width="0.5"></path>
-      </svg>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-on-primary">
+      <span class="inline-block bg-turquoise-accent text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">Conference Agenda</span>
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
+        Program Schedule
+      </h1>
+      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Join us for three intensive days of plenary lectures, panel dialogues, technical tracks, and collaborative networking.
+      </p>
     </div>
   </section>
 
-  <!-- Date Navigation Tabs - Enhanced with interactive JavaScript -->
-  <section class="sticky top-16 md:top-20 bg-surface/90 backdrop-blur-md z-40 border-b border-clinical-gray">
+  <!-- Interactive Day Tabs -->
+  <section class="bg-white border-b border-clinical-gray sticky top-16 md:top-20 z-40 shadow-sm">
     <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-      <div class="flex gap-4 md:gap-12 overflow-x-auto no-scrollbar pb-1">
-        <button data-day="day1" class="schedule-tab relative py-4 md:py-6 text-heritage-maroon font-bold flex flex-col items-center min-w-max group transition-all duration-200">
-          <span class="text-label-xs md:text-label-sm font-label-sm text-on-surface-variant group-hover:text-heritage-maroon">DAY 01</span>
-          <span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">July 15</span>
-          <div class="absolute bottom-0 left-0 w-full h-0.5 md:h-1 bg-prestige-gold transition-all"></div>
+      <div class="flex gap-8 overflow-x-auto no-scrollbar py-1">
+        <button data-day="day1" class="schedule-tab relative py-4 text-heritage-maroon font-bold flex flex-col items-center min-w-[100px] shrink-0 group transition-all">
+          <span class="text-[10px] text-on-surface-variant group-hover:text-heritage-maroon">DAY 01</span>
+          <span class="text-base font-bold">August 4</span>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-prestige-gold transition-all"></div>
         </button>
-        <button data-day="day2" class="schedule-tab relative py-4 md:py-6 text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors flex flex-col items-center min-w-max group">
-          <span class="text-label-xs md:text-label-sm font-label-sm group-hover:text-heritage-maroon">DAY 02</span>
-          <span class="text-headline-sm md:text-headline-md font-headline-md">July 16</span>
-          <div class="absolute bottom-0 left-0 w-full h-0.5 md:h-1 bg-transparent transition-all"></div>
+        <button data-day="day2" class="schedule-tab relative py-4 text-on-surface-variant font-medium hover:text-heritage-maroon flex flex-col items-center min-w-[100px] shrink-0 group transition-all">
+          <span class="text-[10px] group-hover:text-heritage-maroon">DAY 02</span>
+          <span class="text-base font-bold">August 5</span>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-transparent transition-all"></div>
         </button>
-        <button data-day="day3" class="schedule-tab relative py-4 md:py-6 text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors flex flex-col items-center min-w-max group">
-          <span class="text-label-xs md:text-label-sm font-label-sm group-hover:text-heritage-maroon">DAY 03</span>
-          <span class="text-headline-sm md:text-headline-md font-headline-md">July 17</span>
-          <div class="absolute bottom-0 left-0 w-full h-0.5 md:h-1 bg-transparent transition-all"></div>
+        <button data-day="day3" class="schedule-tab relative py-4 text-on-surface-variant font-medium hover:text-heritage-maroon flex flex-col items-center min-w-[100px] shrink-0 group transition-all">
+          <span class="text-[10px] group-hover:text-heritage-maroon">DAY 03</span>
+          <span class="text-base font-bold">August 6</span>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-transparent transition-all"></div>
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Schedule Grid Content - Day 1 (Active) -->
-  <section id="day1" class="schedule-day max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-12 block">
-    <div class="grid grid-cols-1 gap-3 md:gap-4">
-      <!-- Time Slot 1 -->
-      <div class="group grid grid-cols-1 md:grid-cols-12 items-center bg-white p-4 md:p-6 border border-clinical-gray hover:border-prestige-gold transition-all rounded-lg shadow-sm">
-        <div class="col-span-12 md:col-span-2 time-col">
-          <div class="flex flex-row md:flex-col items-center md:items-start gap-2 md:gap-0">
-            <span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">08:30</span>
-            <span class="text-label-xs md:text-label-sm font-label-sm text-on-surface-variant uppercase">AM</span>
+  <!-- Schedule Content Section -->
+  <section class="py-12 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    
+    <!-- Day 1 Schedule -->
+    <div id="day1" class="schedule-day space-y-6">
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            08:30 AM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Registration &amp; Delegate Check-in</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Collect badges, conference kits, and morning tea.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Grand Foyer</span>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-7 mt-2 md:mt-0">
-          <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="px-2 py-0.5 md:px-3 md:py-1 bg-clinical-gray text-on-surface-variant text-label-xs md:text-label-sm rounded-full">General Session</span>
-          </div>
-          <h3 class="text-body-lg md:text-headline-md font-headline-md mb-1 md:mb-2 group-hover:text-heritage-maroon transition-colors">Registration and Morning Coffee</h3>
-          <p class="text-body-sm md:text-body-md text-on-surface-variant flex items-center gap-1 md:gap-2">
-            <span class="material-symbols-outlined text-sm md:text-base">location_on</span>
-            Conference Grand Foyer
-          </p>
-        </div>
+        <span class="text-[10px] bg-clinical-gray px-3 py-1.5 rounded text-on-surface-variant w-fit shrink-0">General Session</span>
       </div>
 
-      <!-- Time Slot 2: Featured Keynote -->
-      <div class="group grid grid-cols-1 md:grid-cols-12 items-center bg-surface-container-low p-4 md:p-6 border-l-4 border-l-prestige-gold border border-clinical-gray rounded-lg shadow-md">
-        <div class="col-span-12 md:col-span-2 time-col">
-          <div class="flex flex-row md:flex-col items-center md:items-start gap-2 md:gap-0">
-            <span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">10:00</span>
-            <span class="text-label-xs md:text-label-sm font-label-sm text-on-surface-variant uppercase">AM</span>
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            09:30 AM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Welcome Address &amp; Opening Remarks</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Speeches by the Host Dean, Faculty of Life Sciences, and UNILAG Vice-Chancellor.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Main Auditorium (Hall A)</span>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-7 mt-2 md:mt-0">
-          <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="px-2 py-0.5 md:px-3 md:py-1 bg-heritage-maroon text-white text-label-xs md:text-label-sm rounded-full">Keynote Address</span>
-            <span class="px-2 py-0.5 md:px-3 md:py-1 border border-science-blue text-science-blue text-label-xs md:text-label-sm rounded-full">Public Health</span>
-          </div>
-          <h3 class="text-body-lg md:text-headline-md font-headline-md mb-2">One Health: The Interplay of Ecosystems and Human Prosperity</h3>
-          <div class="flex items-center gap-3 mb-2">
-            <img alt="Prof. Abayomi Omogbehin" class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-prestige-gold object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0qOKEGTdC0SbE2D6bGtPKm5-KIae6VbGaRXrhH7jaCkgVscezLaSw8jjPlOf4SGxjlK_jbWsuobnYbA2pZAS0BZWg2m4vTIuVIdlAGy37U834NUNWwm9ZzmkoTpvXbYNwLwwYIkRXHThk9hiorBgpmRfVyLaIwbgcKpzV632Ln_dsnnBiIv5EwJ98WzAgIFAIkNzqEl2m6mBzk5g_DmQtMQRAZhpH_nQjnE4JXZhxs4NaQ_c8pZ6G71-uxgnkOXqjTeaQz6WRPOU" onerror="this.src='https://placehold.co/100x100/800000/white?text=PA'"/>
-            <span class="text-body-sm md:text-body-md font-bold text-on-surface">Prof. Abayomi Omogbehin</span>
-          </div>
-          <p class="text-body-sm md:text-body-md text-on-surface-variant flex items-center gap-1 md:gap-2">
-            <span class="material-symbols-outlined text-sm md:text-base">location_on</span>
-            Main Auditorium (Hall A)
-          </p>
-        </div>
-        <div class="col-span-12 md:col-span-3 mt-4 md:mt-0 flex justify-start md:justify-end">
-          <button class="px-4 py-1.5 md:px-6 md:py-2 border border-heritage-maroon text-heritage-maroon text-label-xs md:text-label-lg font-bold hover:bg-heritage-maroon hover:text-white transition-all rounded-full">View Abstract</button>
-        </div>
+        <span class="text-[10px] bg-clinical-gray px-3 py-1.5 rounded text-on-surface-variant w-fit shrink-0">General Session</span>
       </div>
 
-      <!-- Time Slot 3 & 4: Parallel Tracks -->
-      <div class="group grid grid-cols-1 md:grid-cols-12 items-start bg-white p-4 md:p-6 border border-clinical-gray hover:shadow-md transition-all rounded-lg">
-        <div class="col-span-12 md:col-span-2 time-col">
-          <div class="flex flex-row md:flex-col items-center md:items-start gap-2 md:gap-0">
-            <span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">11:30</span>
-            <span class="text-label-xs md:text-label-sm font-label-sm text-on-surface-variant uppercase">AM</span>
+      <!-- Keynote Item -->
+      <div class="bg-science-blue/5 border-l-4 border-science-blue rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:shadow-sm transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue text-white font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            10:15 AM
           </div>
-        </div>
-        <div class="col-span-12 md:col-span-10">
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="px-2 py-0.5 md:px-3 md:py-1 bg-science-blue text-white text-label-xs md:text-label-sm rounded-full">Technical Session</span>
-                <span class="px-2 py-0.5 md:px-3 md:py-1 border border-on-secondary-container text-on-secondary-container text-label-xs md:text-label-sm rounded-full">Genomics</span>
-              </div>
-              <h4 class="font-bold text-body-md md:text-body-lg mb-1">Genomic Surveillance of Emerging Zoonotic Pathogens</h4>
-              <p class="text-body-sm font-medium text-on-surface">Dr. Chidi Nwosu</p>
-              <p class="text-label-xs md:text-label-sm text-on-surface-variant flex items-center gap-1 mt-1">Seminar Room B-12</p>
-            </div>
-            <div class="mt-3 md:mt-0">
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="px-2 py-0.5 md:px-3 md:py-1 bg-science-blue text-white text-label-xs md:text-label-sm rounded-full">Technical Session</span>
-                <span class="px-2 py-0.5 md:px-3 md:py-1 border border-secondary text-secondary text-label-xs md:text-label-sm rounded-full">Food Security</span>
-              </div>
-              <h4 class="font-bold text-body-md md:text-body-lg mb-1">Climate-Resilient Agriculture and Nutritional Sovereignty</h4>
-              <p class="text-body-sm font-medium text-on-surface">Prof. Adeola Williams</p>
-              <p class="text-label-xs md:text-label-sm text-on-surface-variant flex items-center gap-1 mt-1">Conference Room 4 (Level 2)</p>
-            </div>
+          <div>
+            <span class="text-[10px] bg-prestige-gold text-heritage-maroon px-2 py-0.5 rounded font-bold uppercase tracking-wider">Keynote Address</span>
+            <h4 class="font-bold text-lg text-heritage-maroon mt-2">One Health Paradigms: Policy to Clinical Action in Lagos State</h4>
+            <p class="text-xs font-semibold text-on-surface-variant mt-1">Speaker: Prof. Emmanuel Akinola Abayomi (Honourable Commissioner for Health, Lagos State Ministry of Health)</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Main Auditorium (Hall A)</span>
           </div>
         </div>
       </div>
 
-      <!-- Time Slot 5: Lunch Break -->
-      <div class="grid grid-cols-1 md:grid-cols-12 items-center bg-clinical-gray/30 p-4 border-y border-clinical-gray rounded-lg">
-        <div class="col-span-12 md:col-span-2">
-          <span class="text-label-sm md:text-label-lg font-bold text-on-surface-variant">01:00 PM</span>
-        </div>
-        <div class="col-span-12 md:col-span-10 mt-1 md:mt-0">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="material-symbols-outlined text-on-surface-variant">restaurant</span>
-            <span class="text-body-sm md:text-body-md italic text-on-surface-variant">Networking Lunch and Poster Viewing Session — Exhibition Gallery</span>
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            11:30 AM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Group Photography &amp; Exhibition Viewing</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Interact with sponsors, view scientific posters, and network.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Exhibition Court</span>
           </div>
         </div>
       </div>
 
-      <!-- Time Slot 6: Panel Discussion -->
-      <div class="group grid grid-cols-1 md:grid-cols-12 items-center bg-white p-4 md:p-6 border border-clinical-gray hover:shadow-md transition-all rounded-lg">
-        <div class="col-span-12 md:col-span-2 time-col">
-          <div class="flex flex-row md:flex-col items-center md:items-start gap-2 md:gap-0">
-            <span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">02:30</span>
-            <span class="text-label-xs md:text-label-sm font-label-sm text-on-surface-variant uppercase">PM</span>
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            12:30 PM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Technical Session 1: Emerging &amp; Re-emerging Infectious Diseases</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Invited speakers and abstract presenters showcase epidemiological surveillance, vector controls, and outbreak response.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Seminar Room A</span>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-7 mt-2 md:mt-0">
-          <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="px-2 py-0.5 md:px-3 md:py-1 bg-on-tertiary-container text-tertiary text-label-xs md:text-label-sm rounded-full">Panel Discussion</span>
-            <span class="px-2 py-0.5 md:px-3 md:py-1 border border-primary text-primary text-label-xs md:text-label-sm rounded-full">Infectious Diseases</span>
+        <span class="text-[10px] bg-turquoise-accent text-white px-3 py-1.5 rounded w-fit shrink-0 font-bold">Track 1</span>
+      </div>
+
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            02:30 PM
           </div>
-          <h3 class="text-body-lg md:text-headline-md font-headline-md mb-2">Pandemic Preparedness: Lessons from the West African Frontier</h3>
-          <p class="text-body-sm md:text-body-md text-on-surface-variant mb-1">Moderated by Dr. S. Balogun with 4 invited panelists.</p>
-          <p class="text-body-sm md:text-body-md text-on-surface-variant flex items-center gap-1">
-            <span class="material-symbols-outlined text-sm md:text-base">location_on</span>
-            Main Auditorium (Hall A)
-          </p>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Technical Session 2: Non-Communicable Diseases: Monogenic &amp; Complex Traits</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Hereditary genomics, molecular epidemiology of chronic diseases, and genomic screening methods.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Seminar Room B</span>
+          </div>
         </div>
+        <span class="text-[10px] bg-turquoise-accent text-white px-3 py-1.5 rounded w-fit shrink-0 font-bold">Track 2</span>
       </div>
     </div>
-  </section>
 
-  <!-- Schedule for Day 2 (Hidden initially) -->
-  <section id="day2" class="schedule-day max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-12 hidden">
-    <div class="grid grid-cols-1 gap-3 md:gap-4">
-      <div class="bg-white p-4 md:p-6 border border-clinical-gray rounded-lg">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-          <div><span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">09:00 AM</span></div>
-          <div class="flex-1"><h3 class="font-bold text-body-lg md:text-headline-md">Keynote: Climate Change and Vector-Borne Diseases</h3><p class="text-body-sm mt-1">Prof. Fatima Bello (Ahmadu Bello University)</p><p class="text-label-sm text-on-surface-variant mt-2">Main Auditorium</p></div>
-          <button class="text-heritage-maroon border border-heritage-maroon px-4 py-1 rounded-full text-sm hover:bg-heritage-maroon hover:text-white">Details</button>
+    <!-- Day 2 Schedule -->
+    <div id="day2" class="schedule-day space-y-6 hidden">
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            09:00 AM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Plenary Session: Zoonotic Spillover Prevention in Wildlife–Livestock Contact Zones</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Analyzing cross-species animal-to-human transmission barriers and ecological reserve interfaces.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Main Auditorium (Hall A)</span>
+          </div>
         </div>
+        <span class="text-[10px] bg-clinical-gray px-3 py-1.5 rounded text-on-surface-variant w-fit shrink-0">Plenary Address</span>
       </div>
-      <div class="bg-surface-container-low p-4 md:p-6 border-l-4 border-l-prestige-gold border border-clinical-gray rounded-lg">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-          <div><span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">11:00 AM</span></div>
-          <div class="flex-1"><h3 class="font-bold text-body-lg md:text-headline-md">Parallel Session: One Health Economics</h3><p class="text-body-sm mt-1">Dr. Ibrahim Musa &amp; Panel</p><p class="text-label-sm text-on-surface-variant mt-2">Conference Hall C</p></div>
+
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            10:30 AM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Technical Session 3: Antimicrobial Resistance at Human–Animal–Environment Interface</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Ecosystem runoffs, resistance profile mapping, veterinary drug stewardship, and community hygiene.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Seminar Room A</span>
+          </div>
         </div>
+        <span class="text-[10px] bg-turquoise-accent text-white px-3 py-1.5 rounded w-fit shrink-0 font-bold">Track 4</span>
       </div>
-      <div class="bg-clinical-gray/30 p-4 text-center rounded-lg"><span class="material-symbols-outlined align-middle mr-2">groups</span> Afternoon Networking & Workshop Sessions</div>
+
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            01:00 PM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Technical Session 4: Conservation, Climate Change &amp; Environmental Health</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Ecosystem stability, carbon footprint modeling, vector distribution shifts, and planetary health.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Seminar Room B</span>
+          </div>
+        </div>
+        <span class="text-[10px] bg-turquoise-accent text-white px-3 py-1.5 rounded w-fit shrink-0 font-bold">Track 5</span>
+      </div>
+
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            03:00 PM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Technical Session 5: Forensics, Integrated Data Systems &amp; Bio-surveillance</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Molecular forensics, health data systems integration, bio-surveillance architecture, and security protocols.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Seminar Room C</span>
+          </div>
+        </div>
+        <span class="text-[10px] bg-turquoise-accent text-white px-3 py-1.5 rounded w-fit shrink-0 font-bold">Track 6</span>
+      </div>
     </div>
-  </section>
 
-  <!-- Schedule for Day 3 (Hidden initially) -->
-  <section id="day3" class="schedule-day max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-12 hidden">
-    <div class="grid grid-cols-1 gap-3 md:gap-4">
-      <div class="bg-white p-4 md:p-6 border border-clinical-gray rounded-lg">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-          <div><span class="text-headline-sm md:text-headline-md font-headline-md text-heritage-maroon">10:00 AM</span></div>
-          <div class="flex-1"><h3 class="font-bold text-body-lg md:text-headline-md">Closing Plenary: Future of One Health in Africa</h3><p class="text-body-sm mt-1">Prof. Sarah Adenuga &amp; High-Level Panel</p><p class="text-label-sm text-on-surface-variant mt-2">Grand Auditorium</p></div>
+    <!-- Day 3 Schedule -->
+    <div id="day3" class="schedule-day space-y-6 hidden">
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            09:00 AM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Technical Session 6: Drug Discovery &amp; Design</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Phyto-medicines, docking models, pharmaceutical biochemistry, and drug design frameworks.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Seminar Room D</span>
+          </div>
         </div>
+        <span class="text-[10px] bg-turquoise-accent text-white px-3 py-1.5 rounded w-fit shrink-0 font-bold">Track 7</span>
       </div>
-      <div class="bg-heritage-maroon/5 p-4 md:p-6 rounded-lg border border-prestige-gold/30 text-center"><span class="material-symbols-outlined align-middle mr-2">celebration</span> Award Ceremony & Closing Reception (4:00 PM)</div>
-    </div>
-  </section>
 
-  <!-- Track Legend - Responsive -->
-  <section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop mt-12 md:mt-20">
-    <div class="bg-surface-container p-4 md:p-6 rounded-xl">
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6">
-        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-heritage-maroon"></div><span class="text-label-xs md:text-label-sm">General Sessions</span></div>
-        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-science-blue"></div><span class="text-label-xs md:text-label-sm">Technical Tracks</span></div>
-        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border border-primary"></div><span class="text-label-xs md:text-label-sm">Infectious Diseases</span></div>
-        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border border-on-secondary-container"></div><span class="text-label-xs md:text-label-sm">Genomics</span></div>
-        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border border-secondary"></div><span class="text-label-xs md:text-label-sm">Food Security</span></div>
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            11:00 AM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Technical Session 7: Food Security, Biosecurity &amp; Safety</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Sustainable food systems, agricultural safety barriers, food preservation, and safety standards.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Seminar Room A</span>
+          </div>
+        </div>
+        <span class="text-[10px] bg-turquoise-accent text-white px-3 py-1.5 rounded w-fit shrink-0 font-bold">Track 8</span>
+      </div>
+
+      <div class="bg-white border border-clinical-gray rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between hover:border-turquoise-accent transition-all">
+        <div class="flex items-start gap-4">
+          <div class="bg-science-blue/10 text-science-blue font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            01:30 PM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Interactive Panel: Next-Generation One Health Strategies &amp; Action Plan</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Translating research into policy, establishing interdepartmental research clusters, and student action models.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Main Auditorium</span>
+          </div>
+        </div>
+        <span class="text-[10px] bg-clinical-gray px-3 py-1.5 rounded text-on-surface-variant w-fit shrink-0">Panel Discussion</span>
+      </div>
+
+      <div class="bg-heritage-maroon/5 border border-heritage-maroon/20 rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 justify-between">
+        <div class="flex items-start gap-4">
+          <div class="bg-heritage-maroon text-white font-bold px-3 py-1.5 rounded text-xs shrink-0 text-center min-w-[70px]">
+            03:30 PM
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-heritage-maroon">Award Ceremony, Closing Remarks &amp; Cocktail Reception</h4>
+            <p class="text-xs text-on-surface-variant mt-1">Celebrating outstanding presentations, student awards, and concluding statements.</p>
+            <span class="inline-block text-[10px] text-science-blue font-bold mt-2"><span class="material-symbols-outlined text-[12px] align-middle mr-1">location_on</span>Main Auditorium &amp; Garden Court</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Footer Component - Responsive -->
+<!-- Footer -->
 <footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 w-full mt-auto">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-margin-mobile md:px-margin-desktop py-8 md:py-12 max-w-max-width mx-auto">
-    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
-      <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl">UNILAG One Health</div>
-      <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm">Faculty of Life Sciences<br/>University of Lagos, Nigeria.<br/>Advancing Science, Impacting Life.</p>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left flex flex-col items-center sm:items-start">
+      <img src="unilag logo.png" alt="UNILAG Logo" class="h-12 w-auto object-contain mb-2" onerror="this.style.display='none'"/>
+      <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl leading-tight">Faculty of Life Sciences</div>
+      <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm text-center sm:text-left">
+        Faculty of Life Sciences<br/>
+        University of Lagos, Nigeria.<br/>
+        Advancing Science, Impacting Life.
+      </p>
     </div>
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Navigation</h4>
-      <nav class="flex flex-col gap-2"><a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="index.html">Home</a><a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="about_one_health_conference.html">About</a><a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="speakers_one_health_conference.html">Speakers</a><a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="program_one_health_conference.html">Program</a></nav>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="index.html">Home</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="about_one_health_conference.html">About</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="speakers_one_health_conference.html">Speakers</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="program_one_health_conference.html">Program</a>
+      </nav>
     </div>
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Resources</h4>
-      <nav class="flex flex-col gap-2"><a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="abstract_submission_one_health_conference.html">Abstracts</a><a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="registration_one_health_conference.html">Register</a><a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm" href="contact_one_health_conference.html">Contact</a></nav>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="abstract_submission_one_health_conference.html">Abstracts</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="registration_one_health_conference.html">Register</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="partners_sponsors.html">Sponsors</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="contact_one_health_conference.html">Contact</a>
+      </nav>
     </div>
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Connect</h4>
-      <div class="flex gap-4 justify-center sm:justify-start"><a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#"><span class="material-symbols-outlined text-body-md text-base">share</span></a><a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#"><span class="material-symbols-outlined text-body-md text-base">mail</span></a></div>
+      <div class="flex gap-4 justify-center sm:justify-start">
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+          <span class="material-symbols-outlined text-body-md text-base">share</span>
+        </a>
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+          <span class="material-symbols-outlined text-body-md text-base">mail</span>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="border-t border-prestige-gold/10 py-4 md:py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">© 2026 University of Lagos Faculty of Life Sciences. All Rights Reserved. One Health Conference.</div>
+  <div class="border-t border-prestige-gold/10 py-4 md:py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">
+    © 2026 Faculty of Life Science · University of Lagos. All Rights Reserved. One Health Conference.
+  </div>
 </footer>
 
-<!-- Navigation & Interactive Schedule Script -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
     if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.toggle('hidden'); });
-      document.addEventListener('click', (event) => { if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target) && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden'); });
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+        const expanded = !mobileMenu.classList.contains('hidden');
+        menuBtn.setAttribute('aria-expanded', expanded);
+      });
+      document.addEventListener('click', function(event) {
+        if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
     }
 
     // Active link highlighting
-    let currentPath = window.location.pathname.split('/').pop();
+    var currentPath = window.location.pathname.split('/').pop();
     if (!currentPath || currentPath === '') {
       currentPath = 'index.html';
     }
-    document.querySelectorAll('.nav-link').forEach(link => {
-      if (link.getAttribute('href') === currentPath) {
+    
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href === currentPath) {
         link.classList.add('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
         link.classList.remove('text-on-surface-variant', 'font-medium');
-      } else { link.classList.remove('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold'); link.classList.add('text-on-surface-variant', 'font-medium'); }
+      } else {
+        link.classList.remove('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.add('text-on-surface-variant', 'font-medium');
+      }
     });
 
-    // Interactive Schedule Tabs
+    // Schedule Tab Interaction
     const tabs = document.querySelectorAll('.schedule-tab');
-    const days = { day1: document.getElementById('day1'), day2: document.getElementById('day2'), day3: document.getElementById('day3') };
-    
-    function activateTab(activeDayId, activeTabElement) {
-      Object.keys(days).forEach(day => { if (days[day]) days[day].classList.add('hidden'); });
-      if (days[activeDayId]) days[activeDayId].classList.remove('hidden');
-      tabs.forEach(tab => {
-        const tabDay = tab.getAttribute('data-day');
-        const indicator = tab.querySelector('div:last-child');
-        tab.classList.remove('text-heritage-maroon', 'font-bold');
-        tab.classList.add('text-on-surface-variant', 'font-medium');
-        if (indicator) indicator.classList.remove('bg-prestige-gold');
-      });
-      activeTabElement.classList.remove('text-on-surface-variant', 'font-medium');
-      activeTabElement.classList.add('text-heritage-maroon', 'font-bold');
-      const activeIndicator = activeTabElement.querySelector('div:last-child');
-      if (activeIndicator) activeIndicator.classList.add('bg-prestige-gold');
-    }
+    const dayElements = {
+      day1: document.getElementById('day1'),
+      day2: document.getElementById('day2'),
+      day3: document.getElementById('day3')
+    };
 
     tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const dayId = tab.getAttribute('data-day');
-        if (dayId && days[dayId]) activateTab(dayId, tab);
+      tab.addEventListener('click', function() {
+        const targetDay = this.getAttribute('data-day');
+        
+        // Hide all days
+        Object.values(dayElements).forEach(el => {
+          if (el) el.classList.add('hidden');
+        });
+
+        // Show active day
+        if (dayElements[targetDay]) {
+          dayElements[targetDay].classList.remove('hidden');
+        }
+
+        // Reset all tabs styles
+        tabs.forEach(t => {
+          t.classList.remove('text-heritage-maroon', 'font-bold');
+          t.classList.add('text-on-surface-variant', 'font-medium');
+          const indicator = t.querySelector('div:last-child');
+          if (indicator) {
+            indicator.classList.remove('bg-prestige-gold');
+            indicator.classList.add('bg-transparent');
+          }
+        });
+
+        // Set active tab style
+        this.classList.add('text-heritage-maroon', 'font-bold');
+        this.classList.remove('text-on-surface-variant', 'font-medium');
+        const activeIndicator = this.querySelector('div:last-child');
+        if (activeIndicator) {
+          activeIndicator.classList.add('bg-prestige-gold');
+          activeIndicator.classList.remove('bg-transparent');
+        }
       });
     });
 
-    // Download PDF button simulation
-    const downloadBtn = document.getElementById('downloadPdfBtn');
-    if (downloadBtn) {
-      downloadBtn.addEventListener('click', () => { alert('PDF schedule download would begin. For demo purposes, please check back later.'); });
-    }
-
-    // Image fallback
-    document.querySelectorAll('img').forEach(img => { img.addEventListener('error', function() { if (!this.hasAttribute('data-fallback')) { this.setAttribute('data-fallback', 'true'); this.style.backgroundColor = '#f0f0f0'; } }); });
+    // Image fallback handling
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        if (!this.hasAttribute('data-fallback-shown')) {
+          this.setAttribute('data-fallback-shown', 'true');
+          this.style.backgroundColor = '#f3f4f5';
+        }
+      });
+    });
   });
 </script>
 </body>
