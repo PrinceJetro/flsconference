@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -6,7 +7,7 @@
 <title>Faculty of Life Sciences | One Health Conference 2026</title>
 <meta name="description" content="Faculty of Life Sciences | One Health Conference 2026"/>
 <meta name="keywords" content="Faculty of Life Sciences | One Health Conference 2026"/>
-<link rel="icon" href="unilag logo.png"/>
+<link rel="icon" href="{% static 'images/unilag logo.png' %}"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -119,8 +120,8 @@
 <header class="bg-surface/95 backdrop-blur-md shadow-sm sticky top-0 z-50">
   <div class="flex justify-between items-center w-full px-4 md:px-margin-desktop max-w-max-width mx-auto h-16 md:h-20">
     <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon tracking-tight hover:opacity-90">
-      <img src="unilag logo.png" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
+    <a href="{% url 'home' %}" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon tracking-tight hover:opacity-90">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
       <div class="flex flex-col leading-tight">
         <span class="font-headline-lg font-bold text-heritage-maroon text-base md:text-lg tracking-tight">Faculty of Life Sciences</span>
         <span class="text-[10px] text-on-surface-variant font-medium tracking-wider hidden sm:block">One Health Conference 2026</span>
@@ -129,20 +130,20 @@
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="index.html">Home</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="about_one_health_conference.html">About</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="speakers_one_health_conference.html">Speakers</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="special_guests_one_health_conference.html">Guests</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="program_one_health_conference.html">Program</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="partners_sponsors.html">Sponsors</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="contact_one_health_conference.html">Contact</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'special_guests' %}">Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'contact' %}">Contact</a>
     </nav>
 
     <!-- CTA + Hamburger -->
     <div class="flex items-center gap-2 md:gap-4">
       <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary transition-all shadow-md whitespace-nowrap animate-bounce flex flex-col items-center leading-tight"
-         href="registration_one_health_conference.html">
+         href="{% url 'registration' %}">
         <span class="text-xs md:text-label-lg">Register Now</span>
         <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
       </a>
@@ -156,32 +157,32 @@
   <!-- Mobile drawer -->
   <div id="mobile-menu" class="md:hidden bg-surface border-b border-clinical-gray/30">
     <nav class="flex flex-col px-4 py-4 gap-1">
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="index.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'home' %}">
         <span class="material-symbols-outlined text-xl">home</span> Home
       </a>
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="about_one_health_conference.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'about' %}">
         <span class="material-symbols-outlined text-xl">info</span> About
       </a>
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="speakers_one_health_conference.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'speakers' %}">
         <span class="material-symbols-outlined text-xl">groups</span> Speakers
       </a>
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="special_guests_one_health_conference.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'special_guests' %}">
         <span class="material-symbols-outlined text-xl">stars</span> Special Guests
       </a>
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="program_one_health_conference.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'program' %}">
         <span class="material-symbols-outlined text-xl">event_note</span> Program
       </a>
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="abstract_submission_one_health_conference.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'abstract_submission' %}">
         <span class="material-symbols-outlined text-xl">description</span> Submit Abstract
       </a>
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="partners_sponsors.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'partners_sponsors' %}">
         <span class="material-symbols-outlined text-xl">handshake</span> Sponsors
       </a>
-      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="contact_one_health_conference.html">
+      <a class="nav-link flex items-center gap-3 py-3 px-3 rounded-xl text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors font-medium text-base" href="{% url 'contact' %}">
         <span class="material-symbols-outlined text-xl">mail</span> Contact
       </a>
       <div class="mt-3 pt-3 border-t border-clinical-gray/40">
-        <a class="flex items-center justify-center gap-2 bg-heritage-maroon text-on-primary py-3 rounded-full font-bold text-sm w-full flex-col leading-tight" href="registration_one_health_conference.html">
+        <a class="flex items-center justify-center gap-2 bg-heritage-maroon text-on-primary py-3 rounded-full font-bold text-sm w-full flex-col leading-tight" href="{% url 'registration' %}">
           <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">how_to_reg</span> Register for the Conference</span>
           <span class="text-[9px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
         </a>
@@ -232,11 +233,11 @@
 
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row gap-3">
-        <a href="registration_one_health_conference.html"
+        <a href="{% url 'registration' %}"
            class="bg-prestige-gold text-heritage-maroon px-6 py-3.5 rounded-full font-bold text-sm hover:bg-secondary-container transition-all flex items-center justify-center gap-2 active:scale-95">
           <span class="material-symbols-outlined text-lg">how_to_reg</span> Register Now
         </a>
-        <a href="abstract_submission_one_health_conference.html"
+        <a href="{% url 'abstract_submission' %}"
            class="border-2 border-on-primary/30 hover:border-prestige-gold text-on-primary px-6 py-3.5 rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2 active:scale-95">
           <span class="material-symbols-outlined text-lg">description</span> Submit Abstract
         </a>
@@ -307,7 +308,7 @@
       <!-- Feature Card -->
       <div class="lg:col-span-5 relative group">
         <div class="relative z-10 aspect-[4/3] bg-clinical-gray rounded-2xl overflow-hidden shadow-lg">
-          <img src="Faculty of life science building.png" alt="Faculty Building" class="w-full h-full object-cover"/>
+          <img src="{% static 'images/Faculty of life science building.png' %}" alt="Faculty Building" class="w-full h-full object-cover"/>
         </div>
       </div>
 
@@ -324,7 +325,7 @@
             With the rapid shift in planetary climates and urbanization, identifying transmission cycles, heavy metal bio-accumulation pathways, and biological safety mechanisms becomes imperative. This conference targets research outputs that drive real-world application, translating laboratory discovery into life-saving policies.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href="about_one_health_conference.html" class="text-science-blue font-bold flex items-center gap-2 hover:translate-x-2 transition-transform text-sm">
+            <a href="{% url 'about' %}" class="text-science-blue font-bold flex items-center gap-2 hover:translate-x-2 transition-transform text-sm">
               Read our mission statement <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
@@ -419,7 +420,7 @@
       <div class="bg-surface-container-low p-6 md:p-8 rounded-2xl border-2 border-prestige-gold shadow-sm flex flex-col justify-between">
         <div>
           <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4">
-            <img src="commissioner.jpg" alt="Prof. Emmanuel Akinola Abayomi" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-prestige-gold shadow-sm shrink-0"/>
+            <img src="{% static 'images/commissioner.jpg' %}" alt="Prof. Emmanuel Akinola Abayomi" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-prestige-gold shadow-sm shrink-0"/>
             <div class="text-center sm:text-left">
               <div class="inline-block bg-heritage-maroon text-prestige-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Keynote Speaker</div>
               <h3 class="text-lg md:text-xl font-bold text-heritage-maroon font-headline-md leading-tight">Prof. Emmanuel Akinola Abayomi</h3>
@@ -434,7 +435,7 @@
           </p>
         </div>
         <div class="mt-6 pt-4 border-t border-clinical-gray">
-          <a href="speakers_one_health_conference.html" class="text-science-blue text-xs font-bold flex items-center justify-center sm:justify-start gap-1 hover:translate-x-1 transition-transform">
+          <a href="{% url 'speakers' %}" class="text-science-blue text-xs font-bold flex items-center justify-center sm:justify-start gap-1 hover:translate-x-1 transition-transform">
             View Speaker Bio <span class="material-symbols-outlined text-xs">arrow_forward</span>
           </a>
         </div>
@@ -444,7 +445,7 @@
       <div class="bg-surface-container-low p-6 md:p-8 rounded-2xl border border-clinical-gray shadow-sm flex flex-col justify-between">
         <div>
           <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4">
-            <img src="folawiyo.png" alt="Mr. Babatunde Folawiyo" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-science-blue shadow-sm shrink-0"/>
+            <img src="{% static 'images/folawiyo.png' %}" alt="Mr. Babatunde Folawiyo" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-science-blue shadow-sm shrink-0"/>
             <div class="text-center sm:text-left">
               <div class="inline-block bg-science-blue text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Chairman of the Day</div>
               <h3 class="text-lg md:text-xl font-bold text-heritage-maroon font-headline-md leading-tight">Mr. Babatunde Folawiyo</h3>
@@ -459,7 +460,7 @@
           </p>
         </div>
         <div class="mt-6 pt-4 border-t border-clinical-gray">
-          <a href="speakers_one_health_conference.html" class="text-science-blue text-xs font-bold flex items-center justify-center sm:justify-start gap-1 hover:translate-x-1 transition-transform">
+          <a href="{% url 'speakers' %}" class="text-science-blue text-xs font-bold flex items-center justify-center sm:justify-start gap-1 hover:translate-x-1 transition-transform">
             View Guest Information <span class="material-symbols-outlined text-xs">arrow_forward</span>
           </a>
         </div>
@@ -513,7 +514,7 @@
             <span>Submission Window Open. Format: Word (.doc, .docx) ONLY</span>
           </div>
         </div>
-        <a href="abstract_submission_one_health_conference.html"
+        <a href="{% url 'abstract_submission' %}"
            class="inline-block bg-prestige-gold text-heritage-maroon font-bold px-8 py-3.5 rounded-full hover:bg-white transition-all text-sm w-fit active:scale-95 shadow-md">
           Submit Abstract
         </a>
@@ -543,7 +544,7 @@
         </div>
         <div class="bg-clinical-gray/40 p-4 rounded-xl text-center">
           <p class="text-xs text-on-surface-variant mb-2">Want to prepare offline? Download abstract parameters:</p>
-          <a href="Abstract Sample_Template.pdf" download class="text-science-blue font-bold hover:underline flex items-center justify-center gap-1 text-xs">
+          <a href="{% static 'documents/Abstract Sample_Template.pdf' %}" download class="text-science-blue font-bold hover:underline flex items-center justify-center gap-1 text-xs">
             <span class="material-symbols-outlined text-sm">download</span> Download Guidelines PDF
           </a>
         </div>
@@ -560,12 +561,12 @@
     <p class="text-on-surface-variant text-sm max-w-2xl mx-auto mb-8">FLS One Health 2026 is supported by world-class academic, administrative, and corporate bodies dedicated to biological innovation.</p>
     
     <div class="flex justify-center items-center gap-8 md:gap-12 flex-wrap mb-10 opacity-70">
-      <div class="px-6 py-3 border border-clinical-gray/80 rounded-lg text-xs font-bold text-heritage-maroon bg-surface-container-low"><img src="./unilag logo.png" alt=""></div>
-      <div class="px-6 py-3 border border-clinical-gray/80 rounded-lg text-xs font-bold text-heritage-maroon bg-surface-container-low"><img src="./images/lagos ministry of health logo.png" alt=""></div>
+      <div class="px-6 py-3 border border-clinical-gray/80 rounded-lg text-xs font-bold text-heritage-maroon bg-surface-container-low"><img src="{% static 'images/unilag logo.png' %}" alt=""></div>
+      <div class="px-6 py-3 border border-clinical-gray/80 rounded-lg text-xs font-bold text-heritage-maroon bg-surface-container-low"><img src="{% static 'images/lagos ministry of health logo.png' %}" alt=""></div>
       <div class="px-6 py-3 border border-clinical-gray/80 rounded-lg text-xs font-bold text-heritage-maroon bg-surface-container-low">WHO Affiliate Network</div>
     </div>
     
-    <a href="partners_sponsors.html" class="inline-flex items-center gap-2 border-2 border-heritage-maroon text-heritage-maroon px-8 py-3 rounded-full font-bold text-sm hover:bg-heritage-maroon hover:text-white transition-all shadow-sm">
+    <a href="{% url 'partners_sponsors' %}" class="inline-flex items-center gap-2 border-2 border-heritage-maroon text-heritage-maroon px-8 py-3 rounded-full font-bold text-sm hover:bg-heritage-maroon hover:text-white transition-all shadow-sm">
       View All Sponsors &amp; Opportunities <span class="material-symbols-outlined text-sm">arrow_forward</span>
     </a>
   </div>
@@ -577,7 +578,7 @@
 <footer class="bg-heritage-maroon text-on-primary border-t border-prestige-gold/20 w-full">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-4 md:px-margin-desktop py-8 md:py-12 max-w-max-width mx-auto">
     <div class="space-y-3 md:space-y-4 text-center sm:text-left flex flex-col items-center sm:items-start">
-      <img src="unilag logo.png" alt="UNILAG Logo" class="h-12 w-auto object-contain mb-2" onerror="this.style.display='none'"/>
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-12 w-auto object-contain mb-2" onerror="this.style.display='none'"/>
       <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl leading-tight">Faculty of Life Sciences</div>
       <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm text-center sm:text-left">
         Faculty of Life Sciences<br/>
@@ -588,28 +589,28 @@
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Navigation</h4>
       <nav class="flex flex-col gap-2">
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="index.html">Home</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="about_one_health_conference.html">About</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="speakers_one_health_conference.html">Speakers</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="program_one_health_conference.html">Program</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'home' %}">Home</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'about' %}">About</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'speakers' %}">Speakers</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'program' %}">Program</a>
       </nav>
     </div>
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Resources</h4>
       <nav class="flex flex-col gap-2">
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="abstract_submission_one_health_conference.html">Abstracts</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="registration_one_health_conference.html">Register</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="partners_sponsors.html">Sponsors</a>
-        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="contact_one_health_conference.html">Contact</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'abstract_submission' %}">Abstracts</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'registration' %}">Register</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'partners_sponsors' %}">Sponsors</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'contact' %}">Contact</a>
       </nav>
     </div>
     <div class="space-y-3 md:space-y-4 text-center sm:text-left">
       <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Connect</h4>
       <div class="flex gap-4 justify-center sm:justify-start">
-        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
           <span class="material-symbols-outlined text-body-md text-base">share</span>
         </a>
-        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
           <span class="material-symbols-outlined text-body-md text-base">mail</span>
         </a>
       </div>
@@ -679,12 +680,14 @@
   setInterval(updateCountdown, 1000);
 
   // Active nav link
-  let currentPath = window.location.pathname.split('/').pop();
-  if (!currentPath || currentPath === '') {
-    currentPath = 'index.html';
+  let currentPath = window.location.pathname || '/';
+  if (currentPath === '') {
+    currentPath = '/';
   }
   document.querySelectorAll('.nav-link').forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (href === currentPath) {
       link.classList.add('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
       link.classList.remove('text-on-surface-variant');
     } else {

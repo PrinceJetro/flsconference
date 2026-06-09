@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Registration | Faculty of Life Sciences One Health Conference</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts preconnect for better performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .bio-texture {
+            background-image: radial-gradient(circle at 2px 2px, rgba(30, 66, 140, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #A0001F 0%, #650013 100%);
+        }
+        @media (max-width: 768px) {
+            .nav-link, button, .footer-link {
+                touch-action: manipulation;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            line-height: 1;
+        }
+        img {
+            background-color: #f3f4f5;
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "science-blue": "#1E428C",
+                    "turquoise-accent": "#00A896",
+                    "navy-dark": "#028090",
+                    "surface-bright": "#f8f9fa",
+                    "on-surface": "#191c1d",
+                    "background": "#f8f9fa",
+                    "clinical-gray": "#E9ECEF",
+                    "surface": "#f8f9fa",
+                    "prestige-gold": "#FFD700",
+                    "heritage-maroon": "#800000",
+                    "primary": "#570000",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "max-width": "1280px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display", "serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "headline-md": ["Playfair Display", "serif"],
+                    "label-lg": ["Inter", "sans-serif"],
+                    "display-lg": ["Playfair Display", "serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-texture flex flex-col min-h-screen">
+
+<!-- Header -->
+<header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
+  <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-16 md:h-20">
+    <a href="{% url 'home' %}" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight hover:opacity-90">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
+      <div class="flex flex-col">
+        <span class="leading-none text-base md:text-lg font-bold">Faculty of Life Sciences</span>
+        <span class="text-[9px] font-medium tracking-wide text-on-surface-variant leading-normal">University of Lagos</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'special_guests' %}">Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'contact' %}">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-3 sm:space-x-4">
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap flex flex-col items-center leading-tight animate-bounce" href="{% url 'registration' %}">
+        <span class="text-xs md:text-label-lg">Register Now</span>
+        <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+      </a>
+      <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none p-2 -mr-2" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Drawer -->
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300" id="mobile-menu">
+    <nav class="flex flex-col px-margin-mobile py-4 space-y-3 max-h-[80vh] overflow-y-auto">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'special_guests' %}">Special Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'contact' %}">Contact</a>
+      <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
+        <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md flex flex-col items-center leading-tight" href="{% url 'registration' %}">
+          <span>Register Now</span>
+          <span class="text-[9px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-grow">
+  <!-- Hero Section -->
+  <section class="relative hero-gradient py-12 md:py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+      <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white">how_to_reg</span>
+    </div>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+      <!-- Announcement Banner -->
+      <div class="inline-flex items-center gap-2 bg-prestige-gold text-heritage-maroon px-4 py-2 rounded-full mb-6 md:mb-8 shadow-sm">
+        <span class="material-symbols-outlined text-sm md:text-base">event_available</span>
+        <span class="text-xs md:text-sm font-bold uppercase tracking-wider">Registration Commences June 15, 2026</span>
+      </div>
+      
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
+        Join the One Health Dialogue
+      </h1>
+      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Secure your seat today to engage with leading global researchers and policymakers at the Faculty of Life Sciences Conference, holding from August 4–6, 2026.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grid Pricing Tiers -->
+  <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-12">
+      <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-2">Registration Rates</span>
+      <h2 class="font-headline-lg text-2xl md:text-headline-lg text-science-blue">Pricing Tiers</h2>
+      <div class="w-12 h-1 bg-turquoise-accent mx-auto mt-3"></div>
+    </div>
+
+    <!--  Grid Container -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-6xl mx-auto">
+      
+      <!-- Undergraduate (₦5,000) - 5 columns -->
+      <div class="md:col-span-5 bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-turquoise-accent/5 rounded-bl-full flex items-center justify-end p-4">
+          <span class="material-symbols-outlined text-turquoise-accent text-3xl group-hover:rotate-12 transition-transform">school</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-turquoise-accent uppercase tracking-widest block mb-2">Undergraduate</span>
+          <h3 class="font-headline-md text-xl md:text-2xl text-science-blue mb-3">Student Pass</h3>
+          <p class="text-on-surface-variant text-xs md:text-sm mb-6 leading-relaxed">
+            Discounted registration for undergraduate students. Valid student identification card must be presented for accreditation.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="text-3xl md:text-4xl font-extrabold text-science-blue">₦5,000</span>
+            <span class="text-xs text-on-surface-variant">/ Student Rate</span>
+          </div>
+          <button onclick="selectTier('Undergraduate Student Pass', '₦5,000')" class="w-full py-3 bg-turquoise-accent text-white font-bold rounded-xl hover:bg-turquoise-accent/90 active:scale-95 transition-all text-sm">Select Student Pass</button>
+        </div>
+      </div>
+
+      <!-- PG Student (₦15,000) - 7 columns -->
+      <div class="md:col-span-7 bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-science-blue/5 rounded-bl-full flex items-center justify-end p-4">
+          <span class="material-symbols-outlined text-science-blue text-3xl group-hover:scale-110 transition-transform">workspace_premium</span>
+        </div>
+        <div>
+          <div class="inline-block bg-science-blue/10 text-science-blue text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-2">Postgraduate</div>
+          <h3 class="font-headline-md text-xl md:text-2xl text-science-blue mb-3">Postgraduate Delegate</h3>
+          <p class="text-on-surface-variant text-xs md:text-sm mb-6 leading-relaxed">
+            Discounted registration rate for MSc, MPhil, and PhD students. Access to all scientific plenaries, technical tracks, and digital abstract books.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="text-3xl md:text-4xl font-extrabold text-science-blue">₦15,000</span>
+            <span class="text-xs text-on-surface-variant">/ Full Access</span>
+          </div>
+          <button onclick="selectTier('Postgraduate Delegate', '₦15,000')" class="w-full py-3 bg-science-blue text-white font-bold rounded-xl hover:bg-science-blue/90 active:scale-95 transition-all text-sm">Select Postgraduate Tier</button>
+        </div>
+      </div>
+
+      <!-- Regular Participant (₦30,000) - 7 columns (featured) -->
+      <div class="md:col-span-7 bg-white border-2 border-turquoise-accent rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-md relative overflow-hidden group">
+        <div class="absolute -top-3 left-6 bg-turquoise-accent text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-widest shadow-sm">Popular Choice</div>
+        <div class="absolute top-0 right-0 w-24 h-24 bg-turquoise-accent/5 rounded-bl-full flex items-center justify-end p-4">
+          <span class="material-symbols-outlined text-turquoise-accent text-3xl group-hover:scale-115 transition-transform">groups</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-turquoise-accent uppercase tracking-widest block mb-2 mt-2">Regular Participant</span>
+          <h3 class="font-headline-md text-xl md:text-2xl text-science-blue mb-3">Academic &amp; Regular Delegate</h3>
+          <p class="text-on-surface-variant text-xs md:text-sm mb-6 leading-relaxed">
+            Standard rate for academic staff, researchers, and professional delegates. Includes full physical kit, printed program booklet, daily buffet lunch, and participation certificates.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="text-3xl md:text-4xl font-extrabold text-science-blue">₦30,000</span>
+            <span class="text-xs text-on-surface-variant">/ Standard Rate</span>
+          </div>
+          <button onclick="selectTier('Academic & Regular Delegate', '₦30,000')" class="w-full py-3 bg-turquoise-accent text-white font-bold rounded-xl hover:bg-turquoise-accent/90 active:scale-95 transition-all text-sm">Register as Delegate</button>
+        </div>
+      </div>
+
+      <!-- International ( $100 ) - 6 columns -->
+      <div class="md:col-span-6 bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-science-blue/5 rounded-bl-full flex items-center justify-end p-4">
+          <span class="material-symbols-outlined text-science-blue text-3xl group-hover:translate-y-[-2px] transition-transform">public</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Overseas Attendees</span>
+          <h3 class="font-headline-md text-xl md:text-2xl text-science-blue mb-3">International Delegate</h3>
+          <p class="text-on-surface-variant text-xs md:text-sm mb-6 leading-relaxed">
+            Rate for international delegates attending from outside Nigeria. Includes entry to all conference activities, gala night ticket, and airport pick-up shuttle arrangements.
+          </p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="text-3xl md:text-4xl font-extrabold text-science-blue">$100</span>
+            <span class="text-xs text-on-surface-variant">/ International Rate</span>
+          </div>
+          <button onclick="selectTier('International Delegate', '$100')" class="w-full py-3 bg-science-blue text-white font-bold rounded-xl hover:bg-science-blue/90 active:scale-95 transition-all text-sm">Register as International</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits & Form Layout -->
+  <section class="pb-16 md:pb-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
+      <!-- What's Included (Left Side) -->
+      <div class="lg:col-span-5 space-y-8 md:space-y-12">
+        <div>
+          <h2 class="font-headline-md text-xl md:text-2xl text-science-blue mb-6">What's Included</h2>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="bg-science-blue/10 p-3 rounded-lg text-science-blue">
+                <span class="material-symbols-outlined">event_available</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Full 3-Day Access</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Unrestricted entry to all plenaries, technical tracks, and poster sessions across all three conference days.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-science-blue/10 p-3 rounded-lg text-science-blue">
+                <span class="material-symbols-outlined">restaurant</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Tea Break &amp; Lunch</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Complimentary morning/afternoon tea breaks and lunch for all conference days.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-science-blue/10 p-3 rounded-lg text-science-blue">
+                <span class="material-symbols-outlined">inventory_2</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Conference Kit</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Branded conference materials including program booklet, notepad, pen, and delegate bag.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-science-blue/10 p-3 rounded-lg text-science-blue">
+                <span class="material-symbols-outlined">workspace_premium</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Certificate of Attendance</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Official certificate of attendance issued to all registered delegates.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-turquoise-accent/10 p-3 rounded-lg text-turquoise-accent">
+                <span class="material-symbols-outlined">diversity_3</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Networking &amp; Mentorship <span class="text-turquoise-accent text-[10px] font-bold uppercase tracking-wider ml-1">PG Exclusive</span></h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Postgraduate delegates gain access to dedicated networking sessions and mentorship opportunities with senior academics and industry leaders.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 p-5 md:p-6 rounded-xl">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-amber-600 text-lg">badge</span>
+            <h4 class="font-bold text-amber-800 text-sm">Student ID Requirement</h4>
+          </div>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">
+            A <strong>valid student identification card</strong> must be presented at the accreditation desk for all student and postgraduate registration categories. Failure to present a valid ID will require upgrading to the Regular Delegate tier.
+          </p>
+        </div>
+        
+        <!-- Bank Account Details -->
+        <div class="bg-science-blue text-on-primary p-6 md:p-8 rounded-xl">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-prestige-gold text-xl">account_balance</span>
+            <p class="font-headline-md text-lg md:text-xl text-prestige-gold">Payment Details</p>
+          </div>
+          <p class="text-xs md:text-sm opacity-90 mb-5 leading-relaxed">
+            Make payment via bank transfer using the details below. Include your full name as the payment reference and bring proof of payment to the accreditation desk.
+          </p>
+          <div class="space-y-3 bg-white/10 p-4 rounded-lg">
+            <div class="flex justify-between items-center border-b border-white/20 pb-2">
+              <span class="text-xs font-bold uppercase tracking-wider opacity-70">Bank</span>
+              <span class="text-sm font-bold">Wema Bank</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-white/20 pb-2">
+              <span class="text-xs font-bold uppercase tracking-wider opacity-70">Account Number</span>
+              <span class="text-sm font-bold font-mono tracking-wider">0447494934</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold uppercase tracking-wider opacity-70">Account Name</span>
+              <span class="text-sm font-bold">FLS Conference</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/20">
+            <p class="text-[10px] opacity-60">For payment confirmation inquiries, contact <a href="mailto:flsconference@unilag.edu.ng" class="text-prestige-gold underline">flsconference@unilag.edu.ng</a></p>
+          </div>
+        </div>
+
+        <div class="bg-science-blue/5 border border-science-blue/20 p-5 md:p-6 rounded-xl">
+          <p class="font-headline-md text-sm md:text-base text-science-blue mb-3">Group Registrations</p>
+          <p class="text-xs md:text-sm text-on-surface-variant mb-4 leading-relaxed">
+            Registering more than 5 members from the same laboratory, institution, or organization? Contact the secretariat for bulk payment discounts.
+          </p>
+          <a class="inline-flex items-center gap-2 text-science-blue font-bold hover:underline text-xs md:text-sm" href="mailto:flsconference@unilag.edu.ng">
+            Contact Secretariat <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Registration Form (Right Side) -->
+      <div class="lg:col-span-7 bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-clinical-gray">
+        <h2 class="font-headline-md text-xl md:text-2xl text-science-blue mb-6">Delegate Registration Form</h2>
+        <form action="{% url 'registration' %}" method="POST" enctype="multipart/form-data" class="space-y-6" id="registration-form">
+          {% csrf_token %}
+          {% if registration_success %}
+            <div class="rounded-2xl bg-emerald-50 border border-emerald-200 p-4 text-emerald-900">
+              <strong>Registration received.</strong> Thank you! We will review your payment receipt and confirm your place by email.
+            </div>
+          {% endif %}
+          {% if registration_errors %}
+            <div class="rounded-2xl bg-rose-50 border border-rose-200 p-4 text-rose-900">
+              <ul class="list-disc list-inside">
+                {% for error in registration_errors %}
+                  <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-on-surface-variant">Title</label>
+              <select required name="title" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="titleSelect">
+                <option value="Mr">Mr.</option>
+                <option value="Mrs">Mrs.</option>
+                <option value="Ms">Ms.</option>
+                <option value="Miss">Miss</option>
+                <option value="Dr">Dr.</option>
+                <option value="Prof">Prof.</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-on-surface-variant">Full Name</label>
+              <input required name="name" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Jane Doe" type="text" id="fullName"/>
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-on-surface-variant">Email Address</label>
+            <input required name="email" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="jane.doe@unilag.edu.ng" type="email" id="email"/>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-on-surface-variant">Primary Institution / Affiliation</label>
+            <input required name="institution" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Department of Cell Biology, University of Lagos" type="text" id="institution"/>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-on-surface-variant">Registration Category</label>
+              <select required name="category" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="categorySelect">
+                <option value="Undergraduate Student Pass">Undergraduate Student Pass (₦5,000)</option>
+                <option value="Postgraduate Delegate">Postgraduate Delegate (₦15,000)</option>
+                <option value="Academic & Regular Delegate" selected>Academic &amp; Regular Delegate (₦30,000)</option>
+                <option value="International Delegate">International Delegate ($100)</option>
+              </select>
+            </div>
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-on-surface-variant">Preferred Sub-Theme / Track</label>
+              <select required name="track" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="trackSelect">
+                <option>Emerging and re-emerging infectious diseases</option>
+                <option>Non-communicable diseases: monogenic and complex traits</option>
+                <option>Zoonotic spillover prevention in wildlife–livestock contact zones</option>
+                <option>Antimicrobial resistance at the human–animal–environment interface</option>
+                <option>Conservation, climate change and environmental health</option>
+                <option>Forensics, integrated data systems and Bio-surveillance</option>
+                <option>Drug discovery and design</option>
+                <option>Food security, biosecurity and safety</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-on-surface-variant">Dietary Requirements</label>
+            <input name="dietary_requirements" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="e.g. Vegetarian, Halal, Allergies" type="text" id="dietaryRequirements"/>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-on-surface-variant">Payment Reference / Receipt Note</label>
+            <input name="payment_reference" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Bank transfer reference or receipt details" type="text" id="paymentReference"/>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-on-surface-variant">Receipt Image</label>
+            <input name="receipt" type="file" accept="image/*" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="receiptUpload" />
+            <p class="text-[10px] text-on-surface-variant">Upload a photo or screenshot of your payment receipt.</p>
+          </div>
+
+          <div class="space-y-3">
+            <p class="text-xs font-bold text-on-surface-variant">Technical Session Preferences (Select all that apply)</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="pref_plenary" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
+                <span class="text-xs md:text-sm">Morning Plenary Presentations</span>
+              </label>
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="pref_poster" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
+                <span class="text-xs md:text-sm">Scientific Poster Session</span>
+              </label>
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="pref_dinner" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+                <span class="text-xs md:text-sm">Closing Gala Dinner</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-clinical-gray/40">
+            <button class="w-full py-3.5 bg-heritage-maroon text-white font-bold text-base rounded-xl shadow-lg hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+              <span class="material-symbols-outlined">how_to_reg</span>
+              Submit Registration
+            </button>
+            <p class="text-center text-[10px] text-on-surface-variant mt-3">
+              * Note: Registration will commence on June 15, 2026. Submit now to reserve your pending status.
+            </p>
+          </div>
+        </form>
+
+        <div id="formMessageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 px-4 py-6">
+          <div class="relative w-full max-w-xl rounded-3xl bg-white p-6 shadow-2xl ring-1 ring-slate-200">
+            <button type="button" id="formMessageModalClose" class="absolute top-4 right-4 text-slate-500 hover:text-slate-900">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="flex items-center gap-4 mb-4">
+              <span id="formMessageModalIcon" class="material-symbols-outlined text-4xl text-heritage-maroon">check_circle</span>
+              <div>
+                <h3 id="formMessageModalTitle" class="text-xl font-bold text-slate-900">Success</h3>
+                <p id="formMessageModalText" class="text-sm text-slate-600">Your registration was submitted successfully.</p>
+              </div>
+            </div>
+            <div class="mt-2">
+              <button type="button" id="formMessageModalAction" class="w-full rounded-2xl bg-heritage-maroon text-white py-3 font-bold hover:bg-primary transition-all">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 w-full mt-auto">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-margin-mobile md:px-margin-desktop py-8 md:py-12 max-w-max-width mx-auto">
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left flex flex-col items-center sm:items-start">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-12 w-auto object-contain mb-2" onerror="this.style.display='none'"/>
+      <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl leading-tight">Faculty of Life Sciences</div>
+      <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm text-center sm:text-left">
+        Faculty of Life Sciences<br/>
+        University of Lagos, Nigeria.<br/>
+        Advancing Science, Impacting Life.
+      </p>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Navigation</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'home' %}">Home</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'about' %}">About</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'speakers' %}">Speakers</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'program' %}">Program</a>
+      </nav>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Resources</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'abstract_submission' %}">Abstracts</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'registration' %}">Register</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'partners_sponsors' %}">Sponsors</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'contact' %}">Contact</a>
+      </nav>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Connect</h4>
+      <div class="flex gap-4 justify-center sm:justify-start">
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
+          <span class="material-symbols-outlined text-body-md text-base">share</span>
+        </a>
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
+          <span class="material-symbols-outlined text-body-md text-base">mail</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-prestige-gold/10 py-4 md:py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">
+    © 2026 Faculty of Life Science · University of Lagos. All Rights Reserved. One Health Conference.
+  </div>
+</footer>
+
+<script>
+  function selectTier(tierName, price) {
+    const categorySelect = document.getElementById('categorySelect');
+    if (categorySelect) {
+      for (let i = 0; i < categorySelect.options.length; i++) {
+        if (categorySelect.options[i].value === tierName) {
+          categorySelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+    const formSection = document.getElementById('registration-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+        const expanded = !mobileMenu.classList.contains('hidden');
+        menuBtn.setAttribute('aria-expanded', expanded);
+      });
+      document.addEventListener('click', function(event) {
+        if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Active link highlighting
+    var currentPath = window.location.pathname || '/';
+    if (currentPath === '') {
+      currentPath = '/';
+    }
+    
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href === currentPath) {
+        link.classList.add('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.remove('text-on-surface-variant', 'font-medium');
+      } else {
+        link.classList.remove('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.add('text-on-surface-variant', 'font-medium');
+      }
+    });
+
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+
+    const formMessageModal = document.getElementById('formMessageModal');
+    const formMessageModalTitle = document.getElementById('formMessageModalTitle');
+    const formMessageModalText = document.getElementById('formMessageModalText');
+    const formMessageModalIcon = document.getElementById('formMessageModalIcon');
+    const formMessageModalClose = document.getElementById('formMessageModalClose');
+    const formMessageModalAction = document.getElementById('formMessageModalAction');
+
+    function showModal(title, message, isSuccess) {
+      if (!formMessageModal) return;
+      formMessageModalTitle.textContent = title;
+      formMessageModalText.textContent = message;
+      formMessageModalIcon.textContent = isSuccess ? 'check_circle' : 'error_outline';
+      formMessageModalIcon.classList.toggle('text-emerald-600', isSuccess);
+      formMessageModalIcon.classList.toggle('text-rose-600', !isSuccess);
+      formMessageModal.classList.remove('hidden');
+    }
+
+    function hideModal() {
+      if (!formMessageModal) return;
+      formMessageModal.classList.add('hidden');
+    }
+
+    if (formMessageModalClose) {
+      formMessageModalClose.addEventListener('click', hideModal);
+    }
+    if (formMessageModalAction) {
+      formMessageModalAction.addEventListener('click', hideModal);
+    }
+    if (formMessageModal) {
+      formMessageModal.addEventListener('click', function(event) {
+        if (event.target === formMessageModal) {
+          hideModal();
+        }
+      });
+    }
+
+    const form = document.getElementById('registration-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const csrfToken = getCookie('csrftoken');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Submitting...';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: {
+            'Accept': 'application/json',
+            'X-CSRFToken': csrfToken || ''
+          }
+        }).then(response => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+          if (response.ok) {
+            showModal('Registration Submitted', 'Thank you! Your registration has been submitted successfully. We will review your payment receipt and confirm your place by email.', true);
+            form.reset();
+          } else {
+            response.text().then(text => {
+              try {
+                const data = JSON.parse(text);
+                if (Object.prototype.hasOwnProperty.call(data, 'errors')) {
+                  showModal('Submission Error', data['errors'].map(error => error['message']).join('\n'), false);
+                } else {
+                  showModal('Submission Error', 'Oops! There was a problem submitting your registration.', false);
+                }
+              } catch (err) {
+                showModal('Submission Error', 'Oops! There was a problem submitting your registration.', false);
+              }
+            });
+          }
+        }).catch(error => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+          showModal('Submission Error', 'Oops! There was a problem submitting your registration. Please try again.', false);
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>

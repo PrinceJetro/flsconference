@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>About | Faculty of Life Sciences One Health Conference</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts preconnect for better performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .bio-digital-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #E9ECEF 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #800000 0%, #570000 100%);
+        }
+        @media (max-width: 768px) {
+            .nav-link, button, .footer-link {
+                touch-action: manipulation;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            line-height: 1;
+        }
+        img {
+            background-color: #f3f4f5;
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "science-blue": "#1E428C",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-bright": "#f8f9fa",
+                    "on-surface": "#191c1d",
+                    "background": "#f8f9fa",
+                    "clinical-gray": "#E9ECEF",
+                    "surface": "#f8f9fa",
+                    "prestige-gold": "#FFD700",
+                    "heritage-maroon": "#800000",
+                    "primary": "#570000",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "max-width": "1280px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display", "serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "headline-md": ["Playfair Display", "serif"],
+                    "label-lg": ["Inter", "sans-serif"],
+                    "display-lg": ["Playfair Display", "serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-pattern flex flex-col min-h-screen">
+
+<!-- Header -->
+<header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
+  <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-16 md:h-20">
+    <a href="{% url 'home' %}" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight hover:opacity-90">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
+      <div class="flex flex-col">
+        <span class="leading-none text-base md:text-lg font-bold">Faculty of Life Sciences</span>
+        <span class="text-[9px] font-medium tracking-wide text-on-surface-variant leading-normal">University of Lagos</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'special_guests' %}">Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'contact' %}">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-3 sm:space-x-4">
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap animate-bounce flex flex-col items-center leading-tight" href="{% url 'registration' %}">
+        <span class="text-xs md:text-label-lg">Register Now</span>
+        <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+      </a>
+      <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none p-2 -mr-2" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Drawer -->
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300" id="mobile-menu">
+    <nav class="flex flex-col px-margin-mobile py-4 space-y-3 max-h-[80vh] overflow-y-auto">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'special_guests' %}">Special Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'contact' %}">Contact</a>
+      <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
+        <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md flex flex-col items-center leading-tight" href="{% url 'registration' %}">
+          <span>Register Now</span>
+          <span class="text-[9px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-grow">
+  <!-- Hero Section -->
+  <section class="relative hero-gradient py-12 md:py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+      <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white/20">info</span>
+    </div>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-on-primary">
+      <span class="inline-block bg-prestige-gold text-heritage-maroon text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">Conference Info</span>
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
+        About the Conference
+      </h1>
+      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Learn about the historical mission, multidisciplinary tracks, and key leadership backing the Faculty of Life Sciences One Health Conference (August 4–6, 2026).
+      </p>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="py-12 md:py-20 bg-surface">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+        <!-- Text -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-1">Bridging the Sciences</span>
+          <h2 class="font-headline-md text-2xl md:text-3xl text-heritage-maroon leading-tight">Our Mission &amp; Purpose</h2>
+          <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">
+            The Inaugural Annual Conference of the Faculty of Life Sciences, University of Lagos targets critical, peer-reviewed scientific discovery addressing the <strong>One Health</strong> agenda. Our theme is: <strong>"One Health: Preparing the Next Generation for a Changing World"</strong>.
+          </p>
+          <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">
+            By analyzing the overlap of human veterinary networks, ecosystem management, and agricultural output safety, we seek to generate high-impact policy guides. Through this initiative, we prepare the upcoming wave of researchers, doctors, and conservationists with the interdisciplinary knowledge necessary to combat global climate shifts and disease spillovers.
+          </p>
+        </div>
+        <!-- Image Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative z-10 bg-clinical-gray rounded-lg overflow-hidden shadow-md aspect-[4/3]">
+            <img src="{% static 'images/Faculty of life science building.png' %}" alt="Faculty Building" class="w-full h-full object-cover"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conference Sub-themes / Tracks -->
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-12">
+        <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-2">Conference Agenda</span>
+        <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Scientific Tracks &amp; Sub-themes</h2>
+        <div class="w-16 h-1 bg-prestige-gold mx-auto mt-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Track 1 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">coronavirus</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Emerging &amp; Re-emerging Infectious Diseases</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Epidemiological surveillance, host-pathogen interactions, vector control, and response to novel disease outbreaks.</p>
+          </div>
+        </div>
+        <!-- Track 2 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">dna</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Non-Communicable Diseases: Monogenic &amp; Complex Traits</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Molecular genetics, heredity analysis, complex biological traits, and modern genomic screening methods.</p>
+          </div>
+        </div>
+        <!-- Track 3 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">pets</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Zoonotic Spillover in Wildlife–Livestock Contact Zones</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Ecological interfaces, animal-to-human transmission barriers, wildlife preservation, and agricultural buffer zones.</p>
+          </div>
+        </div>
+        <!-- Track 4 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">vaccines</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Antimicrobial Resistance at Human–Animal–Environment Interface</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Development of resistance profiles, ecological runoffs, veterinary stewardship, and community hygiene policies.</p>
+          </div>
+        </div>
+        <!-- Track 5 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">eco</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Conservation, Climate Change &amp; Environmental Health</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Ecosystem stability, carbon footprint modeling, biodiversity preservation, and planetary health dynamics.</p>
+          </div>
+        </div>
+        <!-- Track 6 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">query_stats</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Forensics, Integrated Data Systems &amp; Bio-surveillance</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Molecular forensics, integrated data models, bio-surveillance platforms, and security networks.</p>
+          </div>
+        </div>
+        <!-- Track 7 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">pill</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Drug Discovery &amp; Design</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Phyto-medicine, pharmaceutical biochemistry, molecular docking, and drug design frameworks.</p>
+          </div>
+        </div>
+        <!-- Track 8 -->
+        <div class="p-6 border border-clinical-gray rounded-xl hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
+          <div>
+            <div class="text-science-blue mb-3"><span class="material-symbols-outlined text-3xl">security</span></div>
+            <h4 class="font-bold text-base text-science-blue mb-2 leading-snug">Food Security, Biosecurity &amp; Safety</h4>
+            <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Sustainable agriculture, biosecurity barriers, food preservation pathways, and nutritional health safety.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History & Building Section -->
+  <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+    <div class="relative group order-2 md:order-1">
+      <img alt="Faculty of Life Sciences Building, UNILAG" class="relative z-10 w-full h-auto max-h-[300px] md:max-h-[500px] object-cover shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] rounded-md" src="{% static 'images/Faculty of life science building.png' %}" onerror="this.src='https://placehold.co/800x600/800000/white?text=UNILAG+Life+Sciences'"/>
+    </div>
+    <div class="order-1 md:order-2">
+      <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-heritage-maroon mb-4 md:mb-6">Our Story</h2>
+      <div class="space-y-4 text-on-surface-variant font-body-md leading-relaxed text-sm md:text-base">
+        <p>The story of the Faculty of Life Sciences is one of growth, adaptation, and an unwavering commitment to scientific discovery. For over six decades, the biological sciences thrived within the Faculty of Science — a cornerstone of the University of Lagos since its early years.</p>
+        <p>In 2024, recognizing rapid global advances in biotechnology, environmental health, and molecular research, the University took a visionary step. To ensure more focused academic leadership and foster specialized research clusters, the Faculty of Science was restructured, giving birth to the Faculty of Life Sciences, which officially began independent operations on <strong>August 1, 2025</strong>.</p>
+        <p>Led by our pioneering Dean, <strong>Professor Ganiyu O. Oyetibo</strong>, the Faculty is built on the philosophy that science must be <em>"evidence-based and real-life-applicable."</em> We have transitioned into a streamlined, agile faculty that currently oversees <strong>13 specialized programs</strong> across seven departments.</p>
+      </div>
+      <div class="mt-8 grid grid-cols-2 gap-6 border-t border-clinical-gray pt-6">
+        <div>
+          <div class="text-headline-md font-headline-md text-science-blue text-2xl md:text-3xl">13</div>
+          <div class="text-label-sm text-on-surface-variant uppercase tracking-wider text-xs">Specialized Programs</div>
+        </div>
+        <div>
+          <div class="text-headline-md font-headline-md text-science-blue text-2xl md:text-3xl">7</div>
+          <div class="text-label-sm text-on-surface-variant uppercase tracking-wider text-xs">Departments</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dean's Welcome Message -->
+  <section class="py-12 md:py-20 bg-clinical-gray/10 border-y border-clinical-gray/40">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+        
+        <!-- Dean photo -->
+        <div class="lg:col-span-4 flex flex-col items-center">
+          <div class="relative w-48 h-48 md:w-full md:max-w-xs md:aspect-[4/5] rounded-2xl overflow-hidden shadow-lg flex-shrink-0">
+            <img src="{% static 'images/dean_headshot.jpg' %}" alt="Prof. Ganiyu Oladunjoye Oyetibo" class="w-full h-full object-cover object-top" onerror="this.src='{% static 'images/dean_headshot.png' %}'"/>
+          </div>
+          <div class="mt-4 text-center">
+            <span class="inline-block bg-heritage-maroon text-prestige-gold text-xs font-bold px-3 py-1 rounded-full mb-1">Dean, Faculty of Life Sciences</span>
+            <h3 class="font-headline-md text-xl text-heritage-maroon font-bold leading-tight">Prof. Ganiyu O. Oyetibo</h3>
+            <p class="text-on-surface-variant text-xs mt-1">B.Sc., M.Sc., Ph.D. Microbiology</p>
+            <p class="text-on-surface-variant text-xs font-semibold">MIPAN · FJSPS · FAvH</p>
+          </div>
+        </div>
+
+        <!-- Message text -->
+        <div class="lg:col-span-8">
+          <span class="text-label-lg font-bold text-heritage-maroon uppercase tracking-[0.2em] block mb-2 text-xs md:text-sm">Dean's Welcome Message</span>
+          <h2 class="font-headline-lg text-2xl md:text-3xl text-science-blue mb-4">Welcome to Faculty of Life Sciences</h2>
+          <div class="w-12 h-1 bg-prestige-gold mb-6"></div>
+          <div class="space-y-4 text-sm md:text-base text-on-surface-variant leading-relaxed">
+            <p>It is a distinct honor to welcome you to the Faculty of Life Sciences at the University of Lagos. Established in 2024 as a dynamic evolution of the former Faculty of Science, we officially began our journey on August 1, 2025, with a clear mandate: to redefine the boundaries of biological discovery.</p>
+            <p>Today, we are recognized as a hub for excellence—a place where cutting-edge research, transformative teaching, and impactful community service converge. We are committed to advancing understanding of life in all its complexity—from molecules to ecosystems—while preparing our students to become leaders who will shape the future of science and society.</p>
+            <p>Our mission is to provide transformative education, foster groundbreaking research, and apply biological knowledge responsibly to address global challenges in health, biodiversity, and sustainability.</p>
+            <p class="italic border-l-4 border-prestige-gold pl-4 text-on-surface font-medium my-4">
+              "At the Faculty of Life Sciences, we aren't just studying life — guided by our values of integrity, inclusivity, innovation, and service, we strive to cultivate a vibrant academic community where curiosity and collaboration thrive."
+            </p>
+            <p>I welcome all researchers, scientists, and students to this premier Annual Conference. May our exchange of ideas stimulate the breakthroughs required to sustain human and planetary health.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- One Health Pillars -->
+  <section class="bg-clinical-gray/30 py-12 md:py-20">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-12">
+        <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-heritage-maroon mb-3">The "One Health" Concept</h2>
+        <p class="text-on-surface-variant font-body-md max-w-3xl mx-auto text-sm md:text-base px-2">An integrated approach that recognizes the health of people is closely connected to the health of animals and our shared environment.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Human Health -->
+        <div class="bg-white p-6 border border-clinical-gray hover:shadow-lg transition-all duration-300 relative group overflow-hidden rounded-lg">
+          <div class="w-10 h-10 bg-heritage-maroon flex items-center justify-center text-white mb-4 rounded-md">
+            <span class="material-symbols-outlined text-lg">health_and_safety</span>
+          </div>
+          <h3 class="font-headline-md text-lg text-science-blue mb-2">Human Well-being</h3>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Focusing on zoonotic disease prevention, antimicrobial resistance, and urban public health models.</p>
+        </div>
+        <!-- Animal Health -->
+        <div class="bg-white p-6 border border-clinical-gray hover:shadow-lg transition-all duration-300 relative group overflow-hidden rounded-lg">
+          <div class="w-10 h-10 bg-science-blue flex items-center justify-center text-white mb-4 rounded-md">
+            <span class="material-symbols-outlined text-lg">pets</span>
+          </div>
+          <h3 class="font-headline-md text-lg text-science-blue mb-2">Animal Stewardship</h3>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Examining veterinary research, ecosystem boundaries, and wildlife pathobiology corridors.</p>
+        </div>
+        <!-- Environment -->
+        <div class="bg-white p-6 border border-clinical-gray hover:shadow-lg transition-all duration-300 relative group overflow-hidden rounded-lg">
+          <div class="w-10 h-10 bg-prestige-gold flex items-center justify-center text-heritage-maroon mb-4 rounded-md">
+            <span class="material-symbols-outlined text-lg">eco</span>
+          </div>
+          <h3 class="font-headline-md text-lg text-science-blue mb-2">Ecological Integrity</h3>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Understanding microplastics dispersion, chemical toxicity runoffs, and ecosystem balance markers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 w-full mt-auto">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-margin-mobile md:px-margin-desktop py-8 md:py-12 max-w-max-width mx-auto">
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left flex flex-col items-center sm:items-start">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-12 w-auto object-contain mb-2" onerror="this.style.display='none'"/>
+      <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl leading-tight">Faculty of Life Sciences</div>
+      <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm text-center sm:text-left">
+        Faculty of Life Sciences<br/>
+        University of Lagos, Nigeria.<br/>
+        Advancing Science, Impacting Life.
+      </p>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Navigation</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'home' %}">Home</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'about' %}">About</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'speakers' %}">Speakers</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'program' %}">Program</a>
+      </nav>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Resources</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'abstract_submission' %}">Abstracts</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'registration' %}">Register</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'partners_sponsors' %}">Sponsors</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'contact' %}">Contact</a>
+      </nav>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Connect</h4>
+      <div class="flex gap-4 justify-center sm:justify-start">
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
+          <span class="material-symbols-outlined text-body-md text-base">share</span>
+        </a>
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
+          <span class="material-symbols-outlined text-body-md text-base">mail</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-prestige-gold/10 py-4 md:py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">
+    © 2026 Faculty of Life Science · University of Lagos. All Rights Reserved. One Health Conference.
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+        const expanded = !mobileMenu.classList.contains('hidden');
+        menuBtn.setAttribute('aria-expanded', expanded);
+      });
+      document.addEventListener('click', function(event) {
+        if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Active link highlighting
+    var currentPath = window.location.pathname || '/';
+    if (currentPath === '') {
+      currentPath = '/';
+    }
+    
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href === currentPath) {
+        link.classList.add('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.remove('text-on-surface-variant', 'font-medium');
+      } else {
+        link.classList.remove('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.add('text-on-surface-variant', 'font-medium');
+      }
+    });
+  });
+</script>
+</body>
+</html>

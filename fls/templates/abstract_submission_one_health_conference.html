@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Abstract Submission | Faculty of Life Sciences One Health Conference</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts preconnect for better performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .bio-digital-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(30, 66, 140, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #A30000 0%, #6B0000 100%);
+        }
+        @media (max-width: 768px) {
+            .nav-link, button, .footer-link {
+                touch-action: manipulation;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            line-height: 1;
+        }
+        img {
+            background-color: #f3f4f5;
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "science-blue": "#1E428C",
+                    "turquoise-accent": "#00A896",
+                    "navy-dark": "#028090",
+                    "surface-bright": "#f8f9fa",
+                    "on-surface": "#191c1d",
+                    "background": "#f8f9fa",
+                    "clinical-gray": "#E9ECEF",
+                    "surface": "#f8f9fa",
+                    "prestige-gold": "#FFD700",
+                    "heritage-maroon": "#800000",
+                    "primary": "#570000",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "max-width": "1280px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display", "serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "headline-md": ["Playfair Display", "serif"],
+                    "label-lg": ["Inter", "sans-serif"],
+                    "display-lg": ["Playfair Display", "serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-pattern flex flex-col min-h-screen">
+
+<!-- Header -->
+<header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
+  <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-16 md:h-20">
+    <a href="{% url 'home' %}" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight hover:opacity-90">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
+      <div class="flex flex-col">
+        <span class="leading-none text-base md:text-lg font-bold">Faculty of Life Sciences</span>
+        <span class="text-[9px] font-medium tracking-wide text-on-surface-variant leading-normal">University of Lagos</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'special_guests' %}">Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'contact' %}">Contact</a>
+    </nav>
+    <div class="flex items-center space-x-3 sm:space-x-4">
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap animate-bounce flex flex-col items-center leading-tight" href="{% url 'registration' %}">
+        <span class="text-xs md:text-label-lg">Register Now</span>
+        <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+      </a>
+      <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none p-2 -mr-2" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Drawer -->
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300" id="mobile-menu">
+    <nav class="flex flex-col px-margin-mobile py-4 space-y-3 max-h-[80vh] overflow-y-auto">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'special_guests' %}">Special Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'contact' %}">Contact</a>
+      <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
+        <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md flex flex-col items-center leading-tight" href="{% url 'registration' %}">
+          <span>Register Now</span>
+          <span class="text-[9px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-grow">
+  <!-- Hero Section -->
+  <section class="relative hero-gradient py-12 md:py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+      <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white">description</span>
+    </div>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-on-primary">
+      <span class="inline-block bg-turquoise-accent text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">Scientific Papers</span>
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
+        Call for Abstracts
+      </h1>
+      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Submit your original research addressing human, animal, and ecosystems health. Peer-reviewed papers will be featured in the 2026 conference handbook.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content & Form Grid -->
+  <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+      
+      <!-- Left Column: Instructions and Download -->
+      <div class="lg:col-span-6 space-y-8">
+        <!-- Call for Abstracts Flyer Card -->
+        <div class="bg-white border border-clinical-gray rounded-2xl p-5 shadow-sm relative group overflow-hidden">
+          <h3 class="font-bold text-science-blue mb-3 text-sm md:text-base">Official Call for Abstracts Flyer</h3>
+          <div class="relative rounded-lg overflow-hidden border border-clinical-gray shadow-inner">
+            <img src="{% static 'images/call_for_abstract.jpeg' %}" alt="Call for Abstracts Flyer" class="w-full h-auto object-cover cursor-pointer hover:scale-[1.01] transition-transform duration-300" onclick="window.open(this.src)"/>
+          </div>
+          <p class="text-[11px] text-on-surface-variant mt-2 text-center">Click the flyer image to open in full size.</p>
+        </div>
+
+        <!-- Quick Info Notice Card -->
+        <div class="bg-heritage-maroon text-on-primary p-6 md:p-8 rounded-2xl shadow-md space-y-4">
+          <div class="flex items-center gap-2.5 text-prestige-gold">
+            <span class="material-symbols-outlined text-3xl">info</span>
+            <h3 class="font-headline-md text-lg md:text-xl font-bold">Important Notice</h3>
+          </div>
+          <div class="space-y-3.5 text-xs md:text-sm">
+            <div class="flex justify-between border-b border-white/20 pb-2.5">
+              <span class="font-medium opacity-90">Abstract Processing Fee:</span>
+              <span class="font-bold text-prestige-gold">FREE</span>
+            </div>
+            <div class="flex justify-between border-b border-white/20 pb-2.5">
+              <span class="font-medium opacity-90">Submission Deadline:</span>
+              <span class="font-bold text-prestige-gold">June 26, 2026</span>
+            </div>
+            <div class="flex flex-col gap-1 border-b border-white/20 pb-2.5">
+              <span class="font-medium opacity-90">Send your abstracts directly to:</span>
+              <a href="mailto:flsconference@unilag.edu.ng" class="font-bold text-prestige-gold hover:underline text-sm break-all">flsconference@unilag.edu.ng</a>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-medium opacity-90">For Enquiries:</span>
+              <div class="flex flex-col gap-1 font-bold text-prestige-gold text-sm mt-0.5">
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-base">phone</span> 0703 556 9436
+                </span>
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-base">phone</span> 0803 395 4967
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guidelines Card -->
+        <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-science-blue text-3xl">task</span>
+            <h2 class="font-headline-md text-xl md:text-2xl text-science-blue">Technical Guidelines</h2>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-turquoise-accent mt-0.5">check_circle</span>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Word Limit &amp; Keywords</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Structured abstract of a maximum of 300 words and 5 keywords (excluding titles/authors).</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-turquoise-accent mt-0.5">check_circle</span>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Document Format (MS Word Only)</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Files must be saved in Microsoft Word format (.doc or .docx). <strong>No PDF files will be accepted.</strong></p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-turquoise-accent mt-0.5">check_circle</span>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Formatting Standards</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Must be formatted in Times New Roman, 12pt size, with 1.5 line spacing.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-turquoise-accent mt-0.5">check_circle</span>
+              <div>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Theme Selection Note</h4>
+                <p class="text-on-surface-variant text-xs md:text-sm"><strong>Note:</strong> Please indicate your sub-theme of interest clearly during submission.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Download Guidelines Card -->
+        <div class="bg-science-blue text-on-primary p-6 md:p-8 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 shadow-sm">
+          <div class="space-y-1">
+            <h4 class="font-bold text-prestige-gold text-base md:text-lg">Abstract Guidelines PDF</h4>
+            <p class="text-xs opacity-90 leading-relaxed max-w-sm">Download the comprehensive parameters and template details to format your document offline.</p>
+          </div>
+          <a href="{% static 'documents/Abstract Sample_Template.pdf' %}" download class="bg-prestige-gold text-heritage-maroon px-5 py-2.5 rounded-full font-bold hover:bg-white active:scale-95 transition-all text-xs flex items-center gap-2 shadow-sm shrink-0">
+            <span class="material-symbols-outlined text-sm">download</span> Download PDF
+          </a>
+        </div>
+
+        <!-- Thematic Tracks List -->
+        <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 shadow-sm">
+          <h3 class="font-bold text-science-blue mb-4 text-sm md:text-base">Conference Thematic Tracks</h3>
+          <div class="grid grid-cols-1 gap-2.5">
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>1. Emerging and re-emerging infectious diseases</strong>
+            </div>
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>2. Non-communicable diseases: monogenic and complex traits</strong>
+            </div>
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>3. Zoonotic spillover prevention in wildlife–livestock contact zones</strong>
+            </div>
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>4. Antimicrobial resistance at the human–animal–environment interface</strong>
+            </div>
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>5. Conservation, climate change and environmental health</strong>
+            </div>
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>6. Forensics, integrated data systems and Bio-surveillance</strong>
+            </div>
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>7. Drug discovery and design</strong>
+            </div>
+            <div class="p-3 border border-clinical-gray rounded-lg text-xs hover:border-turquoise-accent transition-colors">
+              <strong>8. Food security, biosecurity and safety</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Submission Form -->
+      <div class="lg:col-span-6">
+        <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-10 shadow-sm">
+          <h2 class="font-headline-md text-xl md:text-2xl text-science-blue mb-6">Abstract Submission Form</h2>
+          
+          <form action="{% url 'abstract_submission' %}" method="POST" enctype="multipart/form-data" class="space-y-6" id="abstract-form">
+            {% csrf_token %}
+            {% if abstract_success %}
+              <div class="server-feedback rounded-2xl bg-emerald-50 border border-emerald-200 p-4 text-emerald-900">
+                <strong>Abstract submitted.</strong> Thank you! We have received your submission and will review it shortly.
+              </div>
+            {% endif %}
+            {% if abstract_errors %}
+              <div class="server-feedback rounded-2xl bg-rose-50 border border-rose-200 p-4 text-rose-900">
+                <ul class="list-disc list-inside">{% for error in abstract_errors %}<li>{{ error }}</li>{% endfor %}</ul>
+              </div>
+            {% endif %}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold text-on-surface-variant">Corresponding Author Name</label>
+                <input required name="author_name" value="{{ author_name|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Dr. Jane Doe" type="text" id="authorName"/>
+              </div>
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold text-on-surface-variant">Email Address</label>
+                <input required name="email" value="{{ email|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="jane.doe@unilag.edu.ng" type="email" id="authorEmail"/>
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-on-surface-variant">Institutional Affiliation</label>
+              <input required name="affiliation" value="{{ affiliation|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Department of Cell Biology, University of Lagos" type="text"/>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold text-on-surface-variant">Thematic Track</label>
+                <select required name="track" title="Thematic Track" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="abstractTrack">
+                  <option value="" disabled{% if not track %} selected{% endif %}>Select Track</option>
+                  <option value="1. Emerging and re-emerging infectious diseases"{% if track == "1. Emerging and re-emerging infectious diseases" %} selected{% endif %}>1. Emerging and re-emerging infectious diseases</option>
+                  <option value="2. Non-communicable diseases: monogenic and complex traits"{% if track == "2. Non-communicable diseases: monogenic and complex traits" %} selected{% endif %}>2. Non-communicable diseases: monogenic and complex traits</option>
+                  <option value="3. Zoonotic spillover prevention in wildlife–livestock contact zones"{% if track == "3. Zoonotic spillover prevention in wildlife–livestock contact zones" %} selected{% endif %}>3. Zoonotic spillover prevention in wildlife–livestock contact zones</option>
+                  <option value="4. Antimicrobial resistance at the human–animal–environment interface"{% if track == "4. Antimicrobial resistance at the human–animal–environment interface" %} selected{% endif %}>4. Antimicrobial resistance at the human–animal–environment interface</option>
+                  <option value="5. Conservation, climate change and environmental health"{% if track == "5. Conservation, climate change and environmental health" %} selected{% endif %}>5. Conservation, climate change and environmental health</option>
+                  <option value="6. Forensics, integrated data systems and Bio-surveillance"{% if track == "6. Forensics, integrated data systems and Bio-surveillance" %} selected{% endif %}>6. Forensics, integrated data systems and Bio-surveillance</option>
+                  <option value="7. Drug discovery and design"{% if track == "7. Drug discovery and design" %} selected{% endif %}>7. Drug discovery and design</option>
+                  <option value="8. Food security, biosecurity and safety"{% if track == "8. Food security, biosecurity and safety" %} selected{% endif %}>8. Food security, biosecurity and safety</option>
+                </select>
+              </div>
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold text-on-surface-variant">Presentation Type</label>
+                <select required name="presentation_type" title="Presentation Type" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="presentationType">
+                  <option value="Oral Presentation"{% if presentation_type == "Oral Presentation" %} selected{% endif %}>Oral Presentation</option>
+                  <option value="Poster Presentation"{% if presentation_type == "Poster Presentation" %} selected{% endif %}>Poster Presentation</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-on-surface-variant">Abstract Title</label>
+              <input required name="abstract_title" value="{{ abstract_title|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="e.g. Assessment of Bio-accumulation of Heavy Metals in Lagos Lagoon" type="text" id="abstractTitle"/>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-on-surface-variant">Upload Word Document (.doc, .docx only)</label>
+              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-clinical-gray border-dashed rounded-lg hover:border-turquoise-accent transition-colors bg-clinical-gray/10 group relative cursor-pointer" id="drop-zone">
+                <input required name="document" title="Upload Word Document" type="file" accept=".doc,.docx" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" id="file-upload"/>
+                <div class="space-y-2 text-center pointer-events-none">
+                  <span class="material-symbols-outlined text-science-blue text-4xl group-hover:scale-110 transition-transform">cloud_upload</span>
+                  <div class="flex flex-col text-xs md:text-sm text-on-surface-variant">
+                    <span class="font-bold text-science-blue">Click to upload Word file</span>
+                    <span>or drag and drop here</span>
+                  </div>
+                  <p class="text-[10px] text-on-surface-variant">MS Word (.doc, .docx) up to 10MB</p>
+                </div>
+              </div>
+              <div class="text-xs text-turquoise-accent font-semibold mt-2 hidden" id="file-details"></div>
+            </div>
+
+            <div class="space-y-3 border border-clinical-gray/60 rounded-xl p-4 bg-clinical-gray/10">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input required name="guidelines_read" type="checkbox" id="guidelinesRead" class="mt-0.5 rounded text-science-blue focus:ring-science-blue shrink-0 h-4 w-4"/>
+                <span class="text-xs text-on-surface-variant group-hover:text-on-surface transition-colors leading-relaxed">
+                  I confirm that I have read the <strong class="text-on-surface">Call for Abstracts flier</strong> and my abstract adheres to all the submission guidelines.
+                </span>
+              </label>
+            </div>
+
+            <div class="pt-4 border-t border-clinical-gray/40">
+              <button class="w-full py-3.5 bg-heritage-maroon text-white font-bold text-base rounded-xl shadow-lg hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit" id="abstract-submit-btn">
+                <span class="material-symbols-outlined">send</span>
+                Submit Abstract
+              </button>
+            </div>
+          </form>
+
+          <div id="formMessageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 px-4 py-6">
+            <div class="relative w-full max-w-xl rounded-3xl bg-white p-6 shadow-2xl ring-1 ring-slate-200">
+              <button type="button" id="formMessageModalClose" class="absolute top-4 right-4 text-slate-500 hover:text-slate-900">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+              <div class="flex items-center gap-4 mb-4">
+                <span id="formMessageModalIcon" class="material-symbols-outlined text-4xl text-heritage-maroon">check_circle</span>
+                <div>
+                  <h3 id="formMessageModalTitle" class="text-xl font-bold text-slate-900">Success</h3>
+                  <p id="formMessageModalText" class="text-sm text-slate-600">Your submission was successful.</p>
+                </div>
+              </div>
+              <div class="mt-2">
+                <button type="button" id="formMessageModalAction" class="w-full rounded-2xl bg-heritage-maroon text-white py-3 font-bold hover:bg-primary transition-all">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 w-full mt-auto">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-margin-mobile md:px-margin-desktop py-8 md:py-12 max-w-max-width mx-auto">
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left flex flex-col items-center sm:items-start">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-12 w-auto object-contain mb-2" onerror="this.style.display='none'"/>
+      <div class="text-headline-sm md:text-headline-md font-headline-lg text-prestige-gold text-lg md:text-xl leading-tight">Faculty of Life Sciences</div>
+      <p class="text-label-sm opacity-80 leading-relaxed text-xs md:text-sm text-center sm:text-left">
+        Faculty of Life Sciences<br/>
+        University of Lagos, Nigeria.<br/>
+        Advancing Science, Impacting Life.
+      </p>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Navigation</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'home' %}">Home</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'about' %}">About</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'speakers' %}">Speakers</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'program' %}">Program</a>
+      </nav>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Resources</h4>
+      <nav class="flex flex-col gap-2">
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'abstract_submission' %}">Abstracts</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'registration' %}">Register</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'partners_sponsors' %}">Sponsors</a>
+        <a class="text-on-primary/80 hover:text-prestige-gold transition-transform hover:translate-x-1 cursor-pointer text-label-sm footer-link" href="{% url 'contact' %}">Contact</a>
+      </nav>
+    </div>
+    <div class="space-y-3 md:space-y-4 text-center sm:text-left">
+      <h4 class="font-headline-md text-headline-sm text-prestige-gold text-base md:text-lg">Connect</h4>
+      <div class="flex gap-4 justify-center sm:justify-start">
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
+          <span class="material-symbols-outlined text-body-md text-base">share</span>
+        </a>
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="javascript:void(0)">
+          <span class="material-symbols-outlined text-body-md text-base">mail</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-prestige-gold/10 py-4 md:py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">
+    © 2026 Faculty of Life Science · University of Lagos. All Rights Reserved. One Health Conference.
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+        const expanded = !mobileMenu.classList.contains('hidden');
+        menuBtn.setAttribute('aria-expanded', expanded);
+      });
+      document.addEventListener('click', function(event) {
+        if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Active link highlighting
+    var currentPath = window.location.pathname || '/';
+    if (currentPath === '') {
+      currentPath = '/';
+    }
+    
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href === currentPath) {
+        link.classList.add('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.remove('text-on-surface-variant', 'font-medium');
+      } else {
+        link.classList.remove('text-heritage-maroon', 'border-b-2', 'border-prestige-gold', 'font-bold');
+        link.classList.add('text-on-surface-variant', 'font-medium');
+      }
+    });
+
+    // File input selection display
+    const fileInput = document.getElementById('file-upload');
+    const fileDetails = document.getElementById('file-details');
+    if (fileInput && fileDetails) {
+      fileInput.addEventListener('change', function(e) {
+        if (fileInput.files && fileInput.files.length > 0) {
+          const file = fileInput.files[0];
+          const ext = file.name.split('.').pop().toLowerCase();
+          if (ext !== 'doc' && ext !== 'docx') {
+            showModal('Invalid File', 'Invalid file format. Please upload a Word Document (.doc or .docx) only.', false);
+            fileInput.value = '';
+            fileDetails.classList.add('hidden');
+            return;
+          }
+          fileDetails.textContent = 'Selected: ' + file.name + ' (' + Math.round(file.size / 1024) + ' KB)';
+          fileDetails.classList.remove('hidden');
+        }
+      });
+    }
+
+    const formMessageModal = document.getElementById('formMessageModal');
+    const formMessageModalTitle = document.getElementById('formMessageModalTitle');
+    const formMessageModalText = document.getElementById('formMessageModalText');
+    const formMessageModalIcon = document.getElementById('formMessageModalIcon');
+    const formMessageModalClose = document.getElementById('formMessageModalClose');
+    const formMessageModalAction = document.getElementById('formMessageModalAction');
+
+    function showModal(title, message, isSuccess) {
+      if (!formMessageModal) return;
+      formMessageModalTitle.textContent = title;
+      formMessageModalText.textContent = message;
+      formMessageModalIcon.textContent = isSuccess ? 'check_circle' : 'error_outline';
+      formMessageModalIcon.classList.toggle('text-emerald-600', isSuccess);
+      formMessageModalIcon.classList.toggle('text-rose-600', !isSuccess);
+      formMessageModal.classList.remove('hidden');
+    }
+
+    function hideModal() {
+      if (!formMessageModal) return;
+      formMessageModal.classList.add('hidden');
+    }
+
+    if (formMessageModalClose) {
+      formMessageModalClose.addEventListener('click', hideModal);
+    }
+    if (formMessageModalAction) {
+      formMessageModalAction.addEventListener('click', hideModal);
+    }
+    if (formMessageModal) {
+      formMessageModal.addEventListener('click', function(event) {
+        if (event.target === formMessageModal) {
+          hideModal();
+        }
+      });
+    }
+
+    document.querySelectorAll('.server-feedback').forEach(element => {
+      element.style.display = 'none';
+    });
+
+    {% if abstract_success %}
+      showModal('Abstract Submitted', 'Thank you! Your abstract has been received. We will review it shortly and contact you by email.', true);
+    {% elif abstract_errors %}
+      showModal('Submission Error', '{{ abstract_errors|join:"\\n"|escapejs }}', false);
+    {% endif %}
+  });
+</script>
+</body>
+</html>

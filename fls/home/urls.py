@@ -1,6 +1,33 @@
-from.views import *
 from django.urls import path
+from .views import (
+    about,
+    abstract_submission,
+    contact,
+    home,
+    partners_sponsors,
+    program,
+    registration,
+    speakers,
+    special_guests,
+)
 
 urlpatterns = [
-    path("", home, name="home")
+    path("", home, name="home"),
+    path("index.html", home),
+    path("about/", about, name="about"),
+    path("about_one_health_conference.html", about),
+    path("abstract/", abstract_submission, name="abstract_submission"),
+    path("abstract_submission_one_health_conference.html", abstract_submission),
+    path("contact/", contact, name="contact"),
+    path("contact_one_health_conference.html", contact),
+    path("registration/", registration, name="registration"),
+    path("registration_one_health_conference.html", registration),
+    path("speakers/", speakers, name="speakers"),
+    path("speakers_one_health_conference.html", speakers),
+    path("special-guests/", special_guests, name="special_guests"),
+    path("special_guests_one_health_conference.html", special_guests),
+    path("partners/", partners_sponsors, name="partners_sponsors"),
+    path("partners_sponsors.html", partners_sponsors),
+    path("program/", program, name="program"),
+    path("program_one_health_conference.html", program),
 ]
