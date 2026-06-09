@@ -155,15 +155,15 @@
     </div>
   </section>
 
-  <!-- Bento Grid Pricing Tiers -->
+  <!-- Grid Pricing Tiers -->
   <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
     <div class="text-center mb-12">
       <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-2">Registration Rates</span>
-      <h2 class="font-headline-lg text-2xl md:text-headline-lg text-science-blue">Bento Pricing Tiers</h2>
+      <h2 class="font-headline-lg text-2xl md:text-headline-lg text-science-blue">Pricing Tiers</h2>
       <div class="w-12 h-1 bg-turquoise-accent mx-auto mt-3"></div>
     </div>
 
-    <!-- Bento Grid Container -->
+    <!--  Grid Container -->
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-6xl mx-auto">
       
       <!-- Undergraduate (₦5,000) - 5 columns -->
@@ -230,7 +230,7 @@
         </div>
       </div>
 
-      <!-- International ( ₦100,000 ) - 6 columns -->
+      <!-- International ( $100 ) - 6 columns -->
       <div class="md:col-span-6 bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
         <div class="absolute top-0 right-0 w-24 h-24 bg-science-blue/5 rounded-bl-full flex items-center justify-end p-4">
           <span class="material-symbols-outlined text-science-blue text-3xl group-hover:translate-y-[-2px] transition-transform">public</span>
@@ -244,31 +244,10 @@
         </div>
         <div>
           <div class="flex items-baseline gap-1 mb-5">
-            <span class="text-3xl md:text-4xl font-extrabold text-science-blue">₦100,000</span>
+            <span class="text-3xl md:text-4xl font-extrabold text-science-blue">$100</span>
             <span class="text-xs text-on-surface-variant">/ International Rate</span>
           </div>
-          <button onclick="selectTier('International Delegate', '₦100,000')" class="w-full py-3 bg-science-blue text-white font-bold rounded-xl hover:bg-science-blue/90 active:scale-95 transition-all text-sm">Register as International</button>
-        </div>
-      </div>
-
-      <!-- Virtual Attendee - 6 columns -->
-      <div class="md:col-span-6 bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-        <div class="absolute top-0 right-0 w-24 h-24 bg-heritage-maroon/5 rounded-bl-full flex items-center justify-end p-4">
-          <span class="material-symbols-outlined text-heritage-maroon text-3xl group-hover:rotate-12 transition-transform">devices</span>
-        </div>
-        <div>
-          <span class="text-xs font-bold text-heritage-maroon uppercase tracking-widest block mb-2">Remote Access</span>
-          <h3 class="font-headline-md text-xl md:text-2xl text-science-blue mb-3">Virtual Attendee</h3>
-          <p class="text-on-surface-variant text-xs md:text-sm mb-6 leading-relaxed">
-            Register as a virtual attendee to access live stream plenaries, virtual breakout sessions, and receive a digital certificate of participation. Please contact the official email for virtual credentials.
-          </p>
-        </div>
-        <div>
-          <div class="flex items-baseline gap-1 mb-5">
-            <span class="text-2xl md:text-3xl font-extrabold text-science-blue">Contact Email</span>
-            <span class="text-xs text-on-surface-variant">/ Remote Access</span>
-          </div>
-          <a href="mailto:flsconference@unilag.edu.ng" class="w-full py-3 bg-heritage-maroon text-on-primary font-bold rounded-xl hover:bg-primary active:scale-95 transition-all text-sm block text-center">Contact to Register</a>
+          <button onclick="selectTier('International Delegate', '$100')" class="w-full py-3 bg-science-blue text-white font-bold rounded-xl hover:bg-science-blue/90 active:scale-95 transition-all text-sm">Register as International</button>
         </div>
       </div>
 
@@ -383,16 +362,28 @@
       <!-- Registration Form (Right Side) -->
       <div class="lg:col-span-7 bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-clinical-gray">
         <h2 class="font-headline-md text-xl md:text-2xl text-science-blue mb-6">Delegate Registration Form</h2>
-        <form action="https://formspree.io/f/mnqeedye" method="POST" class="space-y-6" id="registration-form">
+        <form action="https://formspree.io/f/xaqzjlge" method="POST" class="space-y-6" id="registration-form">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="space-y-1.5">
-              <label class="text-xs font-bold text-on-surface-variant">Full Name</label>
-              <input required name="name" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Dr. Jane Doe" type="text" id="fullName"/>
+              <label class="text-xs font-bold text-on-surface-variant">Title</label>
+              <select required name="title" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="titleSelect">
+                <option value="Mr">Mr.</option>
+                <option value="Mrs">Mrs.</option>
+                <option value="Ms">Ms.</option>
+                <option value="Miss">Miss</option>
+                <option value="Dr">Dr.</option>
+                <option value="Prof">Prof.</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div class="space-y-1.5">
-              <label class="text-xs font-bold text-on-surface-variant">Email Address</label>
-              <input required name="email" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="jane.doe@unilag.edu.ng" type="email" id="email"/>
+              <label class="text-xs font-bold text-on-surface-variant">Full Name</label>
+              <input required name="name" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Jane Doe" type="text" id="fullName"/>
             </div>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-on-surface-variant">Email Address</label>
+            <input required name="email" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="jane.doe@unilag.edu.ng" type="email" id="email"/>
           </div>
           <div class="space-y-1.5">
             <label class="text-xs font-bold text-on-surface-variant">Primary Institution / Affiliation</label>
@@ -406,7 +397,7 @@
                 <option value="Undergraduate Student Pass">Undergraduate Student Pass (₦5,000)</option>
                 <option value="Postgraduate Delegate">Postgraduate Delegate (₦15,000)</option>
                 <option value="Academic & Regular Delegate" selected>Academic &amp; Regular Delegate (₦30,000)</option>
-                <option value="International Delegate">International Delegate (₦100,000)</option>
+                <option value="International Delegate">International Delegate ($100)</option>
               </select>
             </div>
             <div class="space-y-1.5">
@@ -424,26 +415,15 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="space-y-1.5">
-              <label class="text-xs font-bold text-on-surface-variant">Attendance Mode</label>
-              <select required name="attendance_mode" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="attendanceModeSelect">
-                <option value="In-Person" selected>In-Person Attendance</option>
-                <option value="Virtual">Virtual Attendance</option>
-              </select>
-            </div>
-            <div class="space-y-1.5">
-              <label class="text-xs font-bold text-on-surface-variant">Dietary Requirements</label>
-              <select required name="has_dietary" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="dietarySelect" onchange="toggleDietarySpecify(this.value)">
-                <option value="No" selected>No Special Requirements</option>
-                <option value="Yes">Yes, I have dietary requirements</option>
-              </select>
-            </div>
-          </div>
-
           <div class="space-y-1.5 hidden" id="dietarySpecifyGroup">
             <label class="text-xs font-bold text-on-surface-variant">Specify Dietary Requirements</label>
             <input name="dietary_requirements" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="e.g. Vegetarian, Halal, Allergies" type="text" id="dietaryRequirements"/>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-on-surface-variant">Payment Reference / Receipt Note</label>
+            <input name="payment_reference" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-heritage-maroon/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Bank transfer reference or receipt details" type="text" id="paymentReference"/>
+            <p class="text-[10px] text-on-surface-variant">If you have a receipt file, please email it to <a class="underline" href="mailto:flsconference@unilag.edu.ng">flsconference@unilag.edu.ng</a> after submitting. Direct file upload is not permitted by the current form backend.</p>
           </div>
 
           <div class="space-y-3">
