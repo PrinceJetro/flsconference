@@ -16,7 +16,7 @@
             background-size: 32px 32px;
         }
         .hero-gradient {
-            background: linear-gradient(135deg, #1E428C 0%, #00235e 100%);
+            background: linear-gradient(135deg, #A30000 0%, #6B0000 100%);
         }
         @media (max-width: 768px) {
             .nav-link, button, .footer-link {
@@ -95,13 +95,17 @@
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="index.html">Home</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="about_one_health_conference.html">About</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="special_guests_one_health_conference.html">Guests</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="program_one_health_conference.html">Program</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="abstract_submission_one_health_conference.html">Submit</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="partners_sponsors.html">Sponsors</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="contact_one_health_conference.html">Contact</a>
     </nav>
     <div class="flex items-center space-x-3 sm:space-x-4">
-      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-6 md:py-2.5 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md text-label-sm md:text-label-lg whitespace-nowrap animate-bounce" href="registration_one_health_conference.html">Register Now</a>
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap animate-bounce flex flex-col items-center leading-tight" href="registration_one_health_conference.html">
+        <span class="text-xs md:text-label-lg">Register Now</span>
+        <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+      </a>
       <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none p-2 -mr-2" id="mobile-menu-btn" aria-label="Toggle Menu">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
@@ -114,12 +118,16 @@
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="index.html">Home</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="about_one_health_conference.html">About</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="speakers_one_health_conference.html">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="special_guests_one_health_conference.html">Special Guests</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="program_one_health_conference.html">Program</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="abstract_submission_one_health_conference.html">Submit</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="partners_sponsors.html">Sponsors</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="contact_one_health_conference.html">Contact</a>
       <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
-        <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md" href="registration_one_health_conference.html">Register Now</a>
+        <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md flex flex-col items-center leading-tight" href="registration_one_health_conference.html">
+          <span>Register Now</span>
+          <span class="text-[9px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+        </a>
       </div>
     </nav>
   </div>
@@ -339,11 +347,25 @@
               <div class="text-xs text-turquoise-accent font-semibold mt-2 hidden" id="file-details"></div>
             </div>
 
+            <div class="space-y-3 border border-clinical-gray/60 rounded-xl p-4 bg-clinical-gray/10">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input required type="checkbox" id="guidelinesRead" class="mt-0.5 rounded text-science-blue focus:ring-science-blue shrink-0 h-4 w-4"/>
+                <span class="text-xs text-on-surface-variant group-hover:text-on-surface transition-colors leading-relaxed">
+                  I confirm that I have read the <strong class="text-on-surface">Call for Abstracts flier</strong> and my abstract adheres to all the submission guidelines.
+                </span>
+              </label>
+            </div>
+
             <div class="pt-4 border-t border-clinical-gray/40">
-              <button class="w-full py-3.5 bg-turquoise-accent text-white font-bold text-base rounded-xl shadow-lg hover:bg-turquoise-accent/90 active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+              <button class="w-full py-3.5 bg-heritage-maroon text-white font-bold text-base rounded-xl shadow-lg hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit" id="abstract-submit-btn">
                 <span class="material-symbols-outlined">send</span>
-                Submit Paper Proposal
+                Submit Abstract
               </button>
+              <div id="abstract-success" class="hidden text-center py-6">
+                <span class="material-symbols-outlined text-5xl text-heritage-maroon mb-3 block">check_circle</span>
+                <h3 class="font-bold text-lg text-heritage-maroon mb-2">Abstract Submitted!</h3>
+                <p class="text-on-surface-variant text-sm">Thank you! Your abstract has been received. We will be in touch shortly via <strong>flsconference@unilag.edu.ng</strong>.</p>
+              </div>
             </div>
           </form>
         </div>
@@ -457,15 +479,41 @@
       });
     }
 
-    // Submission logic
+    // Abstract form — Formspree AJAX submission
+    // NOTE: Replace 'YOUR_ABSTRACT_FORM_ID' with your Formspree form ID from formspree.io
+    const ABSTRACT_FORMSPREE_ID = 'YOUR_ABSTRACT_FORM_ID';
     const form = document.getElementById('abstract-form');
+    const submitBtn = document.getElementById('abstract-submit-btn');
+    const successDiv = document.getElementById('abstract-success');
+
     if (form) {
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const author = document.getElementById('authorName').value;
-        const title = document.getElementById('abstractTitle').value;
-        // alert('Thank you, ' + author + '! Your abstract entitled "' + title + '" has been submitted for peer review.');
-        alert('Thank you, But Abstract submission has not been open yet');
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">autorenew</span> Submitting...';
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch('https://formspree.io/f/' + ABSTRACT_FORMSPREE_ID, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.querySelectorAll('input, select, textarea, button').forEach(el => el.style.display = 'none');
+            successDiv.classList.remove('hidden');
+          } else {
+            const data = await response.json();
+            throw new Error(data.error || 'Submission failed');
+          }
+        } catch (err) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span class="material-symbols-outlined">send</span> Submit Abstract';
+          alert('Submission error. Please try again or email flsconference@unilag.edu.ng directly.');
+        }
       });
     }
   });

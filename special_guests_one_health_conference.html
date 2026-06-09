@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Partners & Sponsors | Faculty of Life Sciences One Health Conference</title>
+<title>Special Guests | Faculty of Life Sciences One Health Conference</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts preconnect for better performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        .bio-digital-pattern {
-            background-image: radial-gradient(circle at 2px 2px, #E9ECEF 1px, transparent 0);
+        .bio-digital-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(30, 66, 140, 0.05) 1px, transparent 0);
             background-size: 32px 32px;
         }
         .hero-gradient {
@@ -33,7 +32,7 @@
         img {
             background-color: #f3f4f5;
         }
-    </style>
+</style>
 <script>
       tailwind.config = {
         darkMode: "class",
@@ -41,7 +40,8 @@
           extend: {
             "colors": {
                     "science-blue": "#1E428C",
-                    "surface-container-highest": "#e1e3e4",
+                    "turquoise-accent": "#00A896",
+                    "navy-dark": "#028090",
                     "surface-bright": "#f8f9fa",
                     "on-surface": "#191c1d",
                     "background": "#f8f9fa",
@@ -61,7 +61,6 @@
             "spacing": {
                     "margin-desktop": "80px",
                     "gutter": "24px",
-                    "base": "8px",
                     "max-width": "1280px",
                     "margin-mobile": "16px"
             },
@@ -79,7 +78,7 @@
       }
     </script>
 </head>
-<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-pattern flex flex-col min-h-screen">
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-bg flex flex-col min-h-screen">
 
 <!-- Header -->
 <header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
@@ -102,7 +101,7 @@
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="contact_one_health_conference.html">Contact</a>
     </nav>
     <div class="flex items-center space-x-3 sm:space-x-4">
-      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap flex flex-col items-center leading-tight" href="registration_one_health_conference.html">
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap animate-bounce flex flex-col items-center leading-tight" href="registration_one_health_conference.html">
         <span class="text-xs md:text-label-lg">Register Now</span>
         <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
       </a>
@@ -113,7 +112,7 @@
   </div>
   
   <!-- Mobile Menu Drawer -->
-  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300 ease-in-out" id="mobile-menu">
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300" id="mobile-menu">
     <nav class="flex flex-col px-margin-mobile py-4 space-y-3 max-h-[80vh] overflow-y-auto">
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="index.html">Home</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="about_one_health_conference.html">About</a>
@@ -121,7 +120,7 @@
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="special_guests_one_health_conference.html">Special Guests</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="program_one_health_conference.html">Program</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="abstract_submission_one_health_conference.html">Submit</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="partners_sponsors.html">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font:text-heritage-maroon transition-colors text-body-md py-2" href="partners_sponsors.html">Sponsors</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="contact_one_health_conference.html">Contact</a>
       <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
         <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md flex flex-col items-center leading-tight" href="registration_one_health_conference.html">
@@ -135,133 +134,151 @@
 
 <main class="flex-grow">
   <!-- Hero Section -->
-  <section class="relative hero-gradient py-12 md:py-24 overflow-hidden">
-    <div class="absolute inset-0 opacity-5 md:opacity-10 pointer-events-none flex justify-center items-center">
-      <span class="material-symbols-outlined text-[150px] md:text-[400px]" style="font-variation-settings: 'FILL' 1;">handshake</span>
+  <section class="relative hero-gradient py-12 md:py-24 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
+      <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white">stars</span>
     </div>
-    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-      <span class="text-prestige-gold font-label-lg tracking-widest uppercase mb-3 md:mb-4 block text-xs md:text-sm">Synergy for Impact</span>
-      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 md:mb-6 break-words">Partners &amp; Sponsors</h1>
-      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl leading-relaxed text-sm md:text-base">
-        Sustaining global health and biological research excellence through strategic collaboration and industry synergy at the Faculty of Life Sciences One Health Conference (August 4–6, 2026).
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-on-primary">
+      <span class="inline-block bg-prestige-gold text-heritage-maroon text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">Distinguished Guests</span>
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
+        Special Guests of Honor
+      </h1>
+      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+        Meet the distinguished personalities gracing the inaugural Faculty of Life Sciences One Health Conference, August 4–6, 2026.
       </p>
     </div>
   </section>
 
-  <!-- Platinum Sponsors -->
-  <section class="py-12 md:py-20 bg-white">
-    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-      <div class="text-center mb-12">
-        <span class="text-heritage-maroon font-bold text-xs uppercase tracking-[0.2em] block mb-2">Tier 1 Partners</span>
-        <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Platinum Sponsors</h2>
-        <div class="w-16 h-1 bg-prestige-gold mx-auto mt-4"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="p-8 border border-clinical-gray rounded-xl flex flex-col items-center justify-center text-center bg-white shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-48 h-24 bg-clinical-gray/40 flex items-center justify-center rounded-lg mb-6">
-            <img src="./images/lagos ministry of health logo.png" alt="Lagos State Ministry of Health" class="max-w-full max-h-full object-contain p-2"/>
+  <!-- Special Guests Grid -->
+  <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="text-center mb-12">
+      <span class="text-heritage-maroon font-bold text-xs uppercase tracking-[0.2em] block mb-2">Honored Attendees</span>
+      <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Special Guests</h2>
+      <div class="w-12 h-1 bg-prestige-gold mx-auto mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Alhaji Kayode Musa -->
+      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+        <div class="absolute -top-3 right-6 bg-prestige-gold text-heritage-maroon text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
+        <div class="pt-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-20 h-20 rounded-full bg-prestige-gold/10 border-2 border-prestige-gold flex items-center justify-center text-heritage-maroon flex-shrink-0">
+              <span class="material-symbols-outlined text-4xl">business_center</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Alhaji Kayode Musa</h3>
+              <p class="text-on-surface-variant text-xs font-semibold mt-1">CEO &amp; Founder</p>
+            </div>
           </div>
-          <h4 class="font-bold text-lg text-heritage-maroon">Lagos State Ministry of Health</h4>
-          <p class="text-on-surface-variant text-sm mt-2">Strategic partner in public health policy, healthcare infrastructure, and One Health integration across Lagos State.</p>
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
+          <p class="text-on-surface-variant text-sm font-bold mb-4">YKM Products Ltd</p>
+          
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
+            Alhaji Kayode Musa is the visionary behind YKM Products Ltd, a leading enterprise in Nigeria's manufacturing sector. As a special guest and potential sponsor of the conference, his presence underscores the critical role of industry-academia partnerships in advancing One Health research and innovation.
+          </p>
         </div>
-        <div class="p-8 border border-clinical-gray rounded-xl flex flex-col items-center justify-center text-center bg-white shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-48 h-24 bg-clinical-gray/40 flex items-center justify-center rounded-lg mb-6">
-            <span class="text-heritage-maroon font-bold text-lg text-center leading-tight">LASEPA</span>
-          </div>
-          <h4 class="font-bold text-lg text-heritage-maroon">Lagos State Environmental Protection Agency</h4>
-          <p class="text-on-surface-variant text-sm mt-2">Spearheading environmental monitoring, pollution control, and ecosystem preservation initiatives across Lagos State.</p>
+        <div class="mt-auto pt-4 border-t border-clinical-gray">
+          <span class="text-[10px] bg-prestige-gold/10 text-heritage-maroon px-2 py-1 rounded font-bold uppercase tracking-wider">Special Guest &amp; Potential Sponsor</span>
         </div>
       </div>
+
+      <!-- Prof. Ayodele Atsenuya -->
+      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+        <div class="absolute -top-3 right-6 bg-science-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
+        <div class="pt-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-20 h-20 rounded-full bg-science-blue/10 border-2 border-science-blue flex items-center justify-center text-science-blue flex-shrink-0">
+              <span class="material-symbols-outlined text-4xl">school</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Prof. Ayodele Atsenuwa</h3>
+              <p class="text-on-surface-variant text-xs font-semibold mt-1">Deputy Vice-Chancellor</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
+          <p class="text-on-surface-variant text-sm font-bold mb-4">University of Lagos</p>
+          
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
+            Prof. Ayodele Atsenuwa serves as the Deputy Vice-Chancellor (Academic &amp; Research) at the University of Lagos, providing strategic leadership for the university's academic and research enterprise.
+          </p>
+        </div>
+        <div class="mt-auto pt-4 border-t border-clinical-gray">
+          <span class="text-[10px] bg-science-blue/10 text-science-blue px-2 py-1 rounded font-bold uppercase tracking-wider">DVC (Academic &amp; Research), UNILAG</span>
+        </div>
+      </div>
+
+      <!-- Prof. Lucian Chukwu -->
+      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+        <div class="absolute -top-3 right-6 bg-science-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
+        <div class="pt-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-20 h-20 rounded-full bg-science-blue/10 border-2 border-science-blue flex items-center justify-center text-science-blue flex-shrink-0">
+              <span class="material-symbols-outlined text-4xl">analytics</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Prof. Lucian Chukwu</h3>
+              <p class="text-on-surface-variant text-xs font-semibold mt-1">Director</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
+          <p class="text-on-surface-variant text-sm font-bold mb-4">Directorate of Academic Planning, UNILAG</p>
+          
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
+            Prof. Lucian Chukwu oversees academic planning and quality assurance at the University of Lagos, ensuring the highest standards in curriculum development and research output.
+          </p>
+        </div>
+        <div class="mt-auto pt-4 border-t border-clinical-gray">
+          <span class="text-[10px] bg-science-blue/10 text-science-blue px-2 py-1 rounded font-bold uppercase tracking-wider">Director, Academic Planning</span>
+        </div>
+      </div>
+
+      <!-- Prof. Elijah Oyeyemi -->
+      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+        <div class="absolute -top-3 right-6 bg-science-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
+        <div class="pt-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-20 h-20 rounded-full bg-science-blue/10 border-2 border-science-blue flex items-center justify-center text-science-blue flex-shrink-0">
+              <span class="material-symbols-outlined text-4xl">science</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Prof. Elijah Oyeyemi</h3>
+              <p class="text-on-surface-variant text-xs font-semibold mt-1">Dean, Faculty of Science, UNILAG</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
+          <p class="text-on-surface-variant text-sm font-bold mb-4">Faculty of Science, University of Lagos</p>
+          
+          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
+          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
+            Prof. Elijah Oyeyemi serves as the Dean of the Faculty of Science at the University of Lagos, championing interdisciplinary research and scientific excellence across the university.
+          </p>
+        </div>
+        <div class="mt-auto pt-4 border-t border-clinical-gray">
+          <span class="text-[10px] bg-science-blue/10 text-science-blue px-2 py-1 rounded font-bold uppercase tracking-wider">Dean, Faculty of Science</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Gold & Silver Sponsors -->
-  <section class="py-12 md:py-20 bg-clinical-gray/20 border-y border-clinical-gray">
-    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-      <div class="text-center mb-12">
-        <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Gold &amp; Silver Supporters</h2>
-        <div class="w-16 h-1 bg-prestige-gold mx-auto mt-4"></div>
-      </div>
-      
-      <!-- Gold -->
-      <div class="mb-12">
-        <h3 class="text-center text-xs font-bold text-science-blue mb-6 tracking-[0.3em] uppercase">Gold Sponsors</h3>
-        <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-          <div class="w-48 h-24 bg-white border border-clinical-gray flex items-center justify-center rounded-lg shadow-sm hover:shadow-md transition-all p-3">
-            <span class="text-science-blue font-bold text-sm text-center leading-tight">Lagos State Ministry of Water &amp; Environmental Resources</span>
-          </div>
-          <div class="w-48 h-24 bg-white border border-clinical-gray flex items-center justify-center rounded-lg shadow-sm hover:shadow-md transition-all p-3">
-            <span class="text-science-blue font-bold text-sm text-center leading-tight">YKM Products Ltd</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Silver -->
-      <div>
-        <h3 class="text-center text-xs font-bold text-on-surface-variant mb-6 tracking-[0.3em] uppercase">Silver Sponsors</h3>
-        <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-          <div class="w-36 h-16 bg-white border border-clinical-gray flex items-center justify-center rounded-lg shadow-sm hover:shadow-md transition-all">
-            <span class="text-on-surface-variant font-bold text-xs">SILVER SPONSOR</span>
-          </div>
-          <div class="w-36 h-16 bg-white border border-clinical-gray flex items-center justify-center rounded-lg shadow-sm hover:shadow-md transition-all">
-            <span class="text-on-surface-variant font-bold text-xs">SILVER SPONSOR</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Academic & Institutional Collaborators -->
-  <section class="py-12 md:py-20 bg-white">
-    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-      <div class="text-center mb-12">
-        <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Collaborating Institutions</h2>
-        <p class="text-on-surface-variant text-sm mt-2 max-w-xl mx-auto">Providing scientific guidance, ethical oversight, and academic partnership.</p>
-        <div class="w-16 h-1 bg-prestige-gold mx-auto mt-4"></div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto items-center opacity-75">
-        <div class="p-4 border border-clinical-gray/40 rounded-lg flex flex-col items-center justify-center bg-white hover:opacity-100 transition-opacity">
-          <span class="material-symbols-outlined text-4xl text-heritage-maroon mb-2">school</span>
-          <span class="font-bold text-sm text-center text-on-surface">University of Lagos</span>
-        </div>
-        <div class="p-4 border border-clinical-gray/40 rounded-lg flex flex-col items-center justify-center bg-white hover:opacity-100 transition-opacity">
-          <img src="./images/lagos ministry of health logo.png" alt="Lagos State Ministry of Health" class="h-10 object-contain mb-2"/>
-          <span class="font-bold text-sm text-center text-on-surface">Lagos State Ministry of Health</span>
-        </div>
-        <div class="p-4 border border-clinical-gray/40 rounded-lg flex flex-col items-center justify-center bg-white hover:opacity-100 transition-opacity">
-          <span class="material-symbols-outlined text-4xl text-turquoise-accent mb-2">water_drop</span>
-          <span class="font-bold text-xs text-center text-on-surface">Lagos Ministry of Water &amp; Environmental Resources</span>
-        </div>
-        <div class="p-4 border border-clinical-gray/40 rounded-lg flex flex-col items-center justify-center bg-white hover:opacity-100 transition-opacity">
-          <span class="material-symbols-outlined text-4xl text-science-blue mb-2">eco</span>
-          <span class="font-bold text-sm text-center text-on-surface">LASEPA</span>
-        </div>
-        <div class="p-4 border border-clinical-gray/40 rounded-lg flex flex-col items-center justify-center bg-white hover:opacity-100 transition-opacity">
-          <span class="material-symbols-outlined text-4xl text-heritage-maroon mb-2">public</span>
-          <span class="font-bold text-sm text-center text-on-surface">African Center of Excellence</span>
-        </div>
-        <div class="p-4 border border-clinical-gray/40 rounded-lg flex flex-col items-center justify-center bg-white hover:opacity-100 transition-opacity">
-          <span class="material-symbols-outlined text-4xl text-science-blue mb-2">science</span>
-          <span class="font-bold text-sm text-center text-on-surface">NCDC Nigeria</span>
-        </div>
-        <div class="p-4 border border-clinical-gray/40 rounded-lg flex flex-col items-center justify-center bg-white hover:opacity-100 transition-opacity">
-          <span class="material-symbols-outlined text-4xl text-heritage-maroon mb-2">business</span>
-          <span class="font-bold text-sm text-center text-on-surface">YKM Products Ltd</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action: Become a Sponsor -->
-  <section class="bg-heritage-maroon text-on-primary py-16 text-center relative overflow-hidden">
+  <!-- Note about more guests -->
+  <section class="bg-heritage-maroon text-on-primary py-12 text-center relative overflow-hidden">
     <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
-      <span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+      <span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'FILL' 1;">groups</span>
     </div>
     <div class="max-w-2xl mx-auto px-margin-mobile relative z-10">
-      <h2 class="font-headline-lg text-2xl md:text-3xl text-prestige-gold mb-4">Partner with FLS One Health 2026</h2>
-      <p class="text-sm md:text-base opacity-95 mb-8 leading-relaxed">
-        Align your brand with pioneering translational research, health innovations, and academic leadership. Download our sponsorship prospectus to learn about customized booths, logo placements, and networking packages.
+      <h2 class="font-headline-lg text-2xl md:text-3xl text-prestige-gold mb-4">More Guests to Be Announced</h2>
+      <p class="text-sm md:text-base opacity-95 mb-6 leading-relaxed">
+        Additional special guests, dignitaries, and international delegates will be announced in the lead-up to the conference. Stay tuned for updates.
       </p>
+      <a class="inline-flex items-center gap-2 bg-prestige-gold text-heritage-maroon px-8 py-3 rounded-full font-bold text-sm hover:bg-white transition-all shadow-md" href="contact_one_health_conference.html">
+        <span class="material-symbols-outlined text-sm">mail</span> Get in Touch
+      </a>
     </div>
   </section>
 </main>
@@ -302,14 +319,14 @@
         <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
           <span class="material-symbols-outlined text-body-md text-base">share</span>
         </a>
-        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="#">
+        <a class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-prestige-gold/30 flex items-center justify-center hover:bg-prestige-gold hover:text-heritage-maroon transition-all" href="mailto:flsconference@unilag.edu.ng">
           <span class="material-symbols-outlined text-body-md text-base">mail</span>
         </a>
       </div>
     </div>
   </div>
   <div class="border-t border-prestige-gold/10 py-4 md:py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">
-    © 2026 Faculty of Life Science · University of Lagos. All Rights Reserved. One Health Conference.
+    &copy; 2026 Faculty of Life Science &middot; University of Lagos. All Rights Reserved. One Health Conference.
   </div>
 </footer>
 
