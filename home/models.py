@@ -41,6 +41,7 @@ class Registration(models.Model):
     pref_plenary = models.BooleanField(default=True)
     pref_poster = models.BooleanField(default=True)
     pref_dinner = models.BooleanField(default=False)
+    technical_preferences = models.TextField(blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -94,3 +95,46 @@ class AbstractSubmission(models.Model):
 
     def __str__(self):
         return f"{self.abstract_title} by {self.author_name}"
+
+
+class SpecialGuest(models.Model):
+    ROLE_CHOICES = [
+        ('Chairman', 'Chairman'),
+        ('Special Guest of Honor', 'Special Guest of Honor'),
+        ('Royal Father', 'Royal Father'),
+        ('Special Guest', 'Special Guest'),
+    ]
+    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, help_text="e.g. CEO, Commissioner, Professor")
+    affiliation = models.CharField(max_length=255, blank=True, help_text="e.g. Lagos State, LASEPA")
+    role = models.CharField(max_length=50, choices=ROLE_CHOICES)
+    bio = models.TextField(blank=True, help_text="Full bio / information for the read more page")
+    image_url = models.CharField(max_length=255, blank=True, help_text="Static image path (e.g. images/folawiyo.png) or full URL")
+    image = models.ImageField(upload_to='guests/', blank=True, null=True, help_text="Upload custom image")
+    order = models.IntegerField(default=0, help_text="Display order")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.role})"
+
+
+class Speaker(models.Model):
+    ROLE_CHOICES = [
+        ('Keynote Speaker', 'Keynote Speaker'),
+        ('Chairman of the Day', 'Chairman of the Day'),
+        ('Plenary Speaker', 'Plenary Speaker'),
+        ('Invited Speaker', 'Invited Speaker'),
+    ]
+    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, help_text="e.g. Professor of Human Genetics, Managing Director")
+    affiliation = models.CharField(max_length=255, blank=True, help_text="e.g. University of Lagos")
+    role = models.CharField(max_length=50, choices=ROLE_CHOICES)
+    bio = models.TextField(blank=True, help_text="Full bio / information for the read more page")
+    image_url = models.CharField(max_length=255, blank=True, help_text="Static image path or full URL")
+    image = models.ImageField(upload_to='speakers/', blank=True, null=True, help_text="Upload custom image")
+    topic = models.CharField(max_length=255, blank=True, help_text="Presentation topic / research area")
+    order = models.IntegerField(default=0, help_text="Display order")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.role})"

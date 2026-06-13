@@ -150,121 +150,206 @@
     </div>
   </section>
 
-  <!-- Special Guests Grid -->
+  <!-- Special Guests Sections -->
   <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-    <div class="text-center mb-12">
-      <span class="text-heritage-maroon font-bold text-xs uppercase tracking-[0.2em] block mb-2">Honored Attendees</span>
-      <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Special Guests</h2>
-      <div class="w-12 h-1 bg-prestige-gold mx-auto mt-3"></div>
+    
+    <!-- 1. CHAIRMAN SECTION -->
+    <div class="mb-16">
+      <div class="text-center mb-8">
+        <span class="text-heritage-maroon font-bold text-xs uppercase tracking-[0.2em] block mb-2">Conference Leadership</span>
+        <h2 class="font-headline-lg text-2xl md:text-3xl text-heritage-maroon">The Chairman</h2>
+        <div class="w-12 h-1 bg-prestige-gold mx-auto mt-3"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto justify-center">
+        <div></div> <!-- Spacing column for centering on md -->
+        {% for guest in guests %}
+          {% if guest.role == 'Chairman' %}
+            <div class="bg-white border border-clinical-gray rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div class="aspect-square w-full bg-slate-100 relative overflow-hidden flex items-center justify-center">
+                {% if guest.image %}
+                  <img src="{{ guest.image.url }}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% elif guest.image_url %}
+                  <img src="{% static guest.image_url %}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% else %}
+                  <div class="w-full h-full flex flex-col items-center justify-center bg-science-blue/5 text-science-blue">
+                    <span class="material-symbols-outlined text-6xl">person</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="font-headline-md text-xl text-heritage-maroon font-bold leading-tight mb-2">{{ guest.name }}</h3>
+                  <p class="text-on-surface-variant text-sm font-semibold mb-1">{{ guest.title }}</p>
+                  {% if guest.affiliation %}
+                    <p class="text-slate-500 text-xs">{{ guest.affiliation }}</p>
+                  {% endif %}
+                </div>
+                <div class="mt-6 pt-4 border-t border-clinical-gray/40">
+                  <a href="{% url 'guest_detail' guest.id %}" class="w-full py-2.5 bg-science-blue hover:bg-science-blue/90 text-white font-bold text-xs rounded-xl shadow-sm hover:shadow active:scale-95 transition-all text-center block">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% empty %}
+          <div class="col-span-1 text-center text-on-surface-variant italic">Chairman to be announced.</div>
+        {% endfor %}
+        <div></div> <!-- Spacing column -->
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-      <!-- Alhaji Kayode Musa -->
-      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-        <div class="absolute -top-3 right-6 bg-prestige-gold text-heritage-maroon text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
-        <div class="pt-6">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-20 h-20 rounded-full bg-prestige-gold/10 border-2 border-prestige-gold flex items-center justify-center text-heritage-maroon flex-shrink-0">
-              <span class="material-symbols-outlined text-4xl">business_center</span>
-            </div>
-            <div>
-              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Alhaji Kayode Musa</h3>
-              <p class="text-on-surface-variant text-xs font-semibold mt-1">CEO &amp; Founder</p>
-            </div>
-          </div>
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
-          <p class="text-on-surface-variant text-sm font-bold mb-4">YKM Products Ltd</p>
-          
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
-          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
-            Alhaji Kayode Musa is the visionary behind YKM Products Ltd, a leading enterprise in Nigeria's manufacturing sector. As a special guest and potential sponsor of the conference, his presence underscores the critical role of industry-academia partnerships in advancing One Health research and innovation.
-          </p>
-        </div>
-        <div class="mt-auto pt-4 border-t border-clinical-gray">
-          <span class="text-[10px] bg-prestige-gold/10 text-heritage-maroon px-2 py-1 rounded font-bold uppercase tracking-wider">Special Guest &amp; Potential Sponsor</span>
-        </div>
+    <!-- 2. SPECIAL GUEST OF HONOR SECTION -->
+    <div class="mb-16">
+      <div class="text-center mb-8">
+        <span class="text-heritage-maroon font-bold text-xs uppercase tracking-[0.2em] block mb-2">Distinguished Dignitary</span>
+        <h2 class="font-headline-lg text-2xl md:text-3xl text-heritage-maroon">Special Guest of Honor</h2>
+        <div class="w-12 h-1 bg-prestige-gold mx-auto mt-3"></div>
       </div>
-
-      <!-- Prof. Ayodele Atsenuya -->
-      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-        <div class="absolute -top-3 right-6 bg-science-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
-        <div class="pt-6">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-20 h-20 rounded-full bg-science-blue/10 border-2 border-science-blue flex items-center justify-center text-science-blue flex-shrink-0">
-              <span class="material-symbols-outlined text-4xl">school</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div></div> <!-- Spacing column -->
+        
+        <!-- Render confirmed Special Guest of Honor or show TBC -->
+        {% for guest in guests %}
+          {% if guest.role == 'Special Guest of Honor' %}
+            <div class="bg-white border border-clinical-gray rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div class="aspect-square w-full bg-slate-100 relative overflow-hidden flex items-center justify-center">
+                {% if guest.image %}
+                  <img src="{{ guest.image.url }}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% elif guest.image_url %}
+                  <img src="{% static guest.image_url %}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% else %}
+                  <div class="w-full h-full flex flex-col items-center justify-center bg-science-blue/5 text-science-blue">
+                    <span class="material-symbols-outlined text-6xl">person</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="font-headline-md text-xl text-heritage-maroon font-bold leading-tight mb-2">{{ guest.name }}</h3>
+                  <p class="text-on-surface-variant text-sm font-semibold mb-1">{{ guest.title }}</p>
+                  {% if guest.affiliation %}
+                    <p class="text-slate-500 text-xs">{{ guest.affiliation }}</p>
+                  {% endif %}
+                </div>
+                <div class="mt-6 pt-4 border-t border-clinical-gray/40">
+                  <a href="{% url 'guest_detail' guest.id %}" class="w-full py-2.5 bg-science-blue hover:bg-science-blue/90 text-white font-bold text-xs rounded-xl shadow-sm hover:shadow active:scale-95 transition-all text-center block">
+                    Read More
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Prof. Ayodele Atsenuwa</h3>
-              <p class="text-on-surface-variant text-xs font-semibold mt-1">Deputy Vice-Chancellor</p>
-            </div>
+          {% endif %}
+        {% endfor %}
+        
+        <div class="bg-white border border-dashed border-clinical-gray rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm min-h-[300px]">
+          <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
+            <span class="material-symbols-outlined text-3xl">hourglass_empty</span>
           </div>
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
-          <p class="text-on-surface-variant text-sm font-bold mb-4">University of Lagos</p>
-          
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
-          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
-            Prof. Ayodele Atsenuwa serves as the Deputy Vice-Chancellor (Academic &amp; Research) at the University of Lagos, providing strategic leadership for the university's academic and research enterprise.
-          </p>
+          <h3 class="font-headline-md text-lg text-slate-700 font-bold mb-2">Special Guest of Honor</h3>
+          <p class="text-xs text-on-surface-variant">To Be Confirmed &amp; Announced Soon</p>
         </div>
-        <div class="mt-auto pt-4 border-t border-clinical-gray">
-          <span class="text-[10px] bg-science-blue/10 text-science-blue px-2 py-1 rounded font-bold uppercase tracking-wider">DVC (Academic &amp; Research), UNILAG</span>
-        </div>
-      </div>
 
-      <!-- Prof. Lucian Chukwu -->
-      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-        <div class="absolute -top-3 right-6 bg-science-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
-        <div class="pt-6">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-20 h-20 rounded-full bg-science-blue/10 border-2 border-science-blue flex items-center justify-center text-science-blue flex-shrink-0">
-              <span class="material-symbols-outlined text-4xl">analytics</span>
-            </div>
-            <div>
-              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Prof. Lucian Chukwu</h3>
-              <p class="text-on-surface-variant text-xs font-semibold mt-1">Director</p>
-            </div>
-          </div>
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
-          <p class="text-on-surface-variant text-sm font-bold mb-4">Directorate of Academic Planning, UNILAG</p>
-          
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
-          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
-            Prof. Lucian Chukwu oversees academic planning and quality assurance at the University of Lagos, ensuring the highest standards in curriculum development and research output.
-          </p>
-        </div>
-        <div class="mt-auto pt-4 border-t border-clinical-gray">
-          <span class="text-[10px] bg-science-blue/10 text-science-blue px-2 py-1 rounded font-bold uppercase tracking-wider">Director, Academic Planning</span>
-        </div>
+        <div></div> <!-- Spacing column -->
       </div>
-
-      <!-- Prof. Elijah Oyeyemi -->
-      <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-        <div class="absolute -top-3 right-6 bg-science-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm">Special Guest</div>
-        <div class="pt-6">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-20 h-20 rounded-full bg-science-blue/10 border-2 border-science-blue flex items-center justify-center text-science-blue flex-shrink-0">
-              <span class="material-symbols-outlined text-4xl">science</span>
-            </div>
-            <div>
-              <h3 class="font-headline-md text-xl md:text-2xl text-heritage-maroon leading-tight">Prof. Elijah Oyeyemi</h3>
-              <p class="text-on-surface-variant text-xs font-semibold mt-1">Dean, Faculty of Science, UNILAG</p>
-            </div>
-          </div>
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">Affiliation</span>
-          <p class="text-on-surface-variant text-sm font-bold mb-4">Faculty of Science, University of Lagos</p>
-          
-          <span class="text-xs font-bold text-science-blue uppercase tracking-widest block mb-2">About</span>
-          <p class="text-on-surface-variant text-xs md:text-sm leading-relaxed mb-4">
-            Prof. Elijah Oyeyemi serves as the Dean of the Faculty of Science at the University of Lagos, championing interdisciplinary research and scientific excellence across the university.
-          </p>
-        </div>
-        <div class="mt-auto pt-4 border-t border-clinical-gray">
-          <span class="text-[10px] bg-science-blue/10 text-science-blue px-2 py-1 rounded font-bold uppercase tracking-wider">Dean, Faculty of Science</span>
-        </div>
-      </div>
-
     </div>
+
+    <!-- 3. ROYAL FATHERS OF THE DAY -->
+    <div class="mb-16">
+      <div class="text-center mb-8">
+        <span class="text-heritage-maroon font-bold text-xs uppercase tracking-[0.2em] block mb-2">Royal Guardians</span>
+        <h2 class="font-headline-lg text-2xl md:text-3xl text-heritage-maroon">Royal Fathers of the Day</h2>
+        <div class="w-12 h-1 bg-prestige-gold mx-auto mt-3"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div></div> <!-- Spacing column -->
+        
+        {% for guest in guests %}
+          {% if guest.role == 'Royal Father' %}
+            <div class="bg-white border border-clinical-gray rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div class="aspect-square w-full bg-slate-100 relative overflow-hidden flex items-center justify-center">
+                {% if guest.image %}
+                  <img src="{{ guest.image.url }}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% elif guest.image_url %}
+                  <img src="{% static guest.image_url %}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% else %}
+                  <div class="w-full h-full flex flex-col items-center justify-center bg-science-blue/5 text-science-blue">
+                    <span class="material-symbols-outlined text-6xl">person</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="font-headline-md text-xl text-heritage-maroon font-bold leading-tight mb-2">{{ guest.name }}</h3>
+                  <p class="text-on-surface-variant text-sm font-semibold mb-1">{{ guest.title }}</p>
+                  {% if guest.affiliation %}
+                    <p class="text-slate-500 text-xs">{{ guest.affiliation }}</p>
+                  {% endif %}
+                </div>
+                <div class="mt-6 pt-4 border-t border-clinical-gray/40">
+                  <a href="{% url 'guest_detail' guest.id %}" class="w-full py-2.5 bg-science-blue hover:bg-science-blue/90 text-white font-bold text-xs rounded-xl shadow-sm hover:shadow active:scale-95 transition-all text-center block">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="bg-white border border-dashed border-clinical-gray rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm min-h-[300px]">
+          <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
+            <span class="material-symbols-outlined text-3xl">gavel</span>
+          </div>
+          <h3 class="font-headline-md text-lg text-slate-700 font-bold mb-2">Royal Fathers</h3>
+          <p class="text-xs text-on-surface-variant">To Be Announced</p>
+        </div>
+        
+        <div></div> <!-- Spacing column -->
+      </div>
+    </div>
+
+    <!-- 4. SPECIAL GUESTS SECTION -->
+    <div>
+      <div class="text-center mb-8">
+        <span class="text-heritage-maroon font-bold text-xs uppercase tracking-[0.2em] block mb-2">Honored Attendees</span>
+        <h2 class="font-headline-lg text-2xl md:text-3xl text-heritage-maroon">Special Guests</h2>
+        <div class="w-12 h-1 bg-prestige-gold mx-auto mt-3"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {% for guest in guests %}
+          {% if guest.role == 'Special Guest' %}
+            <div class="bg-white border border-clinical-gray rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+              <div class="aspect-square w-full bg-slate-100 relative overflow-hidden flex items-center justify-center">
+                {% if guest.image %}
+                  <img src="{{ guest.image.url }}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% elif guest.image_url %}
+                  <img src="{% static guest.image_url %}" alt="{{ guest.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                {% else %}
+                  <div class="w-full h-full flex flex-col items-center justify-center bg-science-blue/5 text-science-blue">
+                    <span class="material-symbols-outlined text-6xl">person</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="font-headline-md text-xl text-heritage-maroon font-bold leading-tight mb-2">{{ guest.name }}</h3>
+                  <p class="text-on-surface-variant text-sm font-semibold mb-1">{{ guest.title }}</p>
+                  {% if guest.affiliation %}
+                    <p class="text-slate-500 text-xs">{{ guest.affiliation }}</p>
+                  {% endif %}
+                </div>
+                <div class="mt-6 pt-4 border-t border-clinical-gray/40">
+                  <a href="{% url 'guest_detail' guest.id %}" class="w-full py-2.5 bg-science-blue hover:bg-science-blue/90 text-white font-bold text-xs rounded-xl shadow-sm hover:shadow active:scale-95 transition-all text-center block">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
   </section>
 
   <!-- Note about more guests -->

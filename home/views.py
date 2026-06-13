@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-from .models import Registration, ContactMessage, AbstractSubmission
+from django.contrib.admin.views.decorators import staff_member_required
+from .models import Registration, ContactMessage, AbstractSubmission, SpecialGuest, Speaker
 
 
 def home(request):
@@ -120,9 +121,11 @@ def registration(request):
         dietary_requirements = request.POST.get('dietary_requirements', '').strip()
         payment_reference = request.POST.get('payment_reference', '').strip()
         receipt = request.FILES.get('receipt')
-        pref_plenary = request.POST.get('pref_plenary') is not None
-        pref_poster = request.POST.get('pref_poster') is not None
-        pref_dinner = request.POST.get('pref_dinner') is not None
+        pref_list = request.POST.getlist('technical_preferences')
+        technical_preferences = ", ".join(pref_list)
+        pref_plenary = any(p in technical_preferences for p in ['Morning Plenary Presentations', 'Morning plenary sessions'])
+        pref_poster = any(p in technical_preferences for p in ['Scientific Poster Session', 'Scientific poster sessions'])
+        pref_dinner = any(p in technical_preferences for p in ['Closing Gala Dinner'])
 
         errors = []
         if not title:
@@ -155,6 +158,7 @@ def registration(request):
                     pref_plenary=pref_plenary,
                     pref_poster=pref_poster,
                     pref_dinner=pref_dinner,
+                    technical_preferences=technical_preferences,
                 )
                 context['registration_success'] = True
             except Exception as exc:
@@ -169,9 +173,7 @@ def registration(request):
                     'track': track,
                     'dietary_requirements': dietary_requirements,
                     'payment_reference': payment_reference,
-                    'pref_plenary': pref_plenary,
-                    'pref_poster': pref_poster,
-                    'pref_dinner': pref_dinner,
+                    'technical_preferences': pref_list,
                 })
         else:
             context['registration_errors'] = errors
@@ -184,9 +186,7 @@ def registration(request):
                 'track': track,
                 'dietary_requirements': dietary_requirements,
                 'payment_reference': payment_reference,
-                'pref_plenary': pref_plenary,
-                'pref_poster': pref_poster,
-                'pref_dinner': pref_dinner,
+                'technical_preferences': pref_list,
             })
 
     if request.headers.get('Accept', '').find('application/json') != -1:
@@ -198,11 +198,23 @@ def registration(request):
 
 
 def speakers(request):
-    return render(request, 'speakers_one_health_conference.html')
+    speakers = Speaker.objects.all().order_by('order', 'id')
+    return render(request, 'speakers_one_health_conference.html', {'speakers': speakers})
+
+
+def speaker_detail(request, speaker_id):
+    speaker = get_object_or_404(Speaker, id=speaker_id)
+    return render(request, 'speaker_detail.html', {'speaker': speaker})
 
 
 def special_guests(request):
-    return render(request, 'special_guests_one_health_conference.html')
+    guests = SpecialGuest.objects.all().order_by('order', 'id')
+    return render(request, 'special_guests_one_health_conference.html', {'guests': guests})
+
+
+def guest_detail(request, guest_id):
+    guest = get_object_or_404(SpecialGuest, id=guest_id)
+    return render(request, 'guest_detail.html', {'guest': guest})
 
 
 def partners_sponsors(request):
@@ -211,3 +223,14 @@ def partners_sponsors(request):
 
 def program(request):
     return render(request, 'program_one_health_conference.html')
+
+
+@staff_member_required
+def registered_participants(request):
+    registrations = Registration.objects.all().order_by('-created_at')
+    for reg in registrations:
+        if reg.technical_preferences:
+            reg.pref_list = [p.strip() for p in reg.technical_preferences.split(',') if p.strip()]
+        else:
+            reg.pref_list = []
+    return render(request, 'registered_participants.html', {'registrations': registrations})

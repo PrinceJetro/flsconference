@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>{{ guest.name }} | Faculty of Life Sciences One Health Conference</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .bio-texture {
+        background-image: radial-gradient(circle at 2px 2px, rgba(30, 66, 140, 0.05) 1px, transparent 0);
+        background-size: 32px 32px;
+    }
+    .hero-gradient {
+        background: linear-gradient(135deg, #800000 0%, #570000 100%);
+    }
+    .text-gradient {
+        background: linear-gradient(135deg, #1E428C 0%, #00A896 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "science-blue": "#1E428C",
+          "turquoise-accent": "#00A896",
+          "navy-dark": "#028090",
+          "surface-bright": "#f8f9fa",
+          "on-surface": "#191c1d",
+          "background": "#f8f9fa",
+          "clinical-gray": "#E9ECEF",
+          "surface": "#f8f9fa",
+          "prestige-gold": "#FFD700",
+          "heritage-maroon": "#800000",
+          "primary": "#570000",
+          "on-primary": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin-desktop": "80px",
+          "gutter": "24px",
+          "max-width": "1280px",
+          "margin-mobile": "16px"
+        },
+        "fontFamily": {
+          "headline-lg": ["Playfair Display", "serif"],
+          "body-md": ["Inter", "sans-serif"],
+          "headline-md": ["Playfair Display", "serif"],
+          "label-lg": ["Inter", "sans-serif"],
+          "display-lg": ["Playfair Display", "serif"],
+          "label-sm": ["Inter", "sans-serif"],
+          "body-lg": ["Inter", "sans-serif"]
+        }
+      },
+    },
+  }
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-texture flex flex-col min-h-screen">
+
+<!-- Header -->
+<header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
+  <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-16 md:h-20">
+    <a href="{% url 'home' %}" class="flex items-center gap-3 text-body-lg md:text-headline-md font-headline-lg font-bold text-heritage-maroon dark:text-prestige-gold tracking-tight hover:opacity-90">
+      <img src="{% static 'images/unilag logo.png' %}" alt="UNILAG Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.style.display='none'"/>
+      <div class="flex flex-col">
+        <span class="leading-none text-base md:text-lg font-bold">Faculty of Life Sciences</span>
+        <span class="text-[9px] font-medium tracking-wide text-on-surface-variant leading-normal">University of Lagos</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'home' %}">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'about' %}">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'speakers' %}">Speakers</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-bold text-heritage-maroon border-b-2 border-prestige-gold" href="{% url 'special_guests' %}">Guests</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'program' %}">Program</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'abstract_submission' %}">Submit</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'partners_sponsors' %}">Sponsors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-grow py-8 md:py-16 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop w-full">
+  <!-- Back Button -->
+  <div class="mb-8">
+    <a href="{% url 'special_guests' %}" class="inline-flex items-center gap-2 text-science-blue font-bold hover:underline text-sm">
+      <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Guests List
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 max-w-5xl mx-auto">
+    <!-- Left Sidebar: Guest Image & Key Stats -->
+    <div class="lg:col-span-4 space-y-6">
+      <div class="bg-white border border-clinical-gray rounded-2xl overflow-hidden shadow-sm p-4">
+        <div class="aspect-square w-full bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center relative shadow-inner">
+          {% if guest.image %}
+            <img src="{{ guest.image.url }}" alt="{{ guest.name }}" class="w-full h-full object-cover"/>
+          {% elif guest.image_url %}
+            <img src="{% static guest.image_url %}" alt="{{ guest.name }}" class="w-full h-full object-cover"/>
+          {% else %}
+            <div class="w-full h-full flex flex-col items-center justify-center bg-science-blue/5 text-science-blue">
+              <span class="material-symbols-outlined text-8xl">person</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="bg-white border border-clinical-gray rounded-2xl shadow-sm p-6 space-y-4">
+        <div>
+          <span class="text-slate-400 text-[10px] font-bold uppercase tracking-wider block mb-1">Conference Role</span>
+          <span class="inline-block px-3 py-1 bg-heritage-maroon/10 text-heritage-maroon rounded-full text-xs font-bold uppercase tracking-wide">
+            {{ guest.role }}
+          </span>
+        </div>
+        
+        {% if guest.affiliation %}
+        <div>
+          <span class="text-slate-400 text-[10px] font-bold uppercase tracking-wider block mb-1">Affiliation</span>
+          <p class="text-sm font-bold text-slate-800">{{ guest.affiliation }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Right Column: Full Biography & Details -->
+    <div class="lg:col-span-8 bg-white border border-clinical-gray rounded-2xl shadow-sm p-6 md:p-10 flex flex-col justify-between">
+      <div>
+        <span class="text-turquoise-accent font-bold text-xs uppercase tracking-[0.2em] block mb-2">{{ guest.role }} Profile</span>
+        <h1 class="font-headline-lg text-3xl md:text-4xl text-science-blue leading-tight mb-3">{{ guest.name }}</h1>
+        <p class="text-on-surface-variant font-bold text-base md:text-lg mb-6 leading-relaxed">{{ guest.title }}</p>
+        
+        <div class="w-full h-[1px] bg-clinical-gray mb-8"></div>
+
+        <h3 class="font-headline-md text-xl text-heritage-maroon mb-4">Biography &amp; Profile Details</h3>
+        <div class="text-slate-700 text-sm md:text-base leading-relaxed space-y-4 font-body-md whitespace-pre-line">
+          {{ guest.bio }}
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-clinical-gray/40 mt-10 flex justify-between items-center text-xs text-on-surface-variant">
+        <span>Joined: {{ guest.created_at|date:"M d, Y" }}</span>
+        <a href="{% url 'special_guests' %}" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2 rounded-lg transition-all active:scale-95 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Back
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-heritage-maroon dark:bg-primary text-on-primary border-t border-prestige-gold/20 w-full mt-auto">
+  <div class="border-t border-prestige-gold/10 py-6 px-margin-mobile md:px-margin-desktop text-center text-label-sm opacity-60 text-xs md:text-sm">
+    &copy; 2026 Faculty of Life Science &middot; University of Lagos. All Rights Reserved. One Health Conference.
+  </div>
+</footer>
+
+</body>
+</html>

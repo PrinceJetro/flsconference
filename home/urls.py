@@ -9,6 +9,9 @@ from .views import (
     registration,
     speakers,
     special_guests,
+    registered_participants,
+    guest_detail,
+    speaker_detail,
 )
 
 urlpatterns = [
@@ -30,4 +33,7 @@ urlpatterns = [
     path("partners_sponsors.html", partners_sponsors),
     path("program/", program, name="program"),
     path("program_one_health_conference.html", program),
+    path("registered-participants/", registered_participants, name="registered_participants"),
+    path("special-guests/<int:guest_id>/", guest_detail, name="guest_detail"),
+    path("speakers/<int:speaker_id>/", speaker_detail, name="speaker_detail"),
 ]

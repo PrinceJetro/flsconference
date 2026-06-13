@@ -304,8 +304,8 @@
                 <span class="material-symbols-outlined">diversity_3</span>
               </div>
               <div>
-                <h4 class="font-bold text-on-surface text-sm md:text-base">Networking &amp; Mentorship <span class="text-turquoise-accent text-[10px] font-bold uppercase tracking-wider ml-1">PG Exclusive</span></h4>
-                <p class="text-on-surface-variant text-xs md:text-sm">Postgraduate delegates gain access to dedicated networking sessions and mentorship opportunities with senior academics and industry leaders.</p>
+                <h4 class="font-bold text-on-surface text-sm md:text-base">Networking &amp; Mentorship <span class="text-turquoise-accent text-[10px] font-bold uppercase tracking-wider ml-1">Student Exclusive</span></h4>
+                <p class="text-on-surface-variant text-xs md:text-sm">Student delegates (both undergraduate and postgraduate) gain access to dedicated networking sessions and mentorship opportunities with senior academics and industry leaders.</p>
               </div>
             </div>
           </div>
@@ -451,15 +451,35 @@
             <p class="text-xs font-bold text-on-surface-variant">Technical Session Preferences (Select all that apply)</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
-                <input name="pref_plenary" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
-                <span class="text-xs md:text-sm">Morning Plenary Presentations</span>
+                <input name="technical_preferences" value="Opening keynote address" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
+                <span class="text-xs md:text-sm">Opening keynote address</span>
               </label>
               <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
-                <input name="pref_poster" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
-                <span class="text-xs md:text-sm">Scientific Poster Session</span>
+                <input name="technical_preferences" value="Morning plenary sessions" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
+                <span class="text-xs md:text-sm">Morning plenary sessions</span>
               </label>
               <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
-                <input name="pref_dinner" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+                <input name="technical_preferences" value="Afternoon plenary sessions" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
+                <span class="text-xs md:text-sm">Afternoon plenary sessions</span>
+              </label>
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="technical_preferences" value="Oral scientific sessions" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
+                <span class="text-xs md:text-sm">Oral scientific sessions</span>
+              </label>
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="technical_preferences" value="Scientific poster sessions" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox" checked/>
+                <span class="text-xs md:text-sm">Scientific poster sessions</span>
+              </label>
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="technical_preferences" value="Mentoring" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+                <span class="text-xs md:text-sm">Mentoring</span>
+              </label>
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="technical_preferences" value="Networking" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
+                <span class="text-xs md:text-sm">Networking</span>
+              </label>
+              <label class="flex items-center gap-3 p-2.5 border border-clinical-gray rounded-lg hover:border-heritage-maroon cursor-pointer transition-colors">
+                <input name="technical_preferences" value="Closing Gala Dinner" class="rounded text-heritage-maroon focus:ring-heritage-maroon" type="checkbox"/>
                 <span class="text-xs md:text-sm">Closing Gala Dinner</span>
               </label>
             </div>
