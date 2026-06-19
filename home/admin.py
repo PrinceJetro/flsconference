@@ -3,8 +3,8 @@ from .models import Registration, ContactMessage, AbstractSubmission, SpecialGue
 
 @admin.register(Registration)
 class RegistrationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'category', 'track', 'created_at')
-    search_fields = ('name', 'email', 'institution', 'payment_reference')
+    list_display = ('name', 'email', 'phone_number', 'category', 'track', 'created_at')
+    search_fields = ('name', 'email', 'phone_number', 'institution', 'payment_reference')
     list_filter = ('category', 'track')
 
 

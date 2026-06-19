@@ -115,6 +115,7 @@ def registration(request):
         title = request.POST.get('title', '').strip()
         name = request.POST.get('name', '').strip()
         email = request.POST.get('email', '').strip()
+        phone_number = request.POST.get('phone_number', '').strip()
         institution = request.POST.get('institution', '').strip()
         category = request.POST.get('category', '').strip()
         track = request.POST.get('track', '').strip()
@@ -134,6 +135,8 @@ def registration(request):
             errors.append('Your full name is required.')
         if not email:
             errors.append('A valid email address is required.')
+        if not phone_number:
+            errors.append('Your phone number is required.')
         if not institution:
             errors.append('Your institution or affiliation is required.')
         if not category:
@@ -149,6 +152,7 @@ def registration(request):
                     title=title,
                     name=name,
                     email=email,
+                    phone_number=phone_number,
                     institution=institution,
                     category=category,
                     track=track,
@@ -168,6 +172,7 @@ def registration(request):
                     'title': title,
                     'name': name,
                     'email': email,
+                    'phone_number': phone_number,
                     'institution': institution,
                     'category': category,
                     'track': track,
@@ -181,6 +186,7 @@ def registration(request):
                 'title': title,
                 'name': name,
                 'email': email,
+                'phone_number': phone_number,
                 'institution': institution,
                 'category': category,
                 'track': track,

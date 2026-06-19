@@ -134,6 +134,7 @@
           <tr class="hover:bg-slate-50 transition-colors participant-row" 
               data-name="{{ reg.name|lower }}" 
               data-email="{{ reg.email|lower }}" 
+              data-phone="{{ reg.phone_number|lower }}"
               data-inst="{{ reg.institution|lower }}"
               data-category="{{ reg.category }}">
             <!-- Name & Institution -->
@@ -144,6 +145,9 @@
             <!-- Contact -->
             <td class="p-4 md:p-5">
               <div class="font-medium text-slate-800">{{ reg.email }}</div>
+              {% if reg.phone_number %}
+                <div class="text-xs text-on-surface-variant mt-1">{{ reg.phone_number }}</div>
+              {% endif %}
             </td>
             <!-- Category & Track -->
             <td class="p-4 md:p-5">
@@ -262,10 +266,11 @@
     rows.forEach(row => {
       const name = row.getAttribute('data-name');
       const email = row.getAttribute('data-email');
+      const phone = row.getAttribute('data-phone') || '';
       const inst = row.getAttribute('data-inst');
       const category = row.getAttribute('data-category');
 
-      const matchesSearch = name.includes(searchVal) || email.includes(searchVal) || inst.includes(searchVal);
+      const matchesSearch = name.includes(searchVal) || email.includes(searchVal) || phone.includes(searchVal) || inst.includes(searchVal);
       const matchesCategory = categoryVal === "" || category === categoryVal;
 
       if (matchesSearch && matchesCategory) {
