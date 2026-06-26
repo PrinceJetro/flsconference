@@ -105,7 +105,7 @@
     <div class="flex items-center space-x-3 sm:space-x-4">
       <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap animate-bounce flex flex-col items-center leading-tight" href="{% url 'registration' %}">
         <span class="text-xs md:text-label-lg">Register Now</span>
-        <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+        <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Ends July 15</span>
       </a>
       <button class="md:hidden text-on-surface-variant hover:text-heritage-maroon focus:outline-none p-2 -mr-2" id="mobile-menu-btn" aria-label="Toggle Menu">
         <span class="material-symbols-outlined text-2xl">menu</span>
@@ -127,7 +127,7 @@
       <div class="flex flex-col gap-3 pt-4 mt-2 border-t border-clinical-gray/20">
         <a class="bg-heritage-maroon text-on-primary px-6 py-3 rounded-full font-bold hover:bg-primary transition-all shadow-md text-center text-body-md flex flex-col items-center leading-tight" href="{% url 'registration' %}">
           <span>Register Now</span>
-          <span class="text-[9px] text-prestige-gold font-semibold tracking-wide">Opens June 15</span>
+          <span class="text-[9px] text-prestige-gold font-semibold tracking-wide">Ends July 15</span>
         </a>
       </div>
     </nav>
@@ -141,12 +141,12 @@
       <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white">description</span>
     </div>
     <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-on-primary">
-      <span class="inline-block bg-turquoise-accent text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">Scientific Papers</span>
+      <span class="inline-block bg-rose-600 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">Submission Closed</span>
       <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
         Call for Abstracts
       </h1>
       <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-        Submit your original research addressing human, animal, and ecosystems health. Peer-reviewed papers will be featured in the 2026 conference handbook.
+        Abstract submission is now closed. The deadline was June 26, 2026.
       </p>
     </div>
   </section>
@@ -285,7 +285,15 @@
         <div class="bg-white border border-clinical-gray rounded-2xl p-6 md:p-10 shadow-sm">
           <h2 class="font-headline-md text-xl md:text-2xl text-science-blue mb-6">Abstract Submission Form</h2>
           
-          <form action="{% url 'abstract_submission' %}" method="POST" enctype="multipart/form-data" class="space-y-6" id="abstract-form">
+          <div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-6 text-center">
+            <span class="material-symbols-outlined text-4xl text-rose-600 mb-3 block">block</span>
+            <h3 class="font-bold text-lg text-rose-800 mb-2">Submission Closed</h3>
+            <p class="text-rose-700 text-sm leading-relaxed">
+              The abstract submission deadline was <strong>June 26, 2026</strong>. Submissions are no longer being accepted.
+            </p>
+          </div>
+          
+          <form action="{% url 'abstract_submission' %}" method="POST" enctype="multipart/form-data" class="space-y-6 mt-6 opacity-50 pointer-events-none" id="abstract-form">
             {% csrf_token %}
             {% if abstract_success %}
               <div class="server-feedback rounded-2xl bg-emerald-50 border border-emerald-200 p-4 text-emerald-900">
@@ -300,23 +308,23 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="space-y-1.5">
                 <label class="text-xs font-bold text-on-surface-variant">Corresponding Author Name</label>
-                <input required name="author_name" value="{{ author_name|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Dr. Jane Doe" type="text" id="authorName"/>
+                <input disabled name="author_name" value="{{ author_name|default:'' }}" class="w-full border-clinical-gray rounded-lg p-2.5 outline-none transition-all text-sm bg-clinical-gray" placeholder="Dr. Jane Doe" type="text" id="authorName"/>
               </div>
               <div class="space-y-1.5">
                 <label class="text-xs font-bold text-on-surface-variant">Email Address</label>
-                <input required name="email" value="{{ email|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="jane.doe@unilag.edu.ng" type="email" id="authorEmail"/>
+                <input disabled name="email" value="{{ email|default:'' }}" class="w-full border-clinical-gray rounded-lg P-2.5 outline-none transition-all text-sm bg-clinical-gray" placeholder="jane.doe@unilag.edu.ng" type="email" id="authorEmail"/>
               </div>
             </div>
 
             <div class="space-y-1.5">
               <label class="text-xs font-bold text-on-surface-variant">Institutional Affiliation</label>
-              <input required name="affiliation" value="{{ affiliation|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="Department of Cell Biology, University of Lagos" type="text"/>
+              <input disabled name="affiliation" value="{{ affiliation|default:'' }}" class="w-full border-clinical-gray rounded-lg p-2.5 outline-none transition-all text-sm bg-clinical-gray" placeholder="Department of Cell Biology, University of Lagos" type="text"/>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="space-y-1.5">
                 <label class="text-xs font-bold text-on-surface-variant">Thematic Track</label>
-                <select required name="track" title="Thematic Track" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="abstractTrack">
+                <select disabled name="track" title="Thematic Track" class="w-full border-clinical-gray rounded-lg p-2.5 outline-none transition-all text-sm bg-clinical-gray" id="abstractTrack">
                   <option value="" disabled{% if not track %} selected{% endif %}>Select Track</option>
                   <option value="1. Emerging and re-emerging infectious diseases"{% if track == "1. Emerging and re-emerging infectious diseases" %} selected{% endif %}>1. Emerging and re-emerging infectious diseases</option>
                   <option value="2. Non-communicable diseases: monogenic and complex traits"{% if track == "2. Non-communicable diseases: monogenic and complex traits" %} selected{% endif %}>2. Non-communicable diseases: monogenic and complex traits</option>
@@ -330,7 +338,7 @@
               </div>
               <div class="space-y-1.5">
                 <label class="text-xs font-bold text-on-surface-variant">Presentation Type</label>
-                <select required name="presentation_type" title="Presentation Type" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" id="presentationType">
+                <select disabled name="presentation_type" title="Presentation Type" class="w-full border-clinical-gray rounded-lg p-2.5 outline-none transition-all text-sm bg-clinical-gray" id="presentationType">
                   <option value="Oral Presentation"{% if presentation_type == "Oral Presentation" %} selected{% endif %}>Oral Presentation</option>
                   <option value="Poster Presentation"{% if presentation_type == "Poster Presentation" %} selected{% endif %}>Poster Presentation</option>
                 </select>
@@ -340,15 +348,15 @@
 
             <div class="space-y-1.5">
               <label class="text-xs font-bold text-on-surface-variant">Abstract Title</label>
-              <input required name="abstract_title" value="{{ abstract_title|default:'' }}" class="w-full border-clinical-gray focus:border-science-blue focus:ring-2 focus:ring-turquoise-accent/20 rounded-lg p-2.5 outline-none transition-all text-sm" placeholder="e.g. Assessment of Bio-accumulation of Heavy Metals in Lagos Lagoon" type="text" id="abstractTitle"/>
+              <input disabled name="abstract_title" value="{{ abstract_title|default:'' }}" class="w-full border-clinical-gray rounded-lg p-2.5 outline-none transition-all text-sm bg-clinical-gray" placeholder="e.g. Assessment of Bio-accumulation of Heavy Metals in Lagos Lagoon" type="text" id="abstractTitle"/>
             </div>
 
             <div class="space-y-1.5">
               <label class="text-xs font-bold text-on-surface-variant">Upload Word Document (.doc, .docx only)</label>
-              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-clinical-gray border-dashed rounded-lg hover:border-turquoise-accent transition-colors bg-clinical-gray/10 group relative cursor-pointer" id="drop-zone">
-                <input required name="document" title="Upload Word Document" type="file" accept=".doc,.docx" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" id="file-upload"/>
+              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-clinical-gray border-dashed rounded-lg bg-clinical-gray/10 group relative" id="drop-zone">
+                <input disabled name="document" title="Upload Word Document" type="file" accept=".doc,.docx" class="absolute inset-0 opacity-0 w-full h-full" id="file-upload"/>
                 <div class="space-y-2 text-center pointer-events-none">
-                  <span class="material-symbols-outlined text-science-blue text-4xl group-hover:scale-110 transition-transform">cloud_upload</span>
+                  <span class="material-symbols-outlined text-science-blue text-4xl">cloud_upload</span>
                   <div class="flex flex-col text-xs md:text-sm text-on-surface-variant">
                     <span class="font-bold text-science-blue">Click to upload Word file</span>
                     <span>or drag and drop here</span>
@@ -360,18 +368,18 @@
             </div>
 
             <div class="space-y-3 border border-clinical-gray/60 rounded-xl p-4 bg-clinical-gray/10">
-              <label class="flex items-start gap-3 cursor-pointer group">
-                <input required name="guidelines_read" type="checkbox" id="guidelinesRead" class="mt-0.5 rounded text-science-blue focus:ring-science-blue shrink-0 h-4 w-4"/>
-                <span class="text-xs text-on-surface-variant group-hover:text-on-surface transition-colors leading-relaxed">
+              <label class="flex items-start gap-3 group">
+                <input disabled name="guidelines_read" type="checkbox" id="guidelinesRead" class="mt-0.5 rounded text-science-blue shrink-0 h-4 w-4"/>
+                <span class="text-xs text-on-surface-variant leading-relaxed">
                   I confirm that I have read the <strong class="text-on-surface">Call for Abstracts flier</strong> and my abstract adheres to all the submission guidelines.
                 </span>
               </label>
             </div>
 
             <div class="pt-4 border-t border-clinical-gray/40">
-              <button class="w-full py-3.5 bg-heritage-maroon text-white font-bold text-base rounded-xl shadow-lg hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit" id="abstract-submit-btn">
-                <span class="material-symbols-outlined">send</span>
-                Submit Abstract
+              <button disabled class="w-full py-3.5 bg-clinical-gray text-on-surface-variant font-bold text-base rounded-xl transition-all flex items-center justify-center gap-2 cursor-not-allowed" type="submit" id="abstract-submit-btn">
+                <span class="material-symbols-outlined">block</span>
+                Submission Closed
               </button>
             </div>
           </form>
