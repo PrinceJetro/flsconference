@@ -132,13 +132,25 @@
     <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'home' %}">Home</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'about' %}">About</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'speakers' %}">Speakers</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'special_guests' %}">Guests</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'program' %}">Program</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'abstract_submission' %}">Submit</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'partners_sponsors' %}">Sponsors</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'accommodations' %}">Accommodations</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg" href="{% url 'contact' %}">Contact</a>
+      
+      <!-- Dropdown Menu -->
+      <div class="relative group">
+        <button class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg font-label-lg flex items-center gap-1">
+          More
+          <span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+        </button>
+        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-clinical-gray opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="py-2">
+            <a class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors" href="{% url 'speakers' %}">Speakers</a>
+            <a class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors" href="{% url 'special_guests' %}">Special Guests</a>
+            <a class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors" href="{% url 'abstract_submission' %}">Submit Abstract</a>
+            <a class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors" href="{% url 'partners_sponsors' %}">Sponsors</a>
+            <a class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors" href="{% url 'accommodations' %}">Accommodations</a>
+            <a class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-heritage-maroon/5 hover:text-heritage-maroon transition-colors" href="{% url 'contact' %}">Contact</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- CTA + Hamburger -->
