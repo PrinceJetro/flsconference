@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Speakers | Faculty of Life Sciences One Health Conference</title>
+<title>Accommodations | Faculty of Life Sciences One Health Conference</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Google Fonts preconnect for better performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        .bio-digital-bg {
+        .bio-digital-pattern {
             background-image: radial-gradient(circle at 2px 2px, rgba(30, 66, 140, 0.05) 1px, transparent 0);
             background-size: 32px 32px;
         }
         .hero-gradient {
-            background: linear-gradient(135deg, #A0001F 0%, #650013 100%);
+            background: linear-gradient(135deg, #800000 0%, #570000 100%);
         }
         @media (max-width: 768px) {
             .nav-link, button, .footer-link {
@@ -34,6 +34,20 @@
         img {
             background-color: #f3f4f5;
         }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-icon.active {
+            transform: rotate(180deg);
+        }
     </style>
 <script>
       tailwind.config = {
@@ -42,8 +56,7 @@
           extend: {
             "colors": {
                     "science-blue": "#1E428C",
-                    "turquoise-accent": "#00A896",
-                    "navy-dark": "#028090",
+                    "surface-container-highest": "#e1e3e4",
                     "surface-bright": "#f8f9fa",
                     "on-surface": "#191c1d",
                     "background": "#f8f9fa",
@@ -63,6 +76,7 @@
             "spacing": {
                     "margin-desktop": "80px",
                     "gutter": "24px",
+                    "base": "8px",
                     "max-width": "1280px",
                     "margin-mobile": "16px"
             },
@@ -80,7 +94,7 @@
       }
     </script>
 </head>
-<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-bg flex flex-col min-h-screen">
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden bio-digital-pattern flex flex-col min-h-screen">
 
 <!-- Header -->
 <header class="bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-sm w-full top-0 sticky z-50 transition-all duration-200">
@@ -104,7 +118,7 @@
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-label-lg" href="{% url 'contact' %}">Contact</a>
     </nav>
     <div class="flex items-center space-x-3 sm:space-x-4">
-      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap animate-bounce flex flex-col items-center leading-tight" href="{% url 'registration' %}">
+      <a class="bg-heritage-maroon text-on-primary px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary active:scale-95 transition-all shadow-md whitespace-nowrap flex flex-col items-center leading-tight" href="{% url 'registration' %}">
         <span class="text-xs md:text-label-lg">Register Now</span>
         <span class="text-[8px] text-prestige-gold font-semibold tracking-wide">Ends July 15</span>
       </a>
@@ -115,7 +129,7 @@
   </div>
   
   <!-- Mobile Menu Drawer -->
-  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300" id="mobile-menu">
+  <div class="hidden md:hidden bg-surface dark:bg-inverse-surface border-b border-clinical-gray/20 shadow-lg transition-all duration-300 ease-in-out" id="mobile-menu">
     <nav class="flex flex-col px-margin-mobile py-4 space-y-3 max-h-[80vh] overflow-y-auto">
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'home' %}">Home</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-heritage-maroon transition-colors text-body-md py-2" href="{% url 'about' %}">About</a>
@@ -138,128 +152,187 @@
 
 <main class="flex-grow">
   <!-- Hero Section -->
-  <section class="relative hero-gradient py-12 md:py-24 text-center overflow-hidden">
-    <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-center items-center">
-      <span class="material-symbols-outlined text-[150px] md:text-[350px] text-white">groups</span>
+  <section class="relative hero-gradient py-12 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-5 md:opacity-10 pointer-events-none flex justify-center items-center">
+      <span class="material-symbols-outlined text-[150px] md:text-[400px]" style="font-variation-settings: 'FILL' 1;">hotel</span>
     </div>
-    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-on-primary">
-      <span class="inline-block bg-prestige-gold text-heritage-maroon text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">Expert Keynotes &amp; Plenaries</span>
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+      <span class="text-prestige-gold font-label-lg tracking-widest uppercase mb-3 md:mb-4 block text-xs md:text-sm">Comfort & Convenience</span>
       <div class="inline-flex items-center gap-2 bg-rose-600 text-white px-4 py-2 rounded-full font-bold text-sm tracking-wider mb-6 animate-pulse shadow-lg">
         <span class="material-symbols-outlined text-base">alarm</span>
         REGISTRATION DEADLINE: JULY 15, 2026
       </div>
-      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-tight">
-        Conference Speakers
-      </h1>
-      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-        Meet our distinguished keynote speaker, chairman, and plenaries leading critical conversations at our first annual conference, holding August 4–6, 2026.
+      <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 md:mb-6 break-words">Conference Accommodations</h1>
+      <p class="text-on-primary/80 font-body-md md:font-body-lg max-w-2xl leading-relaxed text-sm md:text-base">
+        Find comfortable and convenient lodging options near the conference venue. We have partnered with several hotels and guest houses to offer special rates for our attendees.
       </p>
     </div>
   </section>
 
-  <!-- Keynote and Chairman Section -->
-  <section class="py-12 md:py-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-    <div class="text-center mb-12">
-      <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-2">Distinguished guests</span>
-      <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Conference Leadership</h2>
-      <div class="w-12 h-1 bg-turquoise-accent mx-auto mt-3"></div>
-    </div>
+  <!-- Accommodations Accordion Section -->
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-12">
+        <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Recommended Accommodations</h2>
+        <p class="text-on-surface-variant text-sm mt-3 max-w-xl mx-auto">Click on each accommodation to view details and contact information.</p>
+        <div class="w-16 h-1 bg-prestige-gold mx-auto mt-4"></div>
+      </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-      {% for speaker in speakers %}
-        {% if speaker.role == 'Keynote Speaker' or speaker.role == 'Chairman of the Day' %}
-          <div class="bg-white border border-clinical-gray rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-            <div class="aspect-square w-full bg-slate-100 relative overflow-hidden flex items-center justify-center">
-              {% if speaker.image %}
-                <img src="{{ speaker.image.url }}" alt="{{ speaker.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
-              {% elif speaker.image_url %}
-                <img src="{% static speaker.image_url %}" alt="{{ speaker.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
-              {% else %}
-                <div class="w-full h-full flex flex-col items-center justify-center bg-heritage-maroon/5 text-heritage-maroon">
-                  <span class="material-symbols-outlined text-6xl">person</span>
-                </div>
-              {% endif %}
-              <div class="absolute top-4 right-4 bg-heritage-maroon text-prestige-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                {{ speaker.role }}
+      <div class="max-w-3xl mx-auto space-y-4">
+        
+        <!-- University of Lagos Guest House -->
+        <div class="border border-clinical-gray rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
+          <button class="w-full px-6 py-5 flex items-center justify-between text-left bg-surface-container-low hover:bg-surface-container-highest transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-3xl text-heritage-maroon">apartment</span>
+              <div>
+                <h3 class="font-bold text-lg text-heritage-maroon">UNIVERSITY OF LAGOS, GUEST HOUSE</h3>
+                <p class="text-on-surface-variant text-sm">On-campus accommodation</p>
               </div>
             </div>
-            <div class="p-6 flex-grow flex flex-col justify-between">
-              <div>
-                <h3 class="font-headline-md text-xl text-heritage-maroon font-bold leading-tight mb-2">{{ speaker.name }}</h3>
-                <p class="text-on-surface-variant text-sm font-semibold mb-1">{{ speaker.title }}</p>
-                {% if speaker.affiliation %}
-                  <p class="text-slate-500 text-xs mb-3">{{ speaker.affiliation }}</p>
-                {% endif %}
-                
-                {% if speaker.topic %}
-                  <div class="mt-3 bg-slate-50 border border-slate-100 rounded-lg p-3">
-                    <span class="text-[10px] text-science-blue font-bold uppercase tracking-wider block mb-0.5">Presentation Topic</span>
-                    <span class="text-xs font-semibold text-slate-700">{{ speaker.topic }}</span>
-                  </div>
-                {% endif %}
-              </div>
-              <div class="mt-6 pt-4 border-t border-clinical-gray/40">
-                <a href="{% url 'speaker_detail' speaker.id %}" class="w-full py-2.5 bg-science-blue hover:bg-science-blue/90 text-white font-bold text-xs rounded-xl shadow-sm hover:shadow active:scale-95 transition-all text-center block">
-                  Read More
-                </a>
+            <span class="material-symbols-outlined accordion-icon text-heritage-maroon text-2xl">expand_more</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 py-5 bg-white border-t border-clinical-gray">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">phone</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Telephone</p>
+                  <p class="text-on-surface-variant text-sm">09095326534</p>
+                </div>
               </div>
             </div>
           </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </section>
+        </div>
 
-  <!-- Plenary & Invited Speakers Section -->
-  <section class="py-12 md:py-16 bg-clinical-gray/20 border-y border-clinical-gray">
-    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
-      <div class="text-center mb-12">
-        <span class="text-science-blue font-bold text-xs uppercase tracking-[0.2em] block mb-2">Plenary Sessions</span>
-        <h2 class="font-headline-lg text-2xl md:text-headline-lg text-heritage-maroon">Invited &amp; Plenary Presenters</h2>
-        <div class="w-12 h-1 bg-turquoise-accent mx-auto mt-3"></div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        {% for speaker in speakers %}
-          {% if speaker.role == 'Plenary Speaker' or speaker.role == 'Invited Speaker' %}
-            <div class="bg-white border border-clinical-gray rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-              <div class="aspect-[3/4] w-full bg-slate-100 relative overflow-hidden flex items-center justify-center">
-                {% if speaker.image %}
-                  <img src="{{ speaker.image.url }}" alt="{{ speaker.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
-                {% elif speaker.image_url %}
-                  <img src="{% static speaker.image_url %}" alt="{{ speaker.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
-                {% else %}
-                  <div class="w-full h-full flex flex-col items-center justify-center bg-science-blue/5 text-science-blue">
-                    <span class="material-symbols-outlined text-5xl">person</span>
-                  </div>
-                {% endif %}
-                <div class="absolute top-3 right-3 bg-science-blue text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow">
-                  {{ speaker.role }}
+        <!-- NSPRI Guest House -->
+        <div class="border border-clinical-gray rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
+          <button class="w-full px-6 py-5 flex items-center justify-between text-left bg-surface-container-low hover:bg-surface-container-highest transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-3xl text-heritage-maroon">home</span>
+              <div>
+                <h3 class="font-bold text-lg text-heritage-maroon">NSPRI GUEST HOUSE</h3>
+                <p class="text-on-surface-variant text-sm">Near campus</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined accordion-icon text-heritage-maroon text-2xl">expand_more</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 py-5 bg-white border-t border-clinical-gray space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">location_on</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Address</p>
+                  <p class="text-on-surface-variant text-sm">32/38, Barikisu Iyede street, off Unilag road, Onitiri, Yaba, Lagos</p>
                 </div>
               </div>
-              <div class="p-5 flex-grow flex flex-col justify-between">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">phone</span>
                 <div>
-                  <h4 class="font-bold text-base text-heritage-maroon leading-snug mb-1">{{ speaker.name }}</h4>
-                  <p class="text-on-surface-variant text-[11px] font-semibold mb-1">{{ speaker.title }}</p>
-                  {% if speaker.affiliation %}
-                    <p class="text-slate-500 text-[10px]">{{ speaker.affiliation }}</p>
-                  {% endif %}
-                  
-                  {% if speaker.topic %}
-                    <span class="inline-block mt-3 text-[9px] bg-clinical-gray text-slate-700 px-2 py-0.5 rounded border border-slate-200">
-                      {{ speaker.topic }}
-                    </span>
-                  {% endif %}
-                </div>
-                <div class="mt-4 pt-3 border-t border-clinical-gray/40">
-                  <a href="{% url 'speaker_detail' speaker.id %}" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-[10px] rounded-lg active:scale-95 transition-all text-center block">
-                    Read More
-                  </a>
+                  <p class="text-sm font-semibold text-on-surface">Telephone</p>
+                  <p class="text-on-surface-variant text-sm">08150482519</p>
                 </div>
               </div>
             </div>
-          {% endif %}
-        {% endfor %}
+          </div>
+        </div>
+
+        <!-- JUPEB Guest House -->
+        <div class="border border-clinical-gray rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
+          <button class="w-full px-6 py-5 flex items-center justify-between text-left bg-surface-container-low hover:bg-surface-container-highest transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-3xl text-heritage-maroon">villa</span>
+              <div>
+                <h3 class="font-bold text-lg text-heritage-maroon">JUPEB GUEST HOUSE</h3>
+                <p class="text-on-surface-variant text-sm">Sabo, Yaba</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined accordion-icon text-heritage-maroon text-2xl">expand_more</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 py-5 bg-white border-t border-clinical-gray space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">location_on</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Address</p>
+                  <p class="text-on-surface-variant text-sm">24, McNeil Street, Sabo, Yaba, Lagos</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">phone</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Telephone</p>
+                  <p class="text-on-surface-variant text-sm">07077310031, 07079677519</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Royal Hills Hotels & Suites -->
+        <div class="border border-clinical-gray rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
+          <button class="w-full px-6 py-5 flex items-center justify-between text-left bg-surface-container-low hover:bg-surface-container-highest transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-3xl text-heritage-maroon">hotel</span>
+              <div>
+                <h3 class="font-bold text-lg text-heritage-maroon">ROYAL HILLS HOTELS & SUITES</h3>
+                <p class="text-on-surface-variant text-sm">Shomolu, Lagos</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined accordion-icon text-heritage-maroon text-2xl">expand_more</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 py-5 bg-white border-t border-clinical-gray space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">location_on</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Address</p>
+                  <p class="text-on-surface-variant text-sm">38, Anuoluwapo street, Shomolu, Lagos</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">phone</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Telephone</p>
+                  <p class="text-on-surface-variant text-sm">09043334445, 07025007903</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caritas Inn -->
+        <div class="border border-clinical-gray rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all">
+          <button class="w-full px-6 py-5 flex items-center justify-between text-left bg-surface-container-low hover:bg-surface-container-highest transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-3xl text-heritage-maroon">bed</span>
+              <div>
+                <h3 class="font-bold text-lg text-heritage-maroon">CARITAS INN</h3>
+                <p class="text-on-surface-variant text-sm">Igbobi College Road</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined accordion-icon text-heritage-maroon text-2xl">expand_more</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 py-5 bg-white border-t border-clinical-gray space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">location_on</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Address</p>
+                  <p class="text-on-surface-variant text-sm">Igbobi College Road beside First Bank, WAEC Bus Stop</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-science-blue text-xl mt-0.5">phone</span>
+                <div>
+                  <p class="text-sm font-semibold text-on-surface">Telephone</p>
+                  <p class="text-on-surface-variant text-sm">08126955544</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -348,17 +421,32 @@
         link.classList.add('text-on-surface-variant', 'font-medium');
       }
     });
-
-    // Image fallback handling
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function() {
-        if (!this.hasAttribute('data-fallback-shown')) {
-          this.setAttribute('data-fallback-shown', 'true');
-          this.style.backgroundColor = '#f3f4f5';
-        }
-      });
-    });
   });
+
+  function toggleAccordion(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.accordion-icon');
+    
+    // Close all other accordions
+    const allContents = document.querySelectorAll('.accordion-content');
+    const allIcons = document.querySelectorAll('.accordion-icon');
+    
+    allContents.forEach(function(item) {
+      if (item !== content) {
+        item.classList.remove('active');
+      }
+    });
+    
+    allIcons.forEach(function(item) {
+      if (item !== icon) {
+        item.classList.remove('active');
+      }
+    });
+    
+    // Toggle current accordion
+    content.classList.toggle('active');
+    icon.classList.toggle('active');
+  }
 </script>
 </body>
 </html>

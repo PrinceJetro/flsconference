@@ -2,6 +2,7 @@ from django.urls import path
 from .views import (
     about,
     abstract_submission,
+    accommodations,
     contact,
     home,
     partners_sponsors,
@@ -31,6 +32,8 @@ urlpatterns = [
     path("special_guests_one_health_conference.html", special_guests),
     path("partners/", partners_sponsors, name="partners_sponsors"),
     path("partners_sponsors.html", partners_sponsors),
+    path("accommodations/", accommodations, name="accommodations"),
+    path("accommodations_one_health_conference.html", accommodations),
     path("program/", program, name="program"),
     path("program_one_health_conference.html", program),
     path("registered-participants/", registered_participants, name="registered_participants"),

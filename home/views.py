@@ -227,6 +227,10 @@ def partners_sponsors(request):
     return render(request, 'partners_sponsors.html')
 
 
+def accommodations(request):
+    return render(request, 'accommodations_one_health_conference.html')
+
+
 def program(request):
     return render(request, 'program_one_health_conference.html')
 
