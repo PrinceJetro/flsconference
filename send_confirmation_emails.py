@@ -11,7 +11,7 @@ django.setup()
 from home.models import Registration
 
 # Resend API configuration
-API_KEY = "re_hNcvqpL6_A74EqH8HRz3aDnkJQpNcvw7d"
+API_KEY = "re_e1NxtnnC_PHUiCJE7oEW8oyRh7qT3h7CU"
 URL = "https://api.resend.com/emails"
 
 # Email template
@@ -159,7 +159,7 @@ def send_confirmation_email(registration):
 
 def main():
     # Get first 85 registrations
-    registrations = Registration.objects.all()[:85]
+    registrations = Registration.objects.all()[85:]
     total = registrations.count()
     
     print(f"Starting email send to {total} participants...")
