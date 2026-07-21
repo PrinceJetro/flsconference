@@ -288,23 +288,10 @@
                     <p class="text-slate-500 text-xs">{{ guest.affiliation }}</p>
                   {% endif %}
                 </div>
-                <div class="mt-6 pt-4 border-t border-clinical-gray/40">
-                  <a href="{% url 'guest_detail' guest.id %}" class="w-full py-2.5 bg-science-blue hover:bg-science-blue/90 text-white font-bold text-xs rounded-xl shadow-sm hover:shadow active:scale-95 transition-all text-center block">
-                    Read More
-                  </a>
-                </div>
               </div>
             </div>
           {% endif %}
         {% endfor %}
-
-        <div class="bg-white border border-dashed border-clinical-gray rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm min-h-[300px]">
-          <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
-            <span class="material-symbols-outlined text-3xl">gavel</span>
-          </div>
-          <h3 class="font-headline-md text-lg text-slate-700 font-bold mb-2">Royal Fathers</h3>
-          <p class="text-xs text-on-surface-variant">To Be Announced</p>
-        </div>
         
         <div></div> <!-- Spacing column -->
       </div>
